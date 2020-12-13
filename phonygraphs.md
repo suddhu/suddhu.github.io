@@ -1,8 +1,5 @@
 ## Welcome to GitHub Pages
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<div>
-        
-        
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>      
             <div id="5b76ded2-1513-457c-81b8-efea1e91279c" class="plotly-graph-div" style="height:100%; width:100%;"></div>
             <script type="text/javascript">
                 
@@ -18,7 +15,6 @@
                 };
                 
             </script>
-</div>
 You can use the [editor on GitHub](https://github.com/suddhu/suddhu.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
