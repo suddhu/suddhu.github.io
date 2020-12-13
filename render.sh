@@ -1,1 +1,1 @@
-jupyter nbconvert phonygraph.ipynb --no-input
+jupyter nbconvert phonygraphs.ipynb --no-input
