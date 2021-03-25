@@ -2,6 +2,7 @@
 
 
 ```
-jupyter nbconvert phonygraph.ipynb --no-input
+pip install discogs_client
+pip install nbconvert
 
 ```
