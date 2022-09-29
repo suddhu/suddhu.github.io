@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>MidasTouch: tactile perception</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+        <!--FACEBOOK-->
+    <meta property="og:image" content="https://www.cs.cmu.edu/~sudhars1/midastouch/midastouch/img/pipeline.jpg>
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="682">
+    <meta property="og:image:height" content="682">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.cs.cmu.edu/~sudhars1/midastouch/"/>
+    <meta property="og:title" content="midastouch" />
+    <meta property="og:description" content="Project page for Midastouch:Monte-Carlo inference over distributions across sliding touch." />
+
+        <!--TWITTER-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="midastouch" />
+    <meta name="twitter:description" content="Project page for Midastouch:Monte-Carlo inference over distributions across sliding touch." />
+    <meta name="twitter:image" content="https://www.cs.cmu.edu/~sudhars1/midastouch/midastouch/img/pipeline.jpg" />
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <b>MidasTouch</b>: Monte-Carlo inference over <br> distributions across sliding touch</br> 
+                <small>
+                    CoRL 2022 (Oral)
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="http://www.cs.cmu.edu/~sudhars1/">
+                            Sudharshan Suresh
+                        </a>
+                        </br>CMU RI
+                    </li>
+                    <li>
+                        <a href="https://si-lynnn.github.io/">
+                            Zilin Si
+                        </a>
+                        </br>CMU RI
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/stuartoanderson">
+                            Stuart Anderson
+                        </a>
+                        </br>Meta AI (FAIR)
+                    </li><br><br>
+                    <li>
+                        <a href="https://www.cs.cmu.edu/~kaess/">
+                            Michael Kaess
+                        </a>
+                        </br>CMU RI
+                    </li>
+                    <li>
+                        <a href="https://www.mustafamukadam.com/">
+                            Mustafa Mukadam
+                        </a>
+                        </br>Meta AI (FAIR)
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-10 col-md-offset-1"><hr></div>
+
+        <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://openreview.net/forum?id=JWROnOf4w-K">
+                            <image src="img/midastouch_paper_image.jpg" height="60px">
+                                <h4><strong>Openreview</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://youtu.be/L-h8t9-iSFE">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/midastouch-corl/YCB-Slide" target="popup" onclick="window.open('https://github.com/midastouch-corl/YCB-Slide','popup','width=600,height=400')">
+                            <image src="img/database_icon.png" height="60px">
+                                <h4><strong>YCB-Slide dataset</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code (coming soon)</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+        <div class="col-md-10 col-md-offset-1"><hr></div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <image src="img/pipeline.jpg" class="img-responsive" alt="overview"><br>
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    We present MidasTouch, a tactile perception system for online global localization of a vision-based touch sensor sliding on an object surface. This framework takes in posed tactile images over time, and outputs an evolving distribution of sensor pose on the object's surface, without the need for visual priors. Our key insight is to estimate local surface geometry with tactile sensing, learn a compact representation for it, and disambiguate these signals over a long time horizon. The backbone of MidasTouch is a Monte-Carlo particle filter, with a measurement model based on a tactile code network learned from tactile simulation. This network, inspired by LIDAR place recognition, compactly summarizes local surface geometries. These generated codes are efficiently compared against a precomputed tactile codebook per-object, to update the pose distribution. We further release the YCB-Slide dataset of real-world and simulated forceful sliding interactions between a vision-based tactile sensor and standard YCB objects. While single-touch localization can be inherently ambiguous, we can quickly localize our sensor by traversing salient surface geometries. 
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-10 col-md-offset-1"><hr></div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Video
+                </h3>
+                <div class="text-center">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/L-h8t9-iSFE?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="col-md-12 text-center">
+            <small>
+            More content soon...
+            </small>
+        </h2>
+
+        <div class="col-md-10 col-md-offset-1"><hr></div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-2">
+                <h3>
+                    Bibtex
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+                    <textarea id="bibtex" class="form-control" readonly>
+@inproceedings{suresh2022midastouch,
+    title={{M}idas{T}ouch: {M}onte-{C}arlo inference over distributions across sliding touch},
+    author={Sudharshan Suresh, Zilin Si, Stuart Anderson, Michael Kaess, and Mustafa Mukadam},
+    booktitle = {Proc. Conf. on Robot Learning, CoRL},
+    address = {Auckland, NZ},
+    month = dec,
+    year = {2022, to appear}
+}</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-10 col-md-offset-1"><hr></div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                The website template was borrowed from <a href="https://jonbarron.info/mipnerf/">John Barron</a> and <a href="http://mgharbi.com/">Michaël Gharbi</a>. 
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
