@@ -14,12 +14,12 @@
     <!-- <base href="/"> -->
 
         <!--FACEBOOK-->
-    <meta property="og:image" content="https://www.cs.cmu.edu/~sudhars1/midastouch/midastouch/img/pipeline.jpg>
+    <meta property="og:image" content="https://suddhu.github.io/midastouch-tactile/img/pipeline.jpg>
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="682">
     <meta property="og:image:height" content="682">
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.cs.cmu.edu/~sudhars1/midastouch/"/>
+    <meta property="og:url" content="https://suddhu.github.io/midastouch-tactile/"/>
     <meta property="og:title" content="midastouch" />
     <meta property="og:description" content="Project page for Midastouch:Monte-Carlo inference over distributions across sliding touch." />
 
@@ -27,7 +27,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="midastouch" />
     <meta name="twitter:description" content="Project page for Midastouch:Monte-Carlo inference over distributions across sliding touch." />
-    <meta name="twitter:image" content="https://www.cs.cmu.edu/~sudhars1/midastouch/midastouch/img/pipeline.jpg" />
+    <meta name="twitter:image" content="https://suddhu.github.io/midastouch-tactile/img/pipeline.jpg" />
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -41,7 +41,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
-    
+
     <script src="js/app.js"></script>
 </head>
 
@@ -49,7 +49,7 @@
     <div class="container" id="main">
         <div class="row">
             <h2 class="col-md-12 text-center">
-                <b>MidasTouch</b>: Monte-Carlo inference over <br> distributions across sliding touch</br> 
+                <b>MidasTouch</b>: Monte-Carlo inference over <br> distributions across sliding touch</br>
                 <small>
                     CoRL 2022 (Oral)
                 </small>
@@ -110,7 +110,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/midastouch-corl/YCB-Slide" target="popup" onclick="window.open('https://github.com/midastouch-corl/YCB-Slide','popup','width=600,height=400')">
+                            <a href="https://github.com/rpl-cmu/YCB-Slide" target="popup" onclick="window.open('https://github.com/rpl-cmu/YCB-Slide','popup','width=600,height=400')">
                             <image src="img/database_icon.png" height="60px">
                                 <h4><strong>YCB-Slide dataset</strong></h4>
                             </a>
@@ -134,7 +134,7 @@
                     Abstract
                 </h3>
                 <p class="text-justify">
-                    We present MidasTouch, a tactile perception system for online global localization of a vision-based touch sensor sliding on an object surface. This framework takes in posed tactile images over time, and outputs an evolving distribution of sensor pose on the object's surface, without the need for visual priors. Our key insight is to estimate local surface geometry with tactile sensing, learn a compact representation for it, and disambiguate these signals over a long time horizon. The backbone of MidasTouch is a Monte-Carlo particle filter, with a measurement model based on a tactile code network learned from tactile simulation. This network, inspired by LIDAR place recognition, compactly summarizes local surface geometries. These generated codes are efficiently compared against a precomputed tactile codebook per-object, to update the pose distribution. We further release the YCB-Slide dataset of real-world and simulated forceful sliding interactions between a vision-based tactile sensor and standard YCB objects. While single-touch localization can be inherently ambiguous, we can quickly localize our sensor by traversing salient surface geometries. 
+                    We present MidasTouch, a tactile perception system for online global localization of a vision-based touch sensor sliding on an object surface. This framework takes in posed tactile images over time, and outputs an evolving distribution of sensor pose on the object's surface, without the need for visual priors. Our key insight is to estimate local surface geometry with tactile sensing, learn a compact representation for it, and disambiguate these signals over a long time horizon. The backbone of MidasTouch is a Monte-Carlo particle filter, with a measurement model based on a tactile code network learned from tactile simulation. This network, inspired by LIDAR place recognition, compactly summarizes local surface geometries. These generated codes are efficiently compared against a precomputed tactile codebook per-object, to update the pose distribution. We further release the YCB-Slide dataset of real-world and simulated forceful sliding interactions between a vision-based tactile sensor and standard YCB objects. While single-touch localization can be inherently ambiguous, we can quickly localize our sensor by traversing salient surface geometries.
                 </p>
             </div>
         </div>
@@ -151,7 +151,7 @@
                 </div>
             </div>
         </div>
-        
+
         <h2 class="col-md-12 text-center">
             <small>
             More content soon...
@@ -187,7 +187,7 @@
                     Acknowledgements
                 </h3>
                 <p class="text-justify">
-                The website template was borrowed from <a href="https://jonbarron.info/mipnerf/">John Barron</a> and <a href="http://mgharbi.com/">Michaël Gharbi</a>. 
+                The website template was borrowed from <a href="https://jonbarron.info/mipnerf/">John Barron</a> and <a href="http://mgharbi.com/">Michaël Gharbi</a>.
                 </p>
             </div>
         </div>
