@@ -3,7 +3,8 @@ private/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-.DS_Store 
+.DS_Store
+nerfsburgh/
 
 # C extensions
 *.so
