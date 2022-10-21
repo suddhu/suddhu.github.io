@@ -4,8 +4,7 @@
  */
 
  .blink_me {
-  color: #e7298a;
-  animation: blinker 1s linear infinite;
+  animation: blinker 2s linear infinite;
 }
 
 @keyframes blinker {
@@ -14,21 +13,41 @@
   }
 }
 
+figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+figcaption {
+  align-self: flex-end;
+  font-size: 8px;
+  line-height: 1px;
+  color: #000000;
+  padding-bottom:5px;
+  /*adjust this to control how far it should be from egde*/
+}
+
+
 .caption {
   padding:5px;
   width:90%;
-  font-size:14px;
+  font-size:12px;
   line-height: 1.2em;
 }
 
   /* without hover */
  .hover-video {
-  opacity: 0.5;
   transition: opacity .5s ease-out;
   -moz-transition: opacity .5s ease-out;
   -webkit-transition: opacity .5s ease-out;
   -o-transition: opacity .5s ease-out;
  }
+
+ .flexbox {
+  display: flex;
+  justify-content: space-between;
+}
 
   /* on hover behavior */
  .hover-video:hover {
