@@ -165,3 +165,9 @@ span.highlight {
 	margin-left: 0.5em;
 	margin-right: 0.5em;
 }
+
+
+span.pre {
+  display: inline-block;
+  vertical-align: text-top;
+}
