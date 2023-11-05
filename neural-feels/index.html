@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>NeuralFeels</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+    <!--FACEBOOK-->
+    <meta property="og:image" content="https://suddhu.github.io/neural-feels/img/pipeline.jpg>
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="682">
+    <meta property="og:image:height" content="682">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://suddhu.github.io/neural-feels/"/>
+    <meta property="og:title" content="neuralfeels" />
+    <meta property="og:description" content="Project page for Neural feels with neural fields: Visuo-tactile perception for in-hand manipulation." />
+
+    <!--TWITTER-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="neuralfeels" />
+    <meta name="twitter:description" content="Project page for Neural feels with neural fields: Visuo-tactile perception for in-hand manipulation" />
+    <meta name="twitter:image" content="https://suddhu.github.io/neural-feels/img/pipeline.jpg" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="style_tweaks.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script>
+        function changevid1(buttonlink) {
+            document.getElementById('change1').src = buttonlink;
+        }
+        function changevid2(buttonlink) {
+            document.getElementById('change2').src = buttonlink;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <a href="/"><img src="img/logo.png" width="120px" alt="logo" style="padding-left: 30px; padding-top: 20px;"/></a><span class="pre"><b>NeuralFeels</b>: Neural feels with neural fields <br> &nbsp;&nbsp;&nbsp; Visuo-tactile perception for in-hand manipulation</span>
+                </br>
+                <small>
+                    <!-- submitted -->
+                </small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <ul class="list-inline">
+                    <li>
+                        <a href="http://www.cs.cmu.edu/~sudhars1/" target="_blank">
+                            Sudharshan Suresh
+                        </a>
+                        <sup>1, 2</sup>
+                    </li>
+                    <li>
+                        <a href="https://haozhi.io/" target="_blank">
+                            Haozhi Qi
+                        </a>
+                        <sup>2, 3</sup>
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=9bt2Z5QAAAAJ&hl=en" target="_blank">
+                            Tingfan Wu
+                        </a>
+                        <sup>2</sup>
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=3PJeg1wAAAAJ&hl=en">
+                            Taosha Fan
+                        </a>
+                        <sup>2</sup>
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=rebEn8oAAAAJ&hl=en">
+                            Luis Pineda
+                        </a>
+                        <sup>2</sup>
+                    </li>
+                    <br>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=p6DCMrQAAAAJ&hl=en">
+                            Mike Lambeta
+                        </a>
+                        <sup>2</sup>
+                    </li>
+                    <li>
+                        <a href="https://people.eecs.berkeley.edu/~malik/">
+                            Jitendra Malik
+                        </a>
+                        <sup>2, 3</sup>
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=DMTuJzAAAAAJ&hl=en">
+                            Mrinal Kalakrishnan
+                        </a>
+                        <sup>2</sup>
+                    </li>
+                    <br>
+                    <li>
+                        <a href="https://scholar.google.ch/citations?user=fA0rYxMAAAAJ&hl=en">
+                            Roberto Calandra
+                        </a>
+                        <sup>4, 5</sup>
+                    </li>
+                    <li>
+                        <a href="https://www.cs.cmu.edu/~kaess/">
+                            Michael Kaess
+                        </a>
+                        <sup>1</sup>
+                    </li>
+                    <li>
+                        <a href="https://joeaortiz.github.io/">
+                            Joseph Ortiz
+                        </a>
+                        <sup>2</sup>
+                    </li>
+                    <li>
+                        <a href="https://www.mustafamukadam.com/">
+                            Mustafa Mukadam
+                        </a>
+                        <sup>2</sup>
+                    </li>
+                </ul>
+            </div>
+            <!-- add affiliations with superscripts -->
+            <div class="col-md-10 text-center col-md-offset-1">
+                <ul class="list-inline">
+                    <li>
+                        <sup>1</sup>
+                        <a href="https://www.facebook.com/">
+                        CMU
+                        </a>
+                    </li>
+                    <li>
+                        <sup>2</sup>
+                        <a href="https://www.instagram.com/">
+                        FAIR, Meta
+                        </a>
+                    </li>
+                    <li>
+                        <sup>3</sup>
+                        <a href="https://www.linkedin.com/">
+                        UC Berkeley
+                        </a>
+                    </li>
+                    <li>
+                        <sup>4</sup>
+                        <a href="https://www.twitter.com/">
+                        TU Dresden
+                        </a>
+                    </li>
+                    <li>
+                        <sup>5</sup>
+                        <a href="https://www.youtube.com/">
+                        CeTI
+                        </a>
+                    </li>
+                </ul>
+        </div>
+
+        <div class="row">
+                <div class="col-md-10 text-center col-md-offset-1">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://arxiv.org/abs/2210.14210">
+                            <image src="img/midastouch_paper_image.jpg" height="60px">
+                                <h4><strong>Paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                            <image src="img/database_icon.png" height="60px">
+                                <h4><strong>Dataset (coming soon)</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code (coming soon)</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <p class="text-center">
+                <font size="3"><b>TL;DR</b>: Neural perception with vision and touch yields robust tracking <br> and reconstruction of novel objects for in-hand manipulation.</font>
+                </p>
+            </div>
+            <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+            <div class="col-md-10 text-center col-md-offset-1">
+                <video width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay muted loop class="center">
+                    <source src="" type='video/mp4'>
+                </video> <br>
+
+                <h3>
+                    <b>Overview</b>
+                </h3>
+                <p class="text-justify">
+                    MidasTouch is a tactile perception system for online global localization of a vision-based touch sensor sliding on an object surface. This framework takes in posed tactile images over time, and outputs an evolving distribution of sensor pose on the object's surface, without the need for visual priors. Our key insight is to estimate local surface geometry with tactile sensing, learn a compact representation for it, and disambiguate these signals over a long time horizon. The backbone of MidasTouch is a Monte-Carlo particle filter, with a measurement model based on a tactile code network learned from tactile simulation. This network, inspired by LIDAR place recognition, compactly summarizes local surface geometries. These generated codes are efficiently compared against a precomputed tactile codebook per-object, to update the pose distribution. While single-touch localization can be inherently ambiguous, we can quickly localize our sensor by traversing salient surface geometries. Additionally, the YCB-Slide dataset is a corpus of real-world and simulated forceful sliding interactions between a vision-based tactile sensor and YCB objects.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <h3>
+                    <b>Video presentation</b>
+                </h3>
+                <div class="text-center">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/MkudcePyBJI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <h3>
+                    <b>Full pipeline</b>
+                </h3>
+                <video width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay muted loop class="center">
+                    <source src="neural-feels/video/pipeline.m4v" type='video/mp4'>
+                </video>
+            </div>
+            <div class="col-md-10 text-center col-md-offset-1">
+                <p class="text-justify">
+                    MidasTouch performs online global localization of a vision-based touch sensor on an object surface during sliding interactions. Given posed tactile images over time, this system leverages local surface geometry within a nonparametric particle filter to generate an evolving distribution of sensor pose on the object’s surface.
+                </p>
+                <p class="text-justify">
+                    It comprises three distinct modules, as illustrated above: a <a href="#tactile_depth">tactile depth network</a> (TDN), <a href="#tactile_codes">tactile code network</a> (TCN), and particle filter. At a high-level, the TDN first converts a tactile image into its local 3D geometry via a learned observation model. The 3D information is then condensed into a tactile code by the TCN through a sparse 3D convolution network. Finally, the downstream particle filter uses these learned codes in its measurement model, and outputs a sensor pose distribution that evolves over time.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <a id="tactile_depth"></a><h3><b>Image to 3D</b></h3>
+                    <div class="row align-items-center">
+                            <img src="img/tdn.jpg" alt="Tactile depth netowork" width="100%" align="center" style="margin: 0px 0px 20px 0px"/>
+                    </div>
+            </div>
+
+            <div class="col-md-10 text-center col-md-offset-1">
+                <p class="text-justify">
+                    The tactile depth network learns the inverse sensor model to recover local 3D geometry from a tactile image. We adapt a fully-convolutional residual network, and train it in a supervised fashion to predict local heightmaps from tactile images. Above we see real-world DIGIT images from interactions alongside the predicted 3D geometries.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <a id="tactile_codes"></a><h3><b>Tactile codes</b></h3>
+                        <p class="text-justify">
+                            This network summarizes large, unordered point clouds of local geometry into a low-dimensional embedding space, or code. If two sensor measurements are nearby in pose-space, they observe similar geometries and therefore, their codes will also be nearby in embedding-space.
+                        </p>
+                        <p class="text-justify">
+                            The tactile codebooks comprising of 50k randomized sensor poses on each object’s mesh. We evenly sample these points and normals on the mesh with random orientations and indentations. We feed these poses into TACTO to generate a dense set of tactile images for each object. Local geometric similarity are visualized below for the YCB object set.
+                        </p>
+                    <div class="row align-items-center">
+                            <video width="100%" autoplay muted loop class="center" style="margin: 0px 0px 20px 0px">
+                                <source src="video/tsne.mp4" type='video/mp4'>
+                            </video>
+
+                    </div>
+                    <p class="text-justify">
+                        <em>Tactile codebook per object visualized as a spectral colorspace map using t-SNE. Each codebook comprises of 50k densely sampled poses with their corresponding 256-dimensional tactile code. Similar hues denote sensor poses that elicit similar tactile codes. We can clearly delineate local geometric features: edges (<span style = " font-family:monospace;">sugar_box</span>) , ridges (<span style = "font-family:monospace;">power_drill</span>), corners (<span style = "font-family:monospace;">scissors</span>), and complex texture (<span style = "font-family:monospace;">baseball</span>)</em>
+                    </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <h3><b>YCB-Slide dataset</b></h3>
+                    <video width="100%" autoplay muted loop class="center" style="margin: 0px 0px 20px 0px">
+                        <source src="video/ycb_slide.mp4" type='video/mp4'>
+                    </video>
+                    <p class="text-justify">
+                        To evaluate MidasTouch, and enable further research in tactile sensing, we introduce our <a href="https://github.com/rpl-cmu/YCB-Slide">YCB-Slide dataset</a>. It comprises of DIGIT sliding interactions on the 10 YCB objects from Section 4. We envision this can contribute towards efforts in tactile localization, mapping, object understanding, and learning dynamics models.
+                    </p>
+                    <img src="img/ycb_slide.jpg" alt="Tactile depth netowork" width="100%" align="center" style="margin: 0px 0px 20px 0px"/>
+                    <p class="text-justify">
+                        We provide access to DIGIT images, sensor poses, ground-truth mesh models, and ground-truth heightmaps + contact masks (simulation only). Example sliding trajectories from simulated and real trials on the 10 YCB objects. Overlaid in green are the local 3D geometries captured by the tactile sensor, and the contact poses as RGB coordinate axes.
+                    </p>
+            </div> 
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+            <h3><b>Representative results</b>: simulation</h3>
+            <p class="text-justify">
+                Selected results from the YCB-Slide simulated dataset. In each video, we see the tactile images, local geometries, tactile code heatmap, pose distribution, and average translation/rotation RMSE.
+            </p>
+            <video id="change1" width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay muted loop class="hover-video center">
+                <source src="video/results/sim/004_sugar_box.mp4" type="video/mp4"></source>
+            </video>
+            <div class="flexbox">
+                <div>
+                    <button onClick="changevid1('video/results/sim/004_sugar_box.mp4')"><figure><img src="img/ycb_objects/sim/004_sugar_box.png" height="55px"></figure></figure><figcaption>&nbsp;</figcaption></button>
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/sim/005_tomato_soup_can.mp4')"><figure></figure><img src="img/ycb_objects/sim/005_tomato_soup_can.png" height="55px"></figure><figcaption>&nbsp;</figcaption></button>
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/sim/006_mustard_bottle.mp4')"><figure><img src="img/ycb_objects/sim/006_mustard_bottle.png" height="55px"></figure><figcaption>(Multimode)</figcaption></button>
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/sim/021_bleach_cleanser.mp4')"><figure></figure><img src="img/ycb_objects/sim/021_bleach_cleanser.png" height="55px"></figure></figure><figcaption>&nbsp;</figcaption></button>
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/sim/025_mug.mp4')"><figure></figure><img src="img/ycb_objects/sim/025_mug.png" height="55px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/sim/035_power_drill.mp4')"><figure></figure><img src="img/ycb_objects/sim/035_power_drill.png" height="55px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/sim/037_scissors.mp4')"><figure></figure><img src="img/ycb_objects/sim/037_scissors.png" height="55px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/sim/042_adjustable_wrench.mp4')"><figure></figure><img src="img/ycb_objects/sim/042_adjustable_wrench.png" height="55px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/sim/048_hammer.mp4')"><figure></figure><img src="img/ycb_objects/sim/048_hammer.png" height="55px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/sim/055_baseball.mp4')"><figure></figure><img src="img/ycb_objects/sim/055_baseball.png" height="55px"></figure></figure><figcaption></figcaption></button> <br>
+                </div>
+            </div>
+            <span class="blink_me">
+                <p class="text-center">
+                    Click on each object to view results
+                </p>
+            </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <h3><b>Representative results</b>: real-world</h3>
+                <p class="text-justify">
+                    Selected results from the YCB-Slide real-world dataset. For more results, quantitative metrics, ablations, and discussions on failure modes refer to the paper.
+                </p>
+                <video id="change2" width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay muted loop class="hover-video center">
+                    <source src="video/results/real/004_sugar_box.mp4" type="video/mp4"></source>
+                </video>
+                <div class="flexbox">
+                    <div>
+                        <button onClick="changevid2('video/results/real/004_sugar_box.mp4')"><figure><img src="img/ycb_objects/real/004_sugar_box.png" height="60px"></figure></figure><figcaption>&nbsp;</figcaption></button>
+                    </div>
+                    <div>
+                        <button onClick="changevid2('video/results/real/005_tomato_soup_can.mp4')"><figure></figure><img src="img/ycb_objects/real/005_tomato_soup_can.png" height="60px"></figure><figcaption>&nbsp;</figcaption></button>
+                    </div>
+                    <div>
+                        <button onClick="changevid2('video/results/real/006_mustard_bottle.mp4')"><figure><img src="img/ycb_objects/real/006_mustard_bottle.png" height="60px"></figure><figcaption>&nbsp;</figcaption></button>
+                    </div>
+                    <div>
+                        <button onClick="changevid2('video/results/real/021_bleach_cleanser.mp4')"><figure></figure><img src="img/ycb_objects/real/021_bleach_cleanser.png" height="60px"></figure></figure><figcaption>&nbsp;</figcaption></button>
+                    </div>
+                    <div>
+                        <button onClick="changevid2('video/results/real/025_mug.mp4')"><figure></figure><img src="img/ycb_objects/real/025_mug.png" height="60px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
+                    </div>
+                    <div>
+                        <button onClick="changevid2('video/results/real/035_power_drill.mp4')"><figure></figure><img src="img/ycb_objects/real/035_power_drill.png" height="60px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
+                    </div>
+                    <div>
+                        <button onClick="changevid2('video/results/real/037_scissors.mp4')"><figure></figure><img src="img/ycb_objects/real/037_scissors.png" height="60px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
+                    </div>
+                    <div>
+                        <button onClick="changevid2('video/results/real/042_adjustable_wrench.mp4')"><figure></figure><img src="img/ycb_objects/real/042_adjustable_wrench.png" height="60px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
+                    </div>
+                    <div>
+                        <button onClick="changevid2('video/results/real/048_hammer.mp4')"><figure></figure><img src="img/ycb_objects/real/048_hammer.png" height="60px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
+                    </div>
+                    <div>
+                        <button onClick="changevid2('video/results/real/055_baseball.mp4')"><figure></figure><img src="img/ycb_objects/real/055_baseball.png" height="60px"></figure></figure><figcaption>(Failure)</figcaption></button> <br>
+                    </div>
+                </div>
+                <span class="blink_me">
+                    <p class="text-center">
+                        Click on each object to view results
+                    </p>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <h3>
+                    <b>Related reading</b>
+                </h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <h3>
+                    <b>Bibtex</b>
+                </h3>
+                <div class="form-group text-left col-md-10">
+                    <textarea id="bibtex" class="form-control" readonly>
+@inproceedings{suresh2022midastouch,
+    title={{M}idas{T}ouch: {M}onte-{C}arlo inference over distributions across sliding touch},
+    author={Suresh, Sudharshan and Si, Zilin and Anderson, Stuart and Kaess, Michael and Mukadam, Mustafa},
+    booktitle = {Proc. Conf. on Robot Learning, CoRL},
+    address = {Auckland, NZ},
+    month = dec,
+    year = {2022}
+}</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <h3>
+                    <b>Acknowledgements</b>
+                </h3>
+                <p class="text-justify">
+                    The authors thank Dhruv Batra, Theophile Gervet, Akshara Rai for feedback on the submission, and Wei Dong, Tess Hellebrekers, Carolina Higuera, Patrick Lancaster, Franziska Meier, Alberto Rodriguez, Akash Sharma, Jessica Yin for helpful discussions on the research. 
+                </p>
+
+                <p class="text-justify">
+
+                The website template was borrowed from <a href="https://jonbarron.info/mipnerf/">John Barron</a> and <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+            <div class="col-md-10 text-left col-md-offset-1">
+                <p>
+                    Copyright © 2022 Meta Platforms, Inc
+                  </p>
+                  <p>
+                    <b>Legal</b>:
+                    <a
+                      href="https://opensource.facebook.com/legal/privacy/"
+                      target="_blank"
+                      rel="noreferrer noopener">
+                      Privacy
+                    </a> and
+                    <a
+                      href="https://opensource.facebook.com/legal/terms/"
+                      target="_blank"
+                      rel="noreferrer noopener">
+                      Terms
+                    </a>
+                  </p>
+            </div>
+    </div>
+</body>
+</html>
