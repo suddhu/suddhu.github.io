@@ -226,33 +226,29 @@
                     </ul>
                 </div>
         </div>
-
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1"><hr></div>
             <div class="col-md-10 text-center col-md-offset-1">
-                <div class="row align-items-center">
-                    <img src="img/cover.jpg" alt="Tactile depth netowork" width="70%" align="center" style="margin: 0px 0px 5px 0px"/>
-                </div>
+                <video width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay muted loop class="center" style="margin: 0px 0px 5px 0px">
+                    <source src="video/results/real/bell_pepper_00.mp4" type='video/mp4'>
+                </video> 
                 <p class="text-center">
-                <font size="4"><b>TL;DR</b>: Neural perception with vision and touch yields robust tracking <br> and reconstruction of novel objects for in-hand manipulation.</font>
+                    <font size="4"><b>TL;DR</b>: Neural perception with vision and touch yields robust tracking <br> and reconstruction of novel objects for in-hand manipulation.</font>
                 </p>
-            </div>
-            <div class="col-md-10 text-center col-md-offset-1"><hr></div>
-
-            <div class="col-md-10 text-center col-md-offset-1">
-                <video width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay muted loop class="center">
-                    <source src="video/key_result.mp4" type='video/mp4'>
-                </video> <br>
+                <div class="col-md-10 text-center col-md-offset-1"><hr></div>
                 <h3>
                     <b>Overview</b>
                 </h3>
+                <div class="row align-items-center">
+                    <img src="img/cover.jpg" alt="Tactile depth netowork" width="80%" align="center" style="margin: 0px 0px 20px 0px"/>
+                </div>
                 <p class="text-justify">
                     To achieve human-level dexterity, robots must infer spatial awareness from multimodal sensing to reason over contact interactions. During in-hand manipulation of novel objects, such spatial awareness involves estimating the object's pose and shape. The status quo for in-hand perception primarily employs vision, and restricts to tracking a priori known objects. Moreover, visual occlusion of objects in-hand is imminent during manipulation, preventing current systems to push beyond tasks without occlusion. We combine vision and touch sensing on a multi-fingered hand to estimate an object's pose and shape during in-hand manipulation. Our method, <em><b>NeuralFeels</b></em>, encodes object geometry by learning a neural field online and jointly tracks it by optimizing a pose graph problem. We study multimodal in-hand perception in simulation and the real-world, interacting with different object via a proprioception-driven policy. Our experiments show final reconstruction F-scores of \(81\)% and average pose drifts of \(4.7\,\text{mm}\), further reduced to \(2.3\,\text{mm}\) with known CAD models. Additionally, we observe that under heavy visual occlusion we can achieve up to \(94\)% improvements in tracking compared to vision-only methods. Our results demonstrate that touch, at the very least, refines and, at the very best, disambiguates visual estimates during in-hand manipulation. We release our evaluation dataset of 70 experiments, FeelSight, as a step towards benchmarking in this domain. Our neural representation driven by multimodal sensing can serve as a perception backbone towards advancing robot dexterity.
                 </p>
             </div>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
                 <h3>
                     <b>Video presentation</b>
@@ -261,13 +257,13 @@
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/MkudcePyBJI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
                 <a id="tactile_codes"></a><h3><b>Our pipeline</b>: visuo-tactile neural optimization</h3>
                     <div class="row align-items-center">
-                        <video width="110%" onmouseover="this.pause()" onmouseout="this.play()" autoplay muted class="center">
+                        <video width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay muted class="center">
                             <source src="video/pipeline.m4v" type='video/mp4'>
                         </video>
                     </div>
@@ -277,7 +273,7 @@
                     </p>
             </div>
         </div>
-
+<!-- 
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
             <h3><b>Neural SLAM</b>: embodied perception from scratch</h3>
@@ -412,7 +408,7 @@
                     The tactile depth network learns the inverse sensor model to recover local 3D geometry from a tactile image. We adapt a fully-convolutional residual network, and train it in a supervised fashion to predict local heightmaps from tactile images. Above we see real-world DIGIT images from interactions alongside the predicted 3D geometries.
                 </p>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
@@ -420,16 +416,10 @@
                     <div class="row align-items-center">
                         <img src="img/feelsight_full.jpg" alt="Feelsight dataset" width="100%" align="center" style="margin: 0px 0px 20px 0px"/>
                     </div>
-                    <p class="text-justify">
-                        To evaluate MidasTouch, and enable further research in tactile sensing, we introduce our <a href="https://github.com/rpl-cmu/YCB-Slide">YCB-Slide dataset</a>. It comprises of DIGIT sliding interactions on the 10 YCB objects from Section 4. We envision this can contribute towards efforts in tactile localization, mapping, object understanding, and learning dynamics models.
-                    </p>
-                    <p class="text-justify">
-                        We provide access to DIGIT images, sensor poses, ground-truth mesh models, and ground-truth heightmaps + contact masks (simulation only). Example sliding trajectories from simulated and real trials on the 10 YCB objects. Overlaid in green are the local 3D geometries captured by the tactile sensor, and the contact poses as RGB coordinate axes.
-                    </p>
             </div> 
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <h3>
                     <b>Related reading</b>
@@ -453,7 +443,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
