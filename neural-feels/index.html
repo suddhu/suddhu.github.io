@@ -273,58 +273,56 @@
                     </p>
             </div>
         </div>
-<!-- 
+
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
             <h3><b>Neural SLAM</b>: embodied perception from scratch</h3>
-
-            <p class="text-justify">
-                Selected results from the YCB-Slide simulated dataset. In each video, we see the tactile images, local geometries, tactile code heatmap, pose distribution, and average translation/rotation RMSE.
-            </p>
             <video id="change1" width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay muted loop class="hover-video center">
-                <source src="video/results/sim/004_sugar_box.mp4" type="video/mp4"></source>
+                <source src="video/results/real/bell_pepper_00.mp4" type="video/mp4"></source>
             </video>
             <div class="flexbox">
                 <div>
-                    <button onClick="changevid1('video/results/sim/004_sugar_box.mp4')"><figure><img src="img/ycb_objects/sim/004_sugar_box.png" height="55px"></figure></figure><figcaption>&nbsp;</figcaption></button>
+                    <button onClick="changevid1('video/results/real/bell_pepper_00.mp4')"><figure><img src="img/feelsight/bell_pepper.png" height="55px"></figure></button><br>real
                 </div>
                 <div>
-                    <button onClick="changevid1('video/results/sim/005_tomato_soup_can.mp4')"><figure></figure><img src="img/ycb_objects/sim/005_tomato_soup_can.png" height="55px"></figure><figcaption>&nbsp;</figcaption></button>
+                    <button onClick="changevid1('video/results/sim/contactdb_rubber_duck_00.mp4')"><figure><img src="img/feelsight/010_potted_meat_can.png" height="55px"></figure></button><br>real
                 </div>
                 <div>
-                    <button onClick="changevid1('video/results/sim/006_mustard_bottle.mp4')"><figure><img src="img/ycb_objects/sim/006_mustard_bottle.png" height="55px"></figure><figcaption>(Multimode)</figcaption></button>
+                    <button onClick="changevid1('video/results/sim/contactdb_rubber_duck_00.mp4')"><figure></figure><img src="img/feelsight/pear.png" height="55px"></figure></button><br>real
                 </div>
                 <div>
-                    <button onClick="changevid1('video/results/sim/021_bleach_cleanser.mp4')"><figure></figure><img src="img/ycb_objects/sim/021_bleach_cleanser.png" height="55px"></figure></figure><figcaption>&nbsp;</figcaption></button>
+                    <button onClick="changevid1('video/results/sim/contactdb_rubber_duck_00.mp4')"><figure><img src="img/feelsight/peach.png" height="55px"></figure></button><br>real
                 </div>
                 <div>
-                    <button onClick="changevid1('video/results/sim/025_mug.mp4')"><figure></figure><img src="img/ycb_objects/sim/025_mug.png" height="55px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
+                    <button onClick="changevid1('video/results/sim/contactdb_rubber_duck_00.mp4')"><figure></figure><img src="img/feelsight/large_dice.png" height="55px"></figure></button><br>real
                 </div>
                 <div>
-                    <button onClick="changevid1('video/results/sim/035_power_drill.mp4')"><figure></figure><img src="img/ycb_objects/sim/035_power_drill.png" height="55px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
+                    <button onClick="changevid1('video/results/sim/contactdb_rubber_duck_00.mp4')"><figure></figure><img src="img/feelsight/large_dice.png" height="55px"></figure></button><br>real
                 </div>
                 <div>
-                    <button onClick="changevid1('video/results/sim/037_scissors.mp4')"><figure></figure><img src="img/ycb_objects/sim/037_scissors.png" height="55px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
+                    <button onClick="changevid1('video/results/sim/contactdb_rubber_duck_00.mp4')"><figure></figure><img src="img/feelsight/contactdb_elephant.png" height="55px"></figure></button><br>real
                 </div>
                 <div>
-                    <button onClick="changevid1('video/results/sim/042_adjustable_wrench.mp4')"><figure></figure><img src="img/ycb_objects/sim/042_adjustable_wrench.png" height="55px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
+                    <button onClick="changevid1('video/results/sim/contactdb_rubber_duck_00.mp4')"><figure></figure><img src="img/feelsight/rubiks_cube_small.png" height="55px"></figure></button><br>real
                 </div>
                 <div>
-                    <button onClick="changevid1('video/results/sim/048_hammer.mp4')"><figure></figure><img src="img/ycb_objects/sim/048_hammer.png" height="55px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
-                </div>
-                <div>
-                    <button onClick="changevid1('video/results/sim/055_baseball.mp4')"><figure></figure><img src="img/ycb_objects/sim/055_baseball.png" height="55px"></figure></figure><figcaption></figcaption></button> <br>
+                    <button onClick="changevid1('video/results/sim/contactdb_rubber_duck_00.mp4')"><figure></figure><img src="img/feelsight/007_rubiks_cube.png" height="55px"></figure></button><br>real
                 </div>
             </div>
             <span class="blink_me">
                 <p class="text-center">
-                    Click on each object to view results
+                    Click on each object to view results, hover to pause
                 </p>
             </span>
+
+            <p class="text-justify">
+                In both real-world and simulation, we build an evolving neural SDF that integrates vision and touch while simultaneously tracking the object. We illustrate the input stream of RGB-D and tactile images, paired with the posed reconstruction at that timestep.
+            </p>
             </div>
+
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
                 <h3><b>Neural tracking</b>: perceiving objects given CAD models</h3>
 
@@ -372,9 +370,9 @@
                     </p>
                 </span>
             </div>
-        </div>
+        </div> -->
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
                 <a id="tactile_codes"></a><h3><b>Percieving under duress</b>: occlusion and visual depth noise</h3>
                         <p class="text-justify">
@@ -393,9 +391,9 @@
                         <em>Tactile codebook per object visualized as a spectral colorspace map using t-SNE. Each codebook comprises of 50k densely sampled poses with their corresponding 256-dimensional tactile code. Similar hues denote sensor poses that elicit similar tactile codes. We can clearly delineate local geometric features: edges (<span style = " font-family:monospace;">sugar_box</span>) , ridges (<span style = "font-family:monospace;">power_drill</span>), corners (<span style = "font-family:monospace;">scissors</span>), and complex texture (<span style = "font-family:monospace;">baseball</span>)</em>
                     </p>
             </div>
-        </div>
+        </div> -->
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
                 <a id="tactile_depth"></a><h3><b>Image to 3D</b></h3>
                     <div class="row align-items-center">
