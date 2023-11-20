@@ -259,6 +259,8 @@
             </div>
         </div> -->
 
+        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
                 <a id="tactile_codes"></a><h3><b>Our pipeline</b>: visuo-tactile neural optimization</h3>
@@ -273,6 +275,8 @@
                     </p>
             </div>
         </div>
+
+        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
 
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
@@ -383,21 +387,57 @@
                     </p>
             </div>
         </div> -->
+        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
 
-        <!-- <div class="row">
+        <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
-                <a id="tactile_depth"></a><h3><b>Image to 3D</b></h3>
+                <a id="tactile_depth"></a><h3><b>Frontend</b>: Segment-anything with kinematics</h3>
                     <div class="row align-items-center">
-                            <img src="img/tdn.jpg" alt="Tactile depth netowork" width="100%" align="center" style="margin: 0px 0px 20px 0px"/>
+                            <img src="img/kinematic_sam.jpg" alt="Tactile depth netowork" width="100%" align="center" style="margin: 0px 0px 20px 0px"/>
                     </div>
             </div>
 
             <div class="col-md-10 text-center col-md-offset-1">
                 <p class="text-justify">
-                    The tactile depth network learns the inverse sensor model to recover local 3D geometry from a tactile image. We adapt a fully-convolutional residual network, and train it in a supervised fashion to predict local heightmaps from tactile images. Above we see real-world DIGIT images from interactions alongside the predicted 3D geometries.
+                    Our neural optimization relies on segmented object depth as input: the frontend is engineered to robustly singulate object depth from vision. Depth is available as-is in an RGB-D camera, but the challenge is to robustly segment out pixels of inter-
+                    est in heavily-occluded interactions. Towards this, we introduce a kinematics-aware segmentation strategy based on powerful vision foundation models. 
                 </p>
             </div>
-        </div> -->
+        </div>
+
+        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <a id="tactile_depth"></a><h3><b>Frontend</b>: Tactile transformer</h3>
+                    <div class="row align-items-center">
+                            <img src="img/tactile_transformer.jpg" alt="Tactile depth netowork" width="100%" align="center" style="margin: 0px 0px 20px 0px"/>
+                    </div>
+            </div>
+
+            <div class="col-md-10 text-center col-md-offset-1">
+                <p class="text-justify">
+                    While vision-based touch sensors interpret contact geometry as images, they remain out-of-distribution from natural images. The embedded camera directly perceives the illuminated gelpad, and contact depth is either obtained via photometric stereo, or supervised learning. Existing touch-to-depth relies on convolution, however recent work has shown the benefit of a ViT for dense depth prediction [55] in natural images. We present a tactile transformer for predicting contact depth from vision-based touch, trained entirely in simulation to generalize across multiple real-world DIGIT sensors.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <a id="tactile_depth"></a><h3><b>Backend</b>: shape and pose optimizer</h3>
+                    <div class="row align-items-center">
+                            <img src="img/pgo.jpg" alt="Tactile depth netowork" width="100%" align="center" style="margin: 0px 0px 20px 0px"/>
+                    </div>
+            </div>
+
+            <div class="col-md-10 text-center col-md-offset-1">
+                <p class="text-justify">
+                    The backend module ingests the intermediate output from the frontend, and builds our persistent object model online. This alternates between map and pose optimizer steps using samples from the visuo-tactile depth stream. In our map optimizer, the weights of an instant-NGP model fully-describe the 3D geometry of the object. We formulate pose optimization as a nonlinear least squares problem with custom measurement factors in Theseus.
+                </p>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
@@ -405,6 +445,9 @@
                     <div class="row align-items-center">
                         <img src="img/feelsight_full.jpg" alt="Feelsight dataset" width="100%" align="center" style="margin: 0px 0px 20px 0px"/>
                     </div>
+                <p class="text-justify">
+                    Our FeelSight dataset will empower practitioners in the domain of visuo-tactile manipulation, where there is both a lack of experimental standardization and scarcity of benchmarks. It comprises of a total of 70 rotation sequences in both the real-world and simulation, with ground-truth object meshes and tracking.
+                </p>
             </div> 
         </div>
 
@@ -433,6 +476,7 @@
                 </ul>
             </div>
         </div> -->
+        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
 
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
@@ -453,6 +497,8 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
 
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
