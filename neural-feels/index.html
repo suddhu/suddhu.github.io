@@ -42,6 +42,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
 
     <script src="js/app.js"></script>
     <script>
@@ -58,13 +59,11 @@
     <div class="container" id="main">
         <div class="row">
             <h2 class="col-md-12 text-center">
-                <a href="/"><img src="img/logo.png" width="120px" alt="logo" style="padding-left: 30px; padding-top: 20px;"/></a><span class="pre"><b>NeuralFeels</b>: Neural feels with neural fields <br> &nbsp;&nbsp;&nbsp; Visuo-tactile perception for in-hand manipulation</span>
+                <a href="/"><img src="img/neuralfeels_logo.png" width="120px" alt="logo" style="padding-left: 35px; padding-top: 10px;"/></a><span class="pre"><b>Neural feels with neural fields</b>:  <br> &nbsp;&nbsp;&nbsp; Visuo-tactile perception for in-hand manipulation</span>
                 </br>
-                <small>
-                    <!-- submitted -->
-                </small>
             </h2>
         </div>
+        <br>
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
                 <ul class="list-inline">
@@ -185,8 +184,8 @@
                     <ul class="nav nav-pills nav-justified">
                         <li>
                             <a href="https://arxiv.org/abs/2210.14210">
-                            <image src="img/midastouch_paper_image.jpg" height="60px">
-                                <h4><strong>Paper</strong></h4>
+                            <image src="img/neuralfeels_paper_image.jpg" height="60px">
+                                <h4><strong>Paper (coming soon)</strong></h4>
                             </a>
                         </li>
                         <li>
@@ -208,20 +207,19 @@
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
                 <p class="text-center">
-                <font size="3"><b>TL;DR</b>: Neural perception with vision and touch yields robust tracking <br> and reconstruction of novel objects for in-hand manipulation.</font>
+                <font size="4"><b>TL;DR</b>: Neural perception with vision and touch yields robust tracking <br> and reconstruction of novel objects for in-hand manipulation.</font>
                 </p>
             </div>
             <div class="col-md-10 text-center col-md-offset-1"><hr></div>
             <div class="col-md-10 text-center col-md-offset-1">
                 <video width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay muted loop class="center">
-                    <source src="" type='video/mp4'>
+                    <source src="video/key_result.mp4" type='video/mp4'>
                 </video> <br>
-
                 <h3>
                     <b>Overview</b>
                 </h3>
                 <p class="text-justify">
-                    MidasTouch is a tactile perception system for online global localization of a vision-based touch sensor sliding on an object surface. This framework takes in posed tactile images over time, and outputs an evolving distribution of sensor pose on the object's surface, without the need for visual priors. Our key insight is to estimate local surface geometry with tactile sensing, learn a compact representation for it, and disambiguate these signals over a long time horizon. The backbone of MidasTouch is a Monte-Carlo particle filter, with a measurement model based on a tactile code network learned from tactile simulation. This network, inspired by LIDAR place recognition, compactly summarizes local surface geometries. These generated codes are efficiently compared against a precomputed tactile codebook per-object, to update the pose distribution. While single-touch localization can be inherently ambiguous, we can quickly localize our sensor by traversing salient surface geometries. Additionally, the YCB-Slide dataset is a corpus of real-world and simulated forceful sliding interactions between a vision-based tactile sensor and YCB objects.
+                    To achieve human-level dexterity, robots must infer spatial awareness from multimodal sensing to reason over contact interactions. During in-hand manipulation of novel objects, such spatial awareness involves estimating the object's pose and shape. The status quo for in-hand perception primarily employs vision, and restricts to tracking a priori known objects. Moreover, visual occlusion of objects in-hand is imminent during manipulation, preventing current systems to push beyond tasks without occlusion. We combine vision and touch sensing on a multi-fingered hand to estimate an object's pose and shape during in-hand manipulation. Our method, NeuralFeels, encodes object geometry by learning a neural field online and jointly tracks it by optimizing a pose graph problem. We study multimodal in-hand perception in simulation and the real-world, interacting with different object via a proprioception-driven policy. Our experiments show final reconstruction F-scores of \(81\)% and average pose drifts of \(4.7\,\text{mm}\), further reduced to \(2.3\,\text{mm}\) with known CAD models. Additionally, we observe that under heavy visual occlusion we can achieve up to \(94\)% improvements in tracking compared to vision-only methods. Our results demonstrate that touch, at the very least, refines and, at the very best, disambiguates visual estimates during in-hand manipulation. We release our evaluation dataset of 70 experiments, \dataset, as a step towards benchmarking in this domain. Our neural representation driven by multimodal sensing can serve as a perception backbone towards advancing robot dexterity.
                 </p>
             </div>
         </div>
@@ -407,32 +405,32 @@
             </div>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
                 <h3>
                     <b>Related reading</b>
                 </h3>
             </div>
-        </div>
+        </div> -->
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
                 <h3>
                     <b>Bibtex</b>
                 </h3>
                 <div class="form-group text-left col-md-10">
                     <textarea id="bibtex" class="form-control" readonly>
-@inproceedings{suresh2022midastouch,
-    title={{M}idas{T}ouch: {M}onte-{C}arlo inference over distributions across sliding touch},
-    author={Suresh, Sudharshan and Si, Zilin and Anderson, Stuart and Kaess, Michael and Mukadam, Mustafa},
-    booktitle = {Proc. Conf. on Robot Learning, CoRL},
-    address = {Auckland, NZ},
-    month = dec,
-    year = {2022}
-}</textarea>
+                    @inproceedings{suresh2022midastouch,
+                        title={{M}idas{T}ouch: {M}onte-{C}arlo inference over distributions across sliding touch},
+                        author={Suresh, Sudharshan and Si, Zilin and Anderson, Stuart and Kaess, Michael and Mukadam, Mustafa},
+                        booktitle = {Proc. Conf. on Robot Learning, CoRL},
+                        address = {Auckland, NZ},
+                        month = dec,
+                        year = {2022}
+                    }</textarea>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
@@ -440,17 +438,17 @@
                     <b>Acknowledgements</b>
                 </h3>
                 <p class="text-justify">
-                    The authors thank Dhruv Batra, Theophile Gervet, Akshara Rai for feedback on the submission, and Wei Dong, Tess Hellebrekers, Carolina Higuera, Patrick Lancaster, Franziska Meier, Alberto Rodriguez, Akash Sharma, Jessica Yin for helpful discussions on the research. 
+                    The authors thank Dhruv Batra, Theophile Gervet, Akshara Rai for feedback on writing, and Wei Dong, Tess Hellebrekers, Carolina Higuera, Patrick Lancaster, Franziska Meier, Alberto Rodriguez, Akash Sharma, Jessica Yin for helpful discussions on the research. 
                 </p>
 
                 <p class="text-justify">
 
-                The website template was borrowed from <a href="https://jonbarron.info/mipnerf/">John Barron</a> and <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+                The website uses the <a href="https://suddhu.github.io/midastouch-tactile/">MidasTouch template</a>,  in turn based on <a href="https://jonbarron.info/mipnerf/">John Barron</a>/<a href="http://mgharbi.com/">Michaël Gharbi's websites</a>.
                 </p>
             </div>
         </div>
 
-        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+        <!-- <div class="col-md-10 text-center col-md-offset-1"><hr></div>
             <div class="col-md-10 text-left col-md-offset-1">
                 <p>
                     Copyright © 2022 Meta Platforms, Inc
@@ -471,6 +469,6 @@
                     </a>
                   </p>
             </div>
-    </div>
+        </div> -->
 </body>
 </html>
