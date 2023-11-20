@@ -219,7 +219,7 @@
                     <b>Overview</b>
                 </h3>
                 <p class="text-justify">
-                    To achieve human-level dexterity, robots must infer spatial awareness from multimodal sensing to reason over contact interactions. During in-hand manipulation of novel objects, such spatial awareness involves estimating the object's pose and shape. The status quo for in-hand perception primarily employs vision, and restricts to tracking a priori known objects. Moreover, visual occlusion of objects in-hand is imminent during manipulation, preventing current systems to push beyond tasks without occlusion. We combine vision and touch sensing on a multi-fingered hand to estimate an object's pose and shape during in-hand manipulation. Our method, NeuralFeels, encodes object geometry by learning a neural field online and jointly tracks it by optimizing a pose graph problem. We study multimodal in-hand perception in simulation and the real-world, interacting with different object via a proprioception-driven policy. Our experiments show final reconstruction F-scores of \(81\)% and average pose drifts of \(4.7\,\text{mm}\), further reduced to \(2.3\,\text{mm}\) with known CAD models. Additionally, we observe that under heavy visual occlusion we can achieve up to \(94\)% improvements in tracking compared to vision-only methods. Our results demonstrate that touch, at the very least, refines and, at the very best, disambiguates visual estimates during in-hand manipulation. We release our evaluation dataset of 70 experiments, \dataset, as a step towards benchmarking in this domain. Our neural representation driven by multimodal sensing can serve as a perception backbone towards advancing robot dexterity.
+                    To achieve human-level dexterity, robots must infer spatial awareness from multimodal sensing to reason over contact interactions. During in-hand manipulation of novel objects, such spatial awareness involves estimating the object's pose and shape. The status quo for in-hand perception primarily employs vision, and restricts to tracking a priori known objects. Moreover, visual occlusion of objects in-hand is imminent during manipulation, preventing current systems to push beyond tasks without occlusion. We combine vision and touch sensing on a multi-fingered hand to estimate an object's pose and shape during in-hand manipulation. Our method, <em><b>NeuralFeels</b></em>, encodes object geometry by learning a neural field online and jointly tracks it by optimizing a pose graph problem. We study multimodal in-hand perception in simulation and the real-world, interacting with different object via a proprioception-driven policy. Our experiments show final reconstruction F-scores of \(81\)% and average pose drifts of \(4.7\,\text{mm}\), further reduced to \(2.3\,\text{mm}\) with known CAD models. Additionally, we observe that under heavy visual occlusion we can achieve up to \(94\)% improvements in tracking compared to vision-only methods. Our results demonstrate that touch, at the very least, refines and, at the very best, disambiguates visual estimates during in-hand manipulation. We release our evaluation dataset of 70 experiments, \dataset, as a step towards benchmarking in this domain. Our neural representation driven by multimodal sensing can serve as a perception backbone towards advancing robot dexterity.
                 </p>
             </div>
         </div>
@@ -237,74 +237,17 @@
 
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
-                <h3>
-                    <b>Full pipeline</b>
-                </h3>
-                <video width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay muted loop class="center">
-                    <source src="neural-feels/video/pipeline.m4v" type='video/mp4'>
-                </video>
-            </div>
-            <div class="col-md-10 text-center col-md-offset-1">
-                <p class="text-justify">
-                    MidasTouch performs online global localization of a vision-based touch sensor on an object surface during sliding interactions. Given posed tactile images over time, this system leverages local surface geometry within a nonparametric particle filter to generate an evolving distribution of sensor pose on the object’s surface.
-                </p>
-                <p class="text-justify">
-                    It comprises three distinct modules, as illustrated above: a <a href="#tactile_depth">tactile depth network</a> (TDN), <a href="#tactile_codes">tactile code network</a> (TCN), and particle filter. At a high-level, the TDN first converts a tactile image into its local 3D geometry via a learned observation model. The 3D information is then condensed into a tactile code by the TCN through a sparse 3D convolution network. Finally, the downstream particle filter uses these learned codes in its measurement model, and outputs a sensor pose distribution that evolves over time.
-                </p>
-
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-10 text-center col-md-offset-1">
-                <a id="tactile_depth"></a><h3><b>Image to 3D</b></h3>
+                <a id="tactile_codes"></a><h3><b>Full pipeline</b></h3>
                     <div class="row align-items-center">
-                            <img src="img/tdn.jpg" alt="Tactile depth netowork" width="100%" align="center" style="margin: 0px 0px 20px 0px"/>
-                    </div>
-            </div>
-
-            <div class="col-md-10 text-center col-md-offset-1">
-                <p class="text-justify">
-                    The tactile depth network learns the inverse sensor model to recover local 3D geometry from a tactile image. We adapt a fully-convolutional residual network, and train it in a supervised fashion to predict local heightmaps from tactile images. Above we see real-world DIGIT images from interactions alongside the predicted 3D geometries.
-                </p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-10 text-center col-md-offset-1">
-                <a id="tactile_codes"></a><h3><b>Tactile codes</b></h3>
-                        <p class="text-justify">
-                            This network summarizes large, unordered point clouds of local geometry into a low-dimensional embedding space, or code. If two sensor measurements are nearby in pose-space, they observe similar geometries and therefore, their codes will also be nearby in embedding-space.
-                        </p>
-                        <p class="text-justify">
-                            The tactile codebooks comprising of 50k randomized sensor poses on each object’s mesh. We evenly sample these points and normals on the mesh with random orientations and indentations. We feed these poses into TACTO to generate a dense set of tactile images for each object. Local geometric similarity are visualized below for the YCB object set.
-                        </p>
-                    <div class="row align-items-center">
-                            <video width="100%" autoplay muted loop class="center" style="margin: 0px 0px 20px 0px">
-                                <source src="video/tsne.mp4" type='video/mp4'>
-                            </video>
-
+                        <video width="110%" onmouseover="this.pause()" onmouseout="this.play()" autoplay muted class="center">
+                            <source src="video/pipeline.m4v" type='video/mp4'>
+                        </video>
                     </div>
                     <p class="text-justify">
-                        <em>Tactile codebook per object visualized as a spectral colorspace map using t-SNE. Each codebook comprises of 50k densely sampled poses with their corresponding 256-dimensional tactile code. Similar hues denote sensor poses that elicit similar tactile codes. We can clearly delineate local geometric features: edges (<span style = " font-family:monospace;">sugar_box</span>) , ridges (<span style = "font-family:monospace;">power_drill</span>), corners (<span style = "font-family:monospace;">scissors</span>), and complex texture (<span style = "font-family:monospace;">baseball</span>)</em>
+                        <em><b>frontend</b> achieves robust segmentation and depth prediction for vision and touch, <b>backend</b> combines this information into a neural field, while simultaneously optimizing for pose via volumetric sampling.
+                        </em>
                     </p>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-10 text-center col-md-offset-1">
-                <h3>The <b>FeelSight</b> dataset</h3>
-                    <video width="100%" autoplay muted loop class="center" style="margin: 0px 0px 20px 0px">
-                        <source src="video/ycb_slide.mp4" type='video/mp4'>
-                    </video>
-                    <p class="text-justify">
-                        To evaluate MidasTouch, and enable further research in tactile sensing, we introduce our <a href="https://github.com/rpl-cmu/YCB-Slide">YCB-Slide dataset</a>. It comprises of DIGIT sliding interactions on the 10 YCB objects from Section 4. We envision this can contribute towards efforts in tactile localization, mapping, object understanding, and learning dynamics models.
-                    </p>
-                    <img src="img/ycb_slide.jpg" alt="Tactile depth netowork" width="100%" align="center" style="margin: 0px 0px 20px 0px"/>
-                    <p class="text-justify">
-                        We provide access to DIGIT images, sensor poses, ground-truth mesh models, and ground-truth heightmaps + contact masks (simulation only). Example sliding trajectories from simulated and real trials on the 10 YCB objects. Overlaid in green are the local 3D geometries captured by the tactile sensor, and the contact poses as RGB coordinate axes.
-                    </p>
-            </div> 
         </div>
 
         <div class="row">
@@ -407,13 +350,82 @@
             </div>
         </div>
 
-        <!-- <div class="row">
+        <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
+                <a id="tactile_codes"></a><h3><b>Percieving under duress</b>: occlusion and visual depth noise</h3>
+                        <p class="text-justify">
+                            This network summarizes large, unordered point clouds of local geometry into a low-dimensional embedding space, or code. If two sensor measurements are nearby in pose-space, they observe similar geometries and therefore, their codes will also be nearby in embedding-space.
+                        </p>
+                        <p class="text-justify">
+                            The tactile codebooks comprising of 50k randomized sensor poses on each object’s mesh. We evenly sample these points and normals on the mesh with random orientations and indentations. We feed these poses into TACTO to generate a dense set of tactile images for each object. Local geometric similarity are visualized below for the YCB object set.
+                        </p>
+                    <div class="row align-items-center">
+                            <video width="100%" autoplay muted loop class="center" style="margin: 0px 0px 20px 0px">
+                                <source src="video/tsne.mp4" type='video/mp4'>
+                            </video>
+
+                    </div>
+                    <p class="text-justify">
+                        <em>Tactile codebook per object visualized as a spectral colorspace map using t-SNE. Each codebook comprises of 50k densely sampled poses with their corresponding 256-dimensional tactile code. Similar hues denote sensor poses that elicit similar tactile codes. We can clearly delineate local geometric features: edges (<span style = " font-family:monospace;">sugar_box</span>) , ridges (<span style = "font-family:monospace;">power_drill</span>), corners (<span style = "font-family:monospace;">scissors</span>), and complex texture (<span style = "font-family:monospace;">baseball</span>)</em>
+                    </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <a id="tactile_depth"></a><h3><b>Image to 3D</b></h3>
+                    <div class="row align-items-center">
+                            <img src="img/tdn.jpg" alt="Tactile depth netowork" width="100%" align="center" style="margin: 0px 0px 20px 0px"/>
+                    </div>
+            </div>
+
+            <div class="col-md-10 text-center col-md-offset-1">
+                <p class="text-justify">
+                    The tactile depth network learns the inverse sensor model to recover local 3D geometry from a tactile image. We adapt a fully-convolutional residual network, and train it in a supervised fashion to predict local heightmaps from tactile images. Above we see real-world DIGIT images from interactions alongside the predicted 3D geometries.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <h3>The <b>FeelSight</b> dataset</h3>
+                    <div class="row align-items-center">
+                        <img src="img/feelsight_full.jpg" alt="Feelsight dataset" width="100%" align="center" style="margin: 0px 0px 20px 0px"/>
+                    </div>
+                    <p class="text-justify">
+                        To evaluate MidasTouch, and enable further research in tactile sensing, we introduce our <a href="https://github.com/rpl-cmu/YCB-Slide">YCB-Slide dataset</a>. It comprises of DIGIT sliding interactions on the 10 YCB objects from Section 4. We envision this can contribute towards efforts in tactile localization, mapping, object understanding, and learning dynamics models.
+                    </p>
+                    <p class="text-justify">
+                        We provide access to DIGIT images, sensor poses, ground-truth mesh models, and ground-truth heightmaps + contact masks (simulation only). Example sliding trajectories from simulated and real trials on the 10 YCB objects. Overlaid in green are the local 3D geometries captured by the tactile sensor, and the contact poses as RGB coordinate axes.
+                    </p>
+            </div> 
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
                 <h3>
                     <b>Related reading</b>
                 </h3>
+
+                <ul>
+                    <li>
+                        <a href="https://github.com/facebookresearch/tacto">TACTO</a> and <a href="https://github.com/CMURoboTouch/Taxim">Taxim</a> are great vision-based tactile simulators for the DIGIT and Gelsight.
+                    </li>
+                    <li>
+                        <a href="https://mcube.mit.edu/research/tactile_loc_first_touch.html">Tac2Pose</a> performs pose estimation of small-parts with the GelSlim with single and multi-touch sequences.
+                    </li>
+                    <li>
+                        For the local tracking problem with vision-based touch, have a look at <a href="https://github.com/psodhi/tactile-in-hand">PatchGraph</a> and <a href="https://psodhi.github.io/tactile-pushing">learned tactile factors</a>.
+                    </li>
+                    <li>
+                        <a href="https://github.com/carolinahiguera/NCF">NCF</a> tracks extrinsic contact (between object-environment), converse to our problem (between robot-object).
+                    </li>
+                    <li>
+                        3D pointcloud features can be derived with the <a href="https://github.com/chrischoy/FCGF">FCGF</a> library, also integrated into LiDAR SLAM in <a href="https://github.com/jac99/MinkLoc3D">MinkLoc3D</a>.
+                    </li>
+                </ul>
             </div>
-        </div> -->
+        </div>
 
         <!-- <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
@@ -442,9 +454,14 @@
                 <p class="text-justify">
                     The authors thank Dhruv Batra, Theophile Gervet, Akshara Rai for feedback on writing, and Wei Dong, Tess Hellebrekers, Carolina Higuera, Patrick Lancaster, Franziska Meier, Alberto Rodriguez, Akash Sharma, Jessica Yin for helpful discussions on the research. 
                 </p>
-
+                
+                <!-- horizontal line -->
+                <div class="col-md-12 text-center"><hr></div>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
                 <p class="text-justify">
-
                 The website uses the <a href="https://suddhu.github.io/midastouch-tactile/">MidasTouch template</a>,  in turn based on <a href="https://jonbarron.info/mipnerf/">John Barron</a>/<a href="http://mgharbi.com/">Michaël Gharbi's websites</a>.
                 </p>
             </div>
