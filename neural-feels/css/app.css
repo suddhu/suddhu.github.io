@@ -114,6 +114,11 @@ name {
   font-size: 32px;
 }
 
+video::-webkit-media-controls-panel {
+  background-image: none !important;
+  filter: brightness(0.4);
+ }
+
 .one {
   width: 160px;
   height: 160px;
