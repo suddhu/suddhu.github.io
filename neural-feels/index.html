@@ -342,95 +342,50 @@
 
         </div>
 
-        <!-- <div class="row">
+        <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
                 <h3><b>Neural tracking</b>: perceiving objects given CAD models</h3>
-
-                <p class="text-justify">
-                    Selected results from the YCB-Slide real-world dataset. For more results, quantitative metrics, ablations, and discussions on failure modes refer to the paper.
-                </p>
-                <video id="change2" width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay muted loop class="hover-video center">
-                    <source src="video/results/real/004_sugar_box.mp4" type="video/mp4"></source>
-                </video>
-                <div class="flexbox">
-                    <div>
-                        <button onClick="changevid2('video/results/real/004_sugar_box.mp4')"><figure><img src="img/ycb_objects/real/004_sugar_box.png" height="60px"></figure></figure><figcaption>&nbsp;</figcaption></button>
-                    </div>
-                    <div>
-                        <button onClick="changevid2('video/results/real/005_tomato_soup_can.mp4')"><figure></figure><img src="img/ycb_objects/real/005_tomato_soup_can.png" height="60px"></figure><figcaption>&nbsp;</figcaption></button>
-                    </div>
-                    <div>
-                        <button onClick="changevid2('video/results/real/006_mustard_bottle.mp4')"><figure><img src="img/ycb_objects/real/006_mustard_bottle.png" height="60px"></figure><figcaption>&nbsp;</figcaption></button>
-                    </div>
-                    <div>
-                        <button onClick="changevid2('video/results/real/021_bleach_cleanser.mp4')"><figure></figure><img src="img/ycb_objects/real/021_bleach_cleanser.png" height="60px"></figure></figure><figcaption>&nbsp;</figcaption></button>
-                    </div>
-                    <div>
-                        <button onClick="changevid2('video/results/real/025_mug.mp4')"><figure></figure><img src="img/ycb_objects/real/025_mug.png" height="60px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
-                    </div>
-                    <div>
-                        <button onClick="changevid2('video/results/real/035_power_drill.mp4')"><figure></figure><img src="img/ycb_objects/real/035_power_drill.png" height="60px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
-                    </div>
-                    <div>
-                        <button onClick="changevid2('video/results/real/037_scissors.mp4')"><figure></figure><img src="img/ycb_objects/real/037_scissors.png" height="60px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
-                    </div>
-                    <div>
-                        <button onClick="changevid2('video/results/real/042_adjustable_wrench.mp4')"><figure></figure><img src="img/ycb_objects/real/042_adjustable_wrench.png" height="60px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
-                    </div>
-                    <div>
-                        <button onClick="changevid2('video/results/real/048_hammer.mp4')"><figure></figure><img src="img/ycb_objects/real/048_hammer.png" height="60px"></figure></figure><figcaption>&nbsp;</figcaption></button> <br>
-                    </div>
-                    <div>
-                        <button onClick="changevid2('video/results/real/055_baseball.mp4')"><figure></figure><img src="img/ycb_objects/real/055_baseball.png" height="60px"></figure></figure><figcaption>(Failure)</figcaption></button> <br>
-                    </div>
+                <div class="row align-items-center">
+                    <video width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay loop muted class="center">
+                        <source src="video/sim_pose_collage.mp4" type='video/mp4'>
+                    </video>
                 </div>
-                <span class="blink_me">
-                    <p class="text-center">
-                        Click on each object to view results
-                    </p>
-                </span>
+                <p class="text-justify">
+                    As a special case, we demonstrate superior multimodal pose tracking when provided the CAD models of the objects at runtime. The object's SDF model is pre-computed and we freeze the weights of the neural field, to only perform visuo-tactile tracking with the frontend estimates.
+                </p>
             </div>
-        </div> -->
-
-        <!-- <div class="row">
-            <div class="col-md-10 text-center col-md-offset-1">
-                <a id="tactile_codes"></a><h3><b>Percieving under duress</b>: occlusion and visual depth noise</h3>
-                        <p class="text-justify">
-                            This network summarizes large, unordered point clouds of local geometry into a low-dimensional embedding space, or code. If two sensor measurements are nearby in pose-space, they observe similar geometries and therefore, their codes will also be nearby in embedding-space.
-                        </p>
-                        <p class="text-justify">
-                            The tactile codebooks comprising of 50k randomized sensor poses on each object’s mesh. We evenly sample these points and normals on the mesh with random orientations and indentations. We feed these poses into TACTO to generate a dense set of tactile images for each object. Local geometric similarity are visualized below for the YCB object set.
-                        </p>
-                    <div class="row align-items-center">
-                            <video width="100%" autoplay muted loop class="center" style="margin: 0px 0px 20px 0px">
-                                <source src="video/tsne.mp4" type='video/mp4'>
-                            </video>
-
-                    </div>
-                    <p class="text-justify">
-                        <em>Tactile codebook per object visualized as a spectral colorspace map using t-SNE. Each codebook comprises of 50k densely sampled poses with their corresponding 256-dimensional tactile code. Similar hues denote sensor poses that elicit similar tactile codes. We can clearly delineate local geometric features: edges (<span style = " font-family:monospace;">sugar_box</span>) , ridges (<span style = "font-family:monospace;">power_drill</span>), corners (<span style = "font-family:monospace;">scissors</span>), and complex texture (<span style = "font-family:monospace;">baseball</span>)</em>
-                    </p>
-            </div>
-        </div> -->
-        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+        </div>
 
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
-                <a id="tactile_depth"></a><h3><b>Frontend</b>: Segment-anything with kinematics</h3>
-                    <div class="row align-items-center">
-                            <img src="img/kinematic_sam.jpg" alt="Tactile depth netowork" width="100%" align="center" style="margin: 0px 0px 20px 0px"/>
-                    </div>
-            </div>
-
-            <div class="col-md-10 text-center col-md-offset-1">
+                <h3><b>Percieving under duress</b>: the effects of occlusion</h3>
+                <div class="row align-items-center">
+                    <video width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay loop muted class="center">
+                        <source src="video/occlusion.mp4" type='video/mp4'>
+                    </video>
+                </div>
                 <p class="text-justify">
-                    Our neural optimization relies on segmented object depth as input: the frontend is engineered to robustly singulate object depth from vision. Depth is available as-is in an RGB-D camera, but the challenge is to robustly segment out pixels of inter-
-                    est in heavily-occluded interactions. Towards this, we introduce a kinematics-aware segmentation strategy based on powerful vision foundation models. 
+                    With occluded viewpoints, visuo-tactile fusion helps improve tracking performance with an unobstructed local perspective. We quantify these gains across a sphere of camera viewpoint to show improvements, particularly in occlusion-heavy points-of-view. We observe that touch plays a larger role when vision is heavily occluded, and a refinement role when we there is negligible occlusion. 
                 </p>
             </div>
         </div>
 
         <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <a id="tactile_depth"></a><h3><b>Frontend</b>: Segment-anything with kinematics</h3>
+                    <video width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay loop muted class="center">
+                        <source src="video/animated_sam.mp4" type='video/mp4'>
+                    </video>
+            </div>
+
+            <div class="col-md-10 text-center col-md-offset-1">
+                <p class="text-justify">
+                    Our neural optimization relies on segmented object depth as input: the frontend is engineered to robustly singulate object depth from vision. Depth is available as-is in an RGB-D camera, but the challenge is to robustly segment out pixels of interest in heavily-occluded interactions. Towards this, we introduce a kinematics-aware segmentation strategy based on <a href="https://github.com/facebookresearch/segment-anything">powerful vision foundation models</a>. 
+                </p>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
@@ -442,7 +397,7 @@
 
             <div class="col-md-10 text-center col-md-offset-1">
                 <p class="text-justify">
-                    While vision-based touch sensors interpret contact geometry as images, they remain out-of-distribution from natural images. The embedded camera directly perceives the illuminated gelpad, and contact depth is either obtained via photometric stereo, or supervised learning. Existing touch-to-depth relies on convolution, however recent work has shown the benefit of a ViT for dense depth prediction [55] in natural images. We present a tactile transformer for predicting contact depth from vision-based touch, trained entirely in simulation to generalize across multiple real-world DIGIT sensors.
+                    While vision-based touch sensors interpret contact geometry as images, they remain out-of-distribution from natural images. The embedded camera directly perceives the illuminated gelpad, and contact depth is either obtained via photometric stereo, or supervised learning. Existing touch-to-depth relies on convolution, however recent work has shown the benefit of a ViT for <a href="https://github.com/isl-org/DPT">dense depth prediction in natural images</a>. We present a tactile transformer for predicting contact depth from vision-based touch, trained entirely in simulation to generalize across multiple real-world DIGIT sensors.
                 </p>
             </div>
         </div>
@@ -459,7 +414,7 @@
 
             <div class="col-md-10 text-center col-md-offset-1">
                 <p class="text-justify">
-                    The backend module ingests the intermediate output from the frontend, and builds our persistent object model online. This alternates between map and pose optimizer steps using samples from the visuo-tactile depth stream. In our map optimizer, the weights of an instant-NGP model fully-describe the 3D geometry of the object. We formulate pose optimization as a nonlinear least squares problem with custom measurement factors in Theseus.
+                    The backend module ingests the intermediate output from the frontend, and builds our persistent object model online. This alternates between map and pose optimizer steps using samples from the visuo-tactile depth stream. In our map optimizer, the weights of an instant-NGP model fully-describe the 3D geometry of the object. We formulate pose optimization as a nonlinear least squares problem with custom measurement factors in <a href="https://sites.google.com/view/theseus-ai">Theseus</a>.
                 </p>
             </div>
         </div>
@@ -476,15 +431,17 @@
             </div> 
         </div>
 
+
+
         <!-- <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <h3>
-                    <b>Related reading</b>
+                <h3 class="text-center">
+                    <b>Further reading</b>
                 </h3>
 
                 <ul>
                     <li>
-                        <a href="https://github.com/facebookresearch/tacto">TACTO</a> and <a href="https://github.com/CMURoboTouch/Taxim">Taxim</a> are great vision-based tactile simulators for the DIGIT and Gelsight.
+                        <b>Simulation</b>: touch from <a href="https://github.com/facebookresearch/tacto">TACTO</a> + physics from <a href="https://developer.nvidia.com/isaacgym">IsaacGym</a> (integrated simulator coming soon)
                     </li>
                     <li>
                         <a href="https://mcube.mit.edu/research/tactile_loc_first_touch.html">Tac2Pose</a> performs pose estimation of small-parts with the GelSlim with single and multi-touch sequences.
@@ -517,13 +474,10 @@
         Kaess, Michael and Ortiz, Joseph and Mukadam, Mustafa},
         booktitle = {arXiv preprint arXiv:xxxx.yyyy},
         month = nov,
-        year = {2023}
-}</textarea>
+        year = {2023}}</textarea>
                 </div>
             </div>
         </div>
-
-        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
 
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
