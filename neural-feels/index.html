@@ -14,6 +14,11 @@
                 background-color: lightblue;
             }
         }
+        .video-mask{
+            border-radius: 30px; 
+            overflow: hidden;
+            -webkit-transform: translateZ(0);
+        }
     </style>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -422,9 +427,12 @@
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
                 <a id="dataset"></a><h3>The <b>FeelSight</b> dataset</h3>
-                    <div class="row align-items-center">
-                        <img src="img/feelsight_full.jpg" alt="Feelsight dataset" width="100%" align="center" style="margin: 0px 0px 20px 0px"/>
-                    </div>
+                    <div class="video-mask">
+                        <video width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay loop muted class="center">
+                            <source src="video/dataset_zoom.mp4" type='video/mp4'>
+                        </video>
+                        </div>
+
                 <p class="text-justify">
                     Our FeelSight dataset will empower practitioners in the domain of visuo-tactile manipulation, where there is both a lack of experimental standardization and scarcity of benchmarks. It comprises of a total of 70 rotation sequences in both the real-world and simulation, with ground-truth object meshes and tracking.
                 </p>
