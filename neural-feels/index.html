@@ -71,11 +71,11 @@
     <div class="container" id="main">
         <div class="row">
             <h2 class="col-md-12 text-center">
-                <a href="/"><img src="img/neuralfeels_logo.png" width="120px" alt="logo" style="padding-left: 35px; padding-top: 10px;"/></a><span class="pre"><b>Neural feels with neural fields</b>  <br> &nbsp;&nbsp;&nbsp; Visuo-tactile perception for in-hand manipulation</span>
-                </br>
+                <a href="/"><img src="img/neuralfeels_logo.png" width="120px" alt="logo" style="padding-left: 35px; padding-top: 10px;"/></a><span class="pre"><b>NeuralFeels with neural fields</b>  <br> &nbsp;&nbsp;&nbsp; Visuo-tactile perception for in-hand manipulation</span>
+                <br/>
+                <small style="color: #c11117; font-weight: lighter;"> &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; Science Robotics 2024</small>
             </h2>
         </div>
-        <br>
         <div class="row">
             <div class="col-md-10 text-center col-md-offset-1">
                 <ul class="list-inline">
@@ -218,9 +218,9 @@
                 <div class="col-md-8 text-center col-md-offset-2">
                     <ul class="nav nav-pills nav-justified">
                         <li>
-                            <a href="https://arxiv.org/abs/2312.13469" target="_blank">
-                            <image src="img/neuralfeels_paper_image.jpg" height="60px">
-                                <h4><strong>arXiv</strong></h4>
+                            <a href="http://www.science.org/doi/10.1126/scirobotics.adl0628" target="_blank">
+                            <image src="https://pbs.twimg.com/profile_images/887031261910491136/nf0GEeGB_400x400.jpg" height="60px">
+                                <h4><strong>Journal paper</strong></h4>
                             </a>
                         </li>
                         <li>
@@ -230,15 +230,15 @@
                             </a>
                         </li>
                         <li>
-                            <a href="" target="_blank">
-                            <image src="img/database_icon.png" height="60px">
-                                <h4><strong>Dataset (coming soon)</strong></h4>
+                            <a href="https://github.com/facebookresearch/neuralfeels" target="_blank">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
                             </a>
                         </li>
                         <li>
-                            <a href="" target="_blank">
-                            <image src="img/github.png" height="60px">
-                                <h4><strong>Code (coming soon)</strong></h4>
+                            <a href="https://huggingface.co/collections/suddhu/neuralfeels-673184a97ddcac2df69ff489" target="_blank">
+                            <image src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" height="60px"></image>
+                                <h4><strong>Dataset</strong></h4>
                             </a>
                         </li>
                     </ul>
@@ -471,14 +471,13 @@
                 </h3>
                 <div class="form-group text-left col-md-12">
                     <textarea id="bibtex" class="form-control" readonly>
-@inproceedings{suresh2023neuralfeels,
-        title={{N}eural feels with neural fields: {V}isuo-tactile perception for in-hand manipulation},
-        author={Suresh, Sudharshan and Qi, Haozhi and Wu, Tingfan and Fan, Taosha and Pineda, Luis and
-        Lambeta, Mike and Malik, Jitendra and Kalakrishnan, Mrinal and Calandra, Roberto and 
-        Kaess, Michael and Ortiz, Joseph and Mukadam, Mustafa},
-        booktitle = {arXiv preprint arXiv:2312.1346},
-        month = dec,
-        year = {2023}}</textarea>
+@article{suresh2024neuralfeels,
+title={{N}eural feels with neural fields: {V}isuo-tactile perception for in-hand manipulation},
+author={Suresh, Sudharshan and Qi, Haozhi and Wu, Tingfan and Fan, Taosha and Pineda, Luis and Lambeta, Mike and Malik, Jitendra and Kalakrishnan, Mrinal and Calandra, Roberto and Kaess, Michael and Ortiz, Joseph and Mukadam, Mustafa},
+journal={Science Robotics},
+pages={adl0628},
+year={2024},
+publisher={American Association for the Advancement of Science}}</textarea>
                 </div>
             </div>
         </div>
@@ -489,6 +488,11 @@
                     <b>Acknowledgements</b>
                 </h3>
                 <p class="text-justify">
+                    Our neural rendering and Open3D visualizer are based on <a href="https://github.com/facebookresearch/iSDF">iSDF</a> by <a href="https://joeaortiz.github.io/">Joe Ortiz</a> and others. For in-hand rotation, we train a <a href="https://github.com/HaozhiQi/hora">HORA</a> policy by <a href="https://haozhi.io/">Haozhi Qi</a> and others. We thank the <a href="https://digit.ml/">DIGIT</a> team for the vision-based touch sensors, <a href="https://github.com/facebookresearch/tacto">TACTO</a> for tactile sensor simulation, <a href="https://github.com/facebookresearch/theseus">Theseus</a> for the PyTorch-friendly optimizer, <a href="https://github.com/isl-org/DPT">DPT</a> and <a href="https://github.com/antocad/FocusOnDepth">FocusOnDepth</a> for the transformer architecture, <a href="https://segment-anything.com/">Segment-anything</a> for prompt-based segmentation, <a href="https://github.com/Jianghanxiao/Helper3D">Helper3D</a> for URDF-visualization in Open3D. Some of our mesh models are sourced from <a href="https://www.ycbbenchmarks.com/">YCB</a> and <a href="https://contactdb.cc.gatech.edu/">ContactDB</a>.
+                </p>
+
+                <p class="text-justify">
+                
                     The authors thank Dhruv Batra, Theophile Gervet, Akshara Rai for feedback on writing, and Wei Dong, Tess Hellebrekers, Carolina Higuera, Patrick Lancaster, Franziska Meier, Alberto Rodriguez, Akash Sharma, Jessica Yin for helpful discussions on the research. 
                 </p>
                 
@@ -504,10 +508,10 @@
             </div>
         </div>
 
-        <!-- <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
             <div class="col-md-10 text-left col-md-offset-1">
                 <p>
-                    Copyright © 2022 Meta Platforms, Inc
+                    Copyright © 2024 Meta Platforms, Inc
                   </p>
                   <p>
                     <b>Legal</b>:
@@ -525,6 +529,6 @@
                     </a>
                   </p>
             </div>
-        </div> -->
+        </div>
 </body>
 </html>
