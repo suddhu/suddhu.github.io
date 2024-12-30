@@ -9,8 +9,6 @@
   <meta name="author" content="Sudharshan Suresh">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
-
-
   <!-- Include React and Babel -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
@@ -74,6 +72,16 @@
       font-size: 30px;
     }
  
+    datetime {
+      color: #cc0033; 
+      display: inline; 
+      font-family: 'GameBoy', monospace;
+      letter-spacing: 1px;
+      -webkit-text-stroke: 0.5px;
+      transition: all 0.5s ease;
+      text-shadow: 1px 1px #c67287;
+    }
+
      .zero {
       width: 160px;
       height: 80px;
@@ -178,16 +186,15 @@
 </head>
 <body>
 
-  <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
-    <tbody><tr>
-      <td>
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tbody><tr>
-            <td width="75%" valign="middle">
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr style="padding:0px">
+            <td style="padding:2.5%;width:70%;vertical-align:middle">
               <p align="center">
                 <name>Sudharshan Suresh</name>
                 <div id="root" align="center"></div>
-
                 <script type="text/babel">
                   const EmailScrambler = () => {
                       const [isScrambled, setIsScrambled] = React.useState(true);
@@ -251,10 +258,10 @@
                   root.render(<EmailScrambler />);
               </script>
 
-              <p><p style = "text-align:justify">I'm a research scientist at <a href="https://bostondynamics.com" target="_blank">Boston Dynamics</a>, where I work on machine learning for the <a href="https://bostondynamics.com/atlas/" target="_blank">Atlas</a> humanoid robot. 
+              <p style = "text-align:justify">I'm a research scientist at <a href="https://bostondynamics.com" target="_blank">Boston Dynamics</a>, where I work on machine learning for the <a href="https://bostondynamics.com/atlas/" target="_blank">Atlas</a> humanoid robot. 
               </p>
 
-              <p>I earned my Ph.D. in Robotics from <a href="http://www.cmu.edu" target="_blank"> Carnegie Mellon University</a> (CMU), advised by <A href="https://www.cs.cmu.edu/~kaess/" target="_blank">Michael Kaess</a>. I was also a part-time researcher at <a href="https://ai.meta.com/research/" target="_blank">FAIR</a> (Meta), where I collaborated with <a href="https://www.mustafamukadam.com/home" target="_blank">Mustafa Mukadam</a>. My <a href="https://kilthub.cmu.edu/articles/thesis/Perception_amidst_interaction_spatial_AI_with_vision_and_touch_for_robot_manipulation/25316152?file=44750527" target="_blank">thesis</a> enabled robots to learn from interaction using vision and touch. I have a Masters in Robotics from CMU, and undergraduate from <a href="https://www.nitt.edu/" target="_blank">NIT Trichy</a>.
+              <p>I earned my Ph.D. in Robotics from <a href="http://www.cmu.edu" target="_blank"> Carnegie Mellon University</a>, advised by <A href="https://www.cs.cmu.edu/~kaess/" target="_blank">Michael Kaess</a>. I was also a part-time researcher at <a href="https://ai.meta.com/research/" target="_blank">FAIR</a> (Meta), where I worked on the manipulation and tactile sensing team. My <a href="https://kilthub.cmu.edu/articles/thesis/Perception_amidst_interaction_spatial_AI_with_vision_and_touch_for_robot_manipulation/25316152?file=44750527" target="_blank">thesis</a> enabled robots to learn from interaction using vision and touch.
               </p>
 
               <p align=center>
@@ -272,43 +279,53 @@
                 <img src="https://bostondynamics.com/wp-content/uploads/2023/06/cropped-Boston-Dynamic_favicon-192x192.jpg" alt="Boston Dynamics Icon" style="height: 1em; vertical-align: middle;"><a href="https://bostondynamics.wd1.myworkdayjobs.com/en-US/Boston_Dynamics?q=%22research%20scientist%22" target="_blank" style="font-size: 0.9em;">&nbsp;&nbsp;we're hiring, reach out!</a>
             </p>
             </td>
-            <td width="50%">
-              <img src="misc/suddhu-headshot.jpg" style="width: 200; height: auto; border-radius: 10%;">
+            <td style="padding:2.5%;width:30%;max-width:30%">
+              <img style="width:100%;max-width:100%;object-fit: cover; border-radius: 10%;" alt="profile photo" src="misc/suddhu-headshot.jpg">
             </td>
           </tr>
         </table>
-
         <hr>
-
         <h1>Updates</h1>    
-        <table width="100%" align="center" border="0" cellspacing="6" cellpadding="0">
+        <table style="width:100%;margin-right:auto;margin-left:auto;" cellspacing="6">
           <colgroup>
-            <col span="1" style="width: 12%;">
-            <col span="1" style="width: 88%;">
+            <col span="1" style="width: 15%;">
+            <col span="1" style="width: 85%;">
          </colgroup>
           <tbody>
             <tr>
-              <td><p style="color:cc0033; display:inline;">[Nov '24] &nbsp</p></td>
+              <td>
+              <datetime>[Nov '24] &nbsp</datetime>
+              </td>
                 <td>NeuralFeels is <a href="https://www.science.org/doi/10.1126/scirobotics.adl0628" target="_blank">published in Science Robotics</a> and featured as <a href="https://www.science.org/toc/scirobotics/9/96" target="_blank">cover of November issue</a> [CMU <a href="https://www.ri.cmu.edu/cmu-and-partners-redefine-robotic-perception-with-neuralfeels/" target="_blank">spotlight piece</a>].</td>
             </tr>
             <tr>
-              <td><p style="color:cc0033; display:inline;">[Oct '24] &nbsp</p></td>
+              <td>
+                <datetime>[Oct '24] &nbsp</datetime>
+              </td>
                 <td>My work on Atlas was <a href="https://www.youtube.com/watch?v=29ECwExc-_M" target="_blank">featured in their autonomous demo</a> [Some press: <a href="https://spectrum.ieee.org/boston-dynamics-new-atlas" target="_blank">IEEE</a>, <a href="https://techcrunch.com/2024/10/30/boston-dynamics-electric-atlas-humanoid-executes-autonomous-automotive-parts-picking/" target="_blank">TechCrunch</a>, <a href="https://www.theverge.com/2024/10/30/24283592/boston-dynamics-atlas-robot-autonomous" target="_blank">Verge</a>].</td>
             </tr>
             <tr>
-                <td><p style="color:cc0033; display:inline;">[Mar '24] &nbsp</p></td>
+                <td>
+                  <datetime>[Mar '24] &nbsp</datetime>
+                </td>
                 <td>I've moved to Greater Boston, working on the Atlas team at Boston Dynamics (<a href="https://www.youtube.com/watch?v=29ECwExc-_M" target="_blank">hello</a>).</td>
               </tr>
               <tr>
-                <td><p style="color:cc0033; display:inline;">[Feb '24] &nbsp</p></td>
+                <td>
+                  <datetime>[Feb '24] &nbsp</datetime>
+                </td>
                 <td>I've defended my Ph.D., here's my <a href="https://www.youtube.com/watch?v=9v-bmXGAxVc" target="_blank">talk</a> and <a href="https://kilthub.cmu.edu/articles/thesis/Perception_amidst_interaction_spatial_AI_with_vision_and_touch_for_robot_manipulation/25316152?file=44750527" target="_blank">thesis</a>!</td>
               </tr>
               <tr>
-                <td><p style="color:cc0033; display:inline">[Dec '23] &nbsp &nbsp</p></td>
+                <td>
+                  <datetime>[Dec '23] &nbsp</datetime>
+                </td>
                 <td>The pre-print for NeuralFeels is out, read it <a href="https://arxiv.org/abs/2312.13469" target="_blank">here</a>.</td>
               </tr>
               <tr>
-                <td><p style="color:cc0033; display:inline">[Aug '23] &nbsp &nbsp</p></td>
+                <td>
+                  <datetime>[Aug '23] &nbsp</datetime>
+                </td>
                 <td>Our work <a href="https://haozhi.io/rotateit/" target="_blank">RotateIt</a>, led by <a href="https://haozhi.io/" target="_blank">Haozhi</a>, was accepted to <a href="https://www.corl2023.org/" target="_blank">CoRL 2023</a>.</td>
               </tr>
           </tbody>
@@ -318,53 +335,73 @@
           <summary>
           <p style="color:cc0033; display:inline"><em><b>Click for more updates</b></em></p>
           </summary>
-          <table width="100%" align="center" border="0" cellspacing="6" cellpadding="0">
+          <table style="width:100%;margin-right:auto;margin-left:auto;" cellspacing="6">
             <colgroup>
-              <col span="1" style="width: 12%;">
-              <col span="1" style="width: 88%;">
+              <col span="1" style="width: 15%;">
+              <col span="1" style="width: 85%;">
             </colgroup>
             <tbody>
             <p>
             <tr>
-              <td><p style="color:cc0033; display:inline">[April '23] &nbsp &nbsp</p></td>
+              <td>
+                <datetime>[Apr '23] &nbsp</datetime>
+              </td>
               <td>Spending the summer as a research scientist intern at <a href="https://ai.facebook.com/" target="_blank">FAIR</a> Menlo Park on visuo-tactile manipulation!</td>
             </tr>
             <tr>
-              <td><p style="color:cc0033; display:inline">[Dec '22] &nbsp</p></td>
+              <td>
+                <datetime>[Dec '22] &nbsp</datetime>
+              </td>
               <td><a href="https://suddhu.github.io/midastouch-tactile/" target="_blank">MidasTouch</a> was showcased at <a href="https://corl2022.org/" target="_blank">CoRL 2022</a> with a <a href="data/media/midastouch/midastouch_demo.jpg" target="_blank">live demo</a>. 
               </td>
             </tr>
             <tr>
-                <td><p style="color:cc0033; display:inline;">[Oct '22] &nbsp</p></td>
+                <td>
+                  <datetime>[Oct '22] &nbsp</datetime>
+                </td>
                 <td>Successfully passed my <a href="https://www.ri.cmu.edu/event/tactile-slam-perception-for-dexterity-via-vision-based-touch/" target="_blank">Ph.D. thesis proposal</a>!</td>
             </tr>
             <tr>
-              <td><p style="color:cc0033; display:inline">[Sep '22] &nbsp</p></td>
+              <td>
+                <datetime>[Sep '22] &nbsp</datetime>
+              </td>
               <td><a href="https://suddhu.github.io/midastouch-tactile/" target="_blank">MidasTouch</a> was accepted to <a href="https://corl2022.org/" target="_blank">CoRL 2022</a> as an oral. 
               </td>
             </tr>
               <tr>
-                <td><p style="color:cc0033; display:inline">[Aug '22] &nbsp</p></td>
+                <td>
+                  <datetime>[Aug '22] &nbsp</datetime>
+                </td>
                 <td>We've extended <a href="https://joeaortiz.github.io/iSDF/" target="_blank">iSDF</a> for neural mapping with the Franka robot, code <a href="https://github.com/facebookresearch/iSDF#3-running-isdf-with-a-franka-and-live-camera-in-ros" target="_blank">here</a>.</td>
               </tr>
               <tr>
-                <td><p style="color:cc0033; display:inline">[May '22] &nbsp &nbsp</p></td>
+                <td>
+                  <datetime>[May '22] &nbsp</datetime>
+                </td>
                 <td>Organized the <a href="https://www.roboticsdebates.org/" target="_blank">Debates on the Future of Robotics Research workshop</a> at ICRA '22 </td>
               </tr>
               <tr>
-                <td><p style="color:cc0033; display:inline">[April '22] &nbsp &nbsp</p></td>
+                <td>
+                  <datetime>[Apr '22] &nbsp</datetime>
+                </td>
                 <td>Spending the summer at <a href="https://ai.facebook.com/" target="_blank">FAIR</a> Pittsburgh working on pose tracking from touch</td>
               </tr>
               <tr>
-                <td><p style="color:cc0033; display:inline">[Jan '22] &nbsp &nbsp</p></td>
+                <td>
+                  <datetime>[Jan '22] &nbsp</datetime>
+                </td>
                 <td><a href="https://arxiv.org/abs/2109.09884" target="_blank">ShapeMap 3-D</a> was accepted to ICRA 2022, with an open-source <a href="https://github.com/rpl-cmu/shape-map-3D" target="_blank">implementation</a>.</td>
               </tr>
               <tr>
-                <td><p style="color:cc0033; display:inline">[Aug '21] &nbsp &nbsp</p></td>
+                <td>
+                  <datetime>[Aug '21] &nbsp</datetime>
+                </td>
                 <td>Presented at the Tartan SLAM series on our working on perception for planar pushing, video <a href="https://www.youtube.com/watch?v=IjuTxa8andk" target="_blank">here</a>.</td>
               </tr>
               <tr>
-                <td><p style="color:cc0033; display:inline">[May '21] &nbsp &nbsp</p></td>
+                <td>
+                  <datetime>[May '21] &nbsp</datetime>
+                </td>
                 <td><a href="https://www.cs.cmu.edu/~sudhars1/tactile-slam/" target="_blank">Tactile SLAM</a> was the ICRA 2021 best paper in service robotics finalist!</td>
               </tr>
             </p>
@@ -742,124 +779,9 @@
           </td>
         </tr>
         </table>
-    
-    <br>
     <div style="height:20px;font-size:1px;">&nbsp;</div>
-
     <hr>
     <br>
-
-    <!-- Projects -->
-    <h2>Other projects</h2>
-      <table width="90%" align="center" border="0" cellspacing="0" cellpadding="10">
-          <!-- iSDF-->
-          <tr>
-            <td width="5%" align="center">
-              <img src='https://raw.githubusercontent.com/facebookresearch/iSDF/main/.github/realsense_franka.gif' width="130" height="70">
-            </td>
-            <td valign="center" width="95%">
-                <div id="summary">
-                <papertitle>Franka iSDF: neural mapping for tabletop manipulation</papertitle> 
-                <br>
-                <div style="height:3px;font-size:1px;">&nbsp;</div>
-                Sudharshan Suresh, Joe Ortiz, and Mustafa Mukadam 
-                <div style="height:3px;font-size:1px;">&nbsp;</div>
-                <a href="https://github.com/facebookresearch/iSDF#3-running-isdf-with-a-franka-and-live-camera-in-ros"  target="_blank">github</a>
-                <div style="height:3px;font-size:1px;">&nbsp;</div>
-                </div>
-                <div id="detail">
-                Extending iSDF to build real-time neural models<br> of tabletop scenes with the Franka Panda arm
-                </div>
-            </td>
-          </tr>
-        <!-- Deepgeo-->
-          <tr>
-            <td width="5%" align="center">
-              <img src='data/media/course-projects/deepgeo.gif' width="100" height="100">
-            </td>
-            <td valign="center" width="95%">
-                <div id="summary">
-                <papertitle>DeepGeo: photo localization with deep neural network</papertitle> 
-                <br>
-                <div style="height:3px;font-size:1px;">&nbsp;</div>
-                Sudharshan Suresh, Nate Chodosh, and Montiel Abello 
-                <div style="height:3px;font-size:1px;">&nbsp;</div>
-                <a href="https://arxiv.org/abs/1810.03077"  target="_blank">arXiv</a> / <a href="https://github.com/suddhu/DeepGeo"  target="_blank">github</a>
-                <div style="height:3px;font-size:1px;">&nbsp;</div>
-                </div>
-                <div id="detail">
-                A deep network that beats humans at <a href="https://geoguessr.com/" target="_blank">GeoGuessr</a>,<br> trained on our <i>50States10K</i> dataset
-                </div>
-            </td>
-          </tr>
-  
-          <!-- TAMP -->
-          <tr>
-            <td width="5%" align="center">
-                <img src='data/media/course-projects/tamp.gif' width="100" height="100">
-              </td>
-            <td valign="center" width="95%">
-                <div id="summary">
-                <papertitle>Task and motion planning for robotic food preparation</papertitle> 
-                <br>
-                <div style="height:3px;font-size:1px;">&nbsp;</div>
-                Sudharshan Suresh, Travers Rhodes, Montiel Abello, and Himanshi Yadav
-                <div style="height:3px;font-size:1px;">&nbsp;</div>
-                <a href="data/media/course-projects/TAMP4ParfaitsReport.pdf" target="_blank">pdf</a> /
-                <a href="https://www.youtube.com/watch?v=VBhGjcgPVqA" target="_blank">video 1</a> / <a href="https://www.youtube.com/watch?v=BADt_yy_Lvw" target="_blank">video 2</a>
-                <div style="height:3px;font-size:1px;">&nbsp;</div>
-                </div>
-                <div id="detail">
-                Hierarchical task and motion planning for a 6-DOF robot arm,<br> to prepare yogurt parfaits!
-                </div>
-            </td>
-          </tr>
-  
-          <!-- thin structures -->
-          <tr>
-              <td width="5%" align="center">
-                  <img src='data/media/course-projects/thin.gif' width="100" height="100">
-            </td>
-            <td valign="center" width="95%">
-                <div id="summary">
-                <papertitle>Thin structure reconstruction via 3D lines and points 
-                  </papertitle> 
-                  <br>
-                  <div style="height:3px;font-size:1px;">&nbsp;</div>
-                  Sudharshan Suresh and Montiel Abello
-                  <div style="height:3px;font-size:1px;">&nbsp;</div>
-                  <a href="data/media/course-projects/LinesPointsSFM.pdf" target="_blank">poster</a>
-                  <div style="height:3px;font-size:1px;">&nbsp;</div>
-                  </div>
-                  <div id="detail">
-                  Reconstructing thin objects in a scene through an<br> SfM pipeline can be hard!
-                  </div>
-            </td>
-          </tr>
-  
-          <!-- dyn param -->
-          <tr>
-              <td width="5%" align="center">
-                <img src='data/media/course-projects/dynparam.png' width="100">
-            </td>
-            <td valign="center" width="95%">
-                <div id="summary">
-                <papertitle>Factor graph optimization for dynamic parameter estimation 
-                  </papertitle> 
-                  <br>
-                  <div style="height:3px;font-size:1px;">&nbsp;</div>
-                  Sudharshan Suresh, Eric Dexheimer, and Montiel Abello
-                  <div style="height:3px;font-size:1px;">&nbsp;</div>
-                  <a href="data/papers/16-711_final.pdf" target="_blank">pdf</a>
-                  <div style="height:3px;font-size:1px;">&nbsp;</div>
-                  </div>
-                  <div id="detail">
-                  A method to estimate MAV poses and dynamic parameters<br> during flight.
-                  </div>
-            </td>
-          </tr>
-      </table>
-    
 <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
   <tr><td>
         <p align="right"><font size="2" color=#696969>
