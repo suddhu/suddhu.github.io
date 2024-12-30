@@ -9,6 +9,14 @@
   <!-- <meta name=viewport content="width=800"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+  <!-- Include React and Babel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+  
+  <!-- Include Tailwind CSS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+  
   <style type="text/css">
     /* Color scheme stolen from Sergey Karayev */
     
@@ -119,7 +127,50 @@
     } 
     details summary::-webkit-details-marker {
   display:none;
-}
+  }
+  @font-face {
+            font-family: 'GameBoy';
+            src: url('fonts/Early-GameBoy.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .gameboy-font {
+            font-family: 'GameBoy', monospace;
+            letter-spacing: 2px;
+            font-weight: 100;
+            -webkit-text-stroke: 0.5px;
+            transition: all 0.5s ease;
+        }
+
+        .gameboy-classic {
+            color: #0f380f;
+            text-shadow: 1px 1px #8bac0f;
+        }
+
+        .gameboy-color {
+          background: linear-gradient(45deg, #990000, #994000, #998100, #006400, #000099, #1a0033, #3a006b);
+          -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbow 3s ease infinite;
+            text-shadow: none;
+        }
+
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        .tiny-text {
+            font-size: 8px;
+        }
+
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+
   </style>
   <link rel="icon" href="misc/s_favicon.png">
 
@@ -137,9 +188,71 @@
             <td width="75%" valign="middle">
               <p align="center">
                 <name>Sudharshan Suresh</name>
-              <p align="center">
-                <font size="3">suddhus <font color=#cc0033>[at]</font> gmail <font color=#cc0033>[dot]</font> com </font>
-              </p>
+                <div id="root" align="center"></div>
+
+                <script type="text/babel">
+                  const EmailScrambler = () => {
+                      const [isScrambled, setIsScrambled] = React.useState(true);
+                      const [displayUsername, setDisplayUsername] = React.useState('');
+                      
+                      const emailUser = 'suddhus';
+                      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                      
+                      const generateRandomString = (length) => {
+                          return Array.from(Array(length), () => 
+                              characters.charAt(Math.floor(Math.random() * characters.length))
+                          ).join('');
+                      };
+                      
+                      React.useEffect(() => {
+                          if (isScrambled) {
+                              // Generate a single random string on mount or when returning to scrambled state
+                              setDisplayUsername(generateRandomString(emailUser.length));
+                          } else {
+                              // Unscramble animation
+                              let currentIndex = 0;
+                              const animateUnscramble = () => {
+                                  if (currentIndex <= emailUser.length) {
+                                      const unscrambledPart = emailUser.slice(0, currentIndex);
+                                      const scrambledPart = generateRandomString(emailUser.length - currentIndex);
+                                      setDisplayUsername(unscrambledPart + scrambledPart);
+                                      currentIndex++;
+                                      setTimeout(animateUnscramble, 50);
+                                  }
+                              };
+                              animateUnscramble();
+                          }
+                      }, [isScrambled]);
+
+                      return (
+                          <div className="text-center">
+                              <div 
+                                  className={`cursor-pointer select-none gameboy-font ${isScrambled ? 'gameboy-classic' : 'gameboy-color'}`}
+                                  onClick={() => setIsScrambled(!isScrambled)}
+                              >
+                                  <span>
+                                      {displayUsername}
+                                      <span style={{color: isScrambled ? '#cc0033' : '#ff0000'}}> [at] </span>
+                                      gmail
+                                      <span style={{color: isScrambled ? '#cc0033' : '#ff0000'}}> [dot] </span>
+                                      com
+                                  </span>
+                              </div>
+                                <div style={{ height: '5px' }}></div>
+                                {isScrambled && (
+                                  <div className="tiny-text text-gray-400 mt-2">
+                                    (click to unscramble)
+                                  </div>
+                              )}
+                          </div>
+                      );
+                  };
+
+                  // Render the app
+                  const root = ReactDOM.createRoot(document.getElementById('root'));
+                  root.render(<EmailScrambler />);
+              </script>
+
               <p><p style = "text-align:justify">I'm a research scientist at <a href="https://bostondynamics.com" target="_blank">Boston Dynamics</a>, where I work on machine learning for the <a href="https://bostondynamics.com/atlas/" target="_blank">Atlas</a> humanoid robot. 
               </p>
 
