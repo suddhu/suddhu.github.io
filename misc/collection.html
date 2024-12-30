@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>My collection</title>
+
+    <style>
+        .zoom {
+            padding: 18px;
+            transition: transform .2s;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            z-index:10;
+            background-color:#121212;
+        }
+        body {
+            background-color: #121212;
+        }
+        .zoom:hover {
+            -ms-transform: scale(1.2); /* IE 9 */
+            -webkit-transform: scale(1.2); /* Safari 3-8 */
+            transform: scale(1.2); 
+        }
+
+        .img__wrap {
+            position: relative;
+            height: 200px;
+            width: 200px;
+        }
+
+        .release_title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            font-size: 15px;
+            text-align: center;
+            color: yellow;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            visibility: hidden;
+            /* transition effect. not necessary */
+            transition: opacity .2s, visibility .2s;
+        }
+
+        .artist_name {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 15px;
+            color: red;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            visibility: hidden;
+            /* transition effect. not necessary */
+            transition: opacity .2s, visibility .2s;
+        }
+
+        .img__wrap:hover .artist_name {
+            visibility: visible;
+        }
+
+        .img__wrap:hover .release_title {
+            visibility: visible;
+        }
+
+        p {
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<p>Count: 94&emsp; Last updated: 20-12-2019&emsp;  <a href="https://www.discogs.com/user/suddhus/collection?page=1&limit=250" target="_blank">My discogs collections page</a><br></p><div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/87LbbK5gmrESyWqUy2x7Kir0zRM=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1004089-1408382754-6532.jpeg.jpg" width="200" height="200">
+<p class="artist_name">ARCTIC MONKEYS: </p><p class="release_title">WHATEVER PEOPLE SAY I AM, THAT'S WHAT I'M NOT</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/YPB4TQ7q8UFJZnMsb_gk7c9Nr_I=/fit-in/600x557/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-12425348-1535038606-2718.jpeg.jpg" width="200" height="200">
+<p class="artist_name">ART GARFUNKEL: </p><p class="release_title">BREAKAWAY</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/m7AZ3-9RnydRJ7riakziuBxfk20=/fit-in/399x367/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-572262-1175464421.jpeg.jpg" width="200" height="200">
+<p class="artist_name">AVERAGE WHITE BAND: </p><p class="release_title">SOUL SEARCHING</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/tC4bR1oFBK_mqcvPJmIDsjKdBOs=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-8805558-1469141370-3822.jpeg.jpg" width="200" height="200">
+<p class="artist_name">AVERAGE WHITE BAND: </p><p class="release_title">AWB</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/iBGmEZ0AUqYQ3LEtnUftt-phBrM=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1696164-1449791661-1917.jpeg.jpg" width="200" height="200">
+<p class="artist_name">BEACH BOYS: </p><p class="release_title">ALL SUMMER LONG</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/1YS1fGAa8Q7Exr28mqF3wB9wBhs=/fit-in/239x240/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1513005-1225219593.jpeg.jpg" width="200" height="200">
+<p class="artist_name">BEACH BOYS: </p><p class="release_title">BEST OF THE BEACH BOYS, VOL. 2</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/6oc0h3JrFPcNDjhUq9DO3EIR1qU=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-377554-1340355126-1714.jpeg.jpg" width="200" height="200">
+<p class="artist_name">BEATLES: </p><p class="release_title">LET IT BE</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/li3G-cWYCeANH04dXDHcBZ3oVSY=/fit-in/600x595/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3029710-1312455743.jpeg.jpg" width="200" height="200">
+<p class="artist_name">BEATLES: </p><p class="release_title">ABBEY ROAD</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/gn-4pr0XjmU74SiHn66audRfjVM=/fit-in/475x475/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2521466-1288560412.jpeg.jpg" width="200" height="200">
+<p class="artist_name">BEATLES: </p><p class="release_title">RUBBER SOUL</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/ltQeTpichNS2B9tC4MWzmFx_YHY=/fit-in/598x598/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3352585-1353869782-7337.jpeg.jpg" width="200" height="200">
+<p class="artist_name">BEATLES: </p><p class="release_title">SGT. PEPPER'S LONELY HEARTS CLUB BAND</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/x_xBemjl5KCZf4cuVw5V5IxYs38=/fit-in/600x597/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-379275-1312452623.jpeg.jpg" width="200" height="200">
+<p class="artist_name">BEATLES: </p><p class="release_title">REVOLVER</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/t_Hesmmvjbj32gkz4bO5_3MJcBo=/fit-in/600x583/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1436440-1378535668-3184.jpeg.jpg" width="200" height="200">
+<p class="artist_name">BEATLES: </p><p class="release_title">THE BEATLES</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/IHxv-opLzVx7kb0LTTD6AMUSKdE=/fit-in/596x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-816250-1368133851-4932.jpeg.jpg" width="200" height="200">
+<p class="artist_name">BEATLES: </p><p class="release_title">THE BEATLES FEATURING TONY SHERIDAN</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/3QV66DsWX0MzpVzJI25ubWCuFxc=/fit-in/600x594/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-6818561-1427280186-7884.jpeg.jpg" width="200" height="200">
+<p class="artist_name">BEATLES: </p><p class="release_title">PLEASE PLEASE ME</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/eMGNwxw53h0Mxk14BDHR5gRYgIM=/fit-in/500x500/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3113221-1347490490-1904.jpeg.jpg" width="200" height="200">
+<p class="artist_name">BEATLES: </p><p class="release_title">BEATLES FOR SALE</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/zYOxMMKWLyQdjZtefi2pKbOlUhA=/fit-in/595x593/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-735564-1391696740-8760.jpeg.jpg" width="200" height="200">
+<p class="artist_name">BEATLES: </p><p class="release_title">HELP!</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/EM-9SEqn2i4VCt0verxyTcQl4YE=/fit-in/500x500/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-5298132-1389917613-4051.jpeg.jpg" width="200" height="200">
+<p class="artist_name">BEATLES: </p><p class="release_title">A HARD DAY'S NIGHT (ORIGINAL MOTION PICTURE SOUND TRACK)</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/O_Lff-NzXSZe2E4-vx-sMgS8GiI=/fit-in/600x799/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-8765128-1530484202-3117.jpeg.jpg" width="200" height="200">
+<p class="artist_name">BILLY JOEL: </p><p class="release_title">THE STRANGER</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/7-jTGsSgMaY5YEd--qhHymBI-eA=/fit-in/600x571/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1015895-1394746107-2977.jpeg.jpg" width="200" height="200">
+<p class="artist_name">BREAD: </p><p class="release_title">MANNA</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/Ce3GNxKTVLTevG4r09hfb4fV77Q=/fit-in/600x598/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1903600-1564593967-7679.jpeg.jpg" width="200" height="200">
+<p class="artist_name">BREAD: </p><p class="release_title">BABY I'M-A WANT YOU</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/5uxprunujScK5cLp8w3B-_WHJp8=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-499734-1390593849-6457.jpeg.jpg" width="200" height="200">
+<p class="artist_name">BREAD: </p><p class="release_title">THE BEST OF BREAD</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/S8D7Fvf1lvxIyGH3rmIg4IzQNd8=/fit-in/340x336/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1523619-1271557732.jpeg.jpg" width="200" height="200">
+<p class="artist_name">CANNONBALL ADDERLEY QUINTET: </p><p class="release_title">MERCY, MERCY, MERCY! - LIVE AT "THE CLUB"</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/H6QOMWfOSaX92tgd59K_KkBP3XI=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-570936-1277265635.jpeg.jpg" width="200" height="200">
+<p class="artist_name">CHET ATKINS: </p><p class="release_title">CHESTER & LESTER</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/DC1ug9qHf_8Y2v-89JmNk3V5gzo=/fit-in/600x598/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2237153-1494645495-1545.jpeg.jpg" width="200" height="200">
+<p class="artist_name">CHET ATKINS: </p><p class="release_title">PICKS ON THE BEATLES</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/_yXjiSF4ubZOuN7K4WZRwyusZPo=/fit-in/600x596/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7683818-1453670854-9541.jpeg.jpg" width="200" height="200">
+<p class="artist_name">COURTNEY BARNETT: </p><p class="release_title">SOMETIMES I SIT AND THINK, AND SOMETIMES I JUST SIT</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/-kVz-2NR9XVTMrhDfoHku6f1l3U=/fit-in/600x595/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-12008619-1526474443-3255.jpeg.jpg" width="200" height="200">
+<p class="artist_name">COURTNEY BARNETT: </p><p class="release_title">TELL ME HOW YOU REALLY FEEL</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/qmE5dYhbzkHg7R-UiONqLlC7p2s=/fit-in/425x425/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3864688-1347363839-3770.jpeg.jpg" width="200" height="200">
+<p class="artist_name">CREAM (2): </p><p class="release_title">DISRAELI GEARS</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/_NYOdrG0OywQXHdhTLy2T870-yM=/fit-in/557x548/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2800795-1301609927.jpeg.jpg" width="200" height="200">
+<p class="artist_name">CROSBY, STILLS & NASH: </p><p class="release_title">CSN</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/TmuODzjc4syGuQFvPTD6J3RtYH0=/fit-in/600x575/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-676961-1304476560.jpeg.jpg" width="200" height="200">
+<p class="artist_name">DARYL HALL & JOHN OATES: </p><p class="release_title">H2O</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/7xX_vJDPU_-8YNFwG2Ax0vtZPAw=/fit-in/200x200/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1494725-1223943458.jpeg.jpg" width="200" height="200">
+<p class="artist_name">DAVE BRUBECK: </p><p class="release_title">TIME IN</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/2-ie5Hk9uiK0MLvEgM7miroM5Wg=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7342792-1439345641-4600.jpeg.jpg" width="200" height="200">
+<p class="artist_name">DIRE STRAITS: </p><p class="release_title">DIRE STRAITS</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/H_eRtdXhIxBdEn_l4rWF7107xZs=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1653947-1373786761-4312.jpeg.jpg" width="200" height="200">
+<p class="artist_name">DIRE STRAITS: </p><p class="release_title">MAKING MOVIES</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/BcrtqNzDTpTDxo5CmzQLrhiqKLw=/fit-in/600x620/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7899162-1505202485-6568.jpeg.jpg" width="200" height="200">
+<p class="artist_name">DIRE STRAITS: </p><p class="release_title">COMMUNIQUé</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/Ug-B7fVu3aT5LNgXHGbneUG0Xd0=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7590177-1444672765-5323.jpeg.jpg" width="200" height="200">
+<p class="artist_name">DIRE STRAITS: </p><p class="release_title">LOVE OVER GOLD</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/0BiylM_OlM4A6MakWt9J93CE5sY=/fit-in/336x350/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1181124-1242371904.jpeg.jpg" width="200" height="200">
+<p class="artist_name">DON MCLEAN: </p><p class="release_title">DON MCLEAN</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/yJaN2cSWWoAV7IGdXWWk8GrVJOo=/fit-in/595x590/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13839806-1562308277-4267.jpeg.jpg" width="200" height="200">
+<p class="artist_name">DOORS: </p><p class="release_title">STRANGE DAYS</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/8KRw0JKuo4A6ZSKVS2FIkkAUJnk=/fit-in/500x500/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2407670-1293894525.jpeg.jpg" width="200" height="200">
+<p class="artist_name">DUKE ELLINGTON AND HIS ORCHESTRA: </p><p class="release_title">ELLINGTON INDIGOS</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/zVnJmtcAA8q924EPNRrqYRAqAgo=/fit-in/595x595/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2370116-1284424146.jpeg.jpg" width="200" height="200">
+<p class="artist_name">DUKE ELLINGTON AND HIS ORCHESTRA: </p><p class="release_title">ELLINGTON AT NEWPORT</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/LuXqkHzoSHZoxpCtCghT1snj6cY=/fit-in/316x316/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-6354881-1417204240-8464.jpeg.jpg" width="200" height="200">
+<p class="artist_name">ERIC CLAPTON: </p><p class="release_title">SLOW HAND</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/MaAnLiebiS8IRyVuk-G07C3DD4c=/fit-in/600x595/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3757398-1343157785-2869.jpeg.jpg" width="200" height="200">
+<p class="artist_name">EUGENE ORMANDY: </p><p class="release_title">THE BLUE DANUBE</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/_Arg3MbNrxZG0qAUou29JoRZpUE=/fit-in/600x597/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3087794-1315144403.jpeg.jpg" width="200" height="200">
+<p class="artist_name">FLEETWOOD MAC: </p><p class="release_title">RUMOURS</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/MNpf35yfkGZNodGPZykQd-XkRFY=/fit-in/600x595/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1276537-1508171926-4798.jpeg.jpg" width="200" height="200">
+<p class="artist_name">FRANK SINATRA: </p><p class="release_title">STRANGERS IN THE NIGHT</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/NBQ83okyxjZlO4MGxshwqOAloK0=/fit-in/600x592/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-11166753-1511096781-2697.jpeg.jpg" width="200" height="200">
+<p class="artist_name">FRéDéRIC CHOPIN: </p><p class="release_title">AUSGEWäHLTE MEISTERWERKE</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/04_jJ9KLya3Da0QqB8CzsZKgFdw=/fit-in/600x611/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-10699668-1502646750-4721.jpeg.jpg" width="200" height="200">
+<p class="artist_name">GORILLAZ: </p><p class="release_title">DEMON DAYS</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/xwaD5rIBwPBlBvLAjAdLB97Ombk=/fit-in/600x599/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3891860-1348282793-8077.jpeg.jpg" width="200" height="200">
+<p class="artist_name">GUSTAV HOLST: </p><p class="release_title">THE PLANETS</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/QLL6vZXq62hPJPMEcJrDKheNdxA=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4666371-1371581295-3809.jpeg.jpg" width="200" height="200">
+<p class="artist_name">HERBIE HANCOCK: </p><p class="release_title">AN EVENING WITH HERBIE HANCOCK & CHICK COREA IN CONCERT 1978</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/NmM_T8FpwccjPLCA8HJoHrK1FWY=/fit-in/500x499/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-700507-1481840047-9590.gif.jpg" width="200" height="200">
+<p class="artist_name">JEFFERSON STARSHIP: </p><p class="release_title">RED OCTOPUS</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/5TqtMVzwfRi_e-bqczGNEihJSAY=/fit-in/600x606/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7435538-1441473595-5878.jpeg.jpg" width="200" height="200">
+<p class="artist_name">JIM CROCE: </p><p class="release_title">YOU DON'T MESS AROUND WITH JIM</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/ctScH18EuNQeKlaJHUg92YuINLs=/fit-in/594x594/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1349108-1346593603-8239.jpeg.jpg" width="200" height="200">
+<p class="artist_name">JIMI HENDRIX EXPERIENCE: </p><p class="release_title">AXIS: BOLD AS LOVE</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/QE56mV2Qrd1OeX_LaztDWSKuEYY=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2011442-1431092983-7050.jpeg.jpg" width="200" height="200">
+<p class="artist_name">JOHN COLTRANE: </p><p class="release_title">GIANT STEPS</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/dZgy1p3blML28WHg2qF_CHApLMQ=/fit-in/600x597/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-12255566-1531528783-5120.jpeg.jpg" width="200" height="200">
+<p class="artist_name">JOHN DENVER: </p><p class="release_title">ROCKY MOUNTAIN HIGH</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/MpxR37ueMGwR2HAyg2cp5zvfY-8=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-11530439-1545871119-8257.jpeg.jpg" width="200" height="200">
+<p class="artist_name">KHRUANGBIN: </p><p class="release_title">CON TODO EL MUNDO</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/s_cts3OCd_nQgBiAtshcdofaKVY=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-8259798-1461082084-9393.png.jpg" width="200" height="200">
+<p class="artist_name">KHRUANGBIN: </p><p class="release_title">THE UNIVERSE SMILES UPON YOU</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/Tp441MtFD6A1K1WfUh57P3zNMlk=/fit-in/600x576/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-8126057-1455629582-5676.jpeg.jpg" width="200" height="200">
+<p class="artist_name">KING CRIMSON: </p><p class="release_title">IN THE COURT OF THE CRIMSON KING (AN OBSERVATION BY KING CRIMSON)</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/vdy2hpfNFj-vNjbXno0Kmnq28o0=/fit-in/600x597/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-10449503-1500156493-4141.jpeg.jpg" width="200" height="200">
+<p class="artist_name">KING GIZZARD AND LIZARD WIZARD: </p><p class="release_title">MURDER OF THE UNIVERSE</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/ABK2KN3Vl94QzFd6eB-gDe929Zc=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7699597-1447461942-8578.jpeg.jpg" width="200" height="200">
+<p class="artist_name">KING GIZZARD AND LIZARD WIZARD: </p><p class="release_title">PAPER MâCHé DREAM BALLOON</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/QWP-XnRPSgG-buxHW0IrJn-Zhsc=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-10352108-1517506514-7723.jpeg.jpg" width="200" height="200">
+<p class="artist_name">KING GIZZARD AND LIZARD WIZARD: </p><p class="release_title">FLYING MICROTONAL BANANA </p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/j4N-xfd1DC5lgLDn7Dk1LU4-7vI=/fit-in/600x591/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-11430189-1516293555-7693.jpeg.jpg" width="200" height="200">
+<p class="artist_name">KING GIZZARD AND LIZARD WIZARD: </p><p class="release_title">POLYGONDWANALAND</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/KvfSdhp-rlmYGHEG894u-ldJLjo=/fit-in/600x800/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7766891-1448338005-1623.jpeg.jpg" width="200" height="200">
+<p class="artist_name">KING GIZZARD AND LIZARD WIZARD: </p><p class="release_title">QUARTERS!</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/YOEnod2v0ttkms9hmuPWbIIaw4g=/fit-in/600x630/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-10415097-1496960001-7682.jpeg.jpg" width="200" height="200">
+<p class="artist_name">KINKS: </p><p class="release_title">KINKS GREATEST HITS</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/PCmkZ2NyDReemZdjRlMy8WVF6ZU=/fit-in/600x609/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-849535-1432632499-7270.jpeg.jpg" width="200" height="200">
+<p class="artist_name">KOOKS: </p><p class="release_title">INSIDE IN / INSIDE OUT</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/jLzCg2rUAslxGpx54ACuE1SiedM=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4889755-1378586813-7131.jpeg.jpg" width="200" height="200">
+<p class="artist_name">LED ZEPPELIN: </p><p class="release_title">UNTITLED</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/RLs3d3H2aRjW1ClsXBTJs0qlEyw=/fit-in/600x534/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-5545585-1396226729-1375.jpeg.jpg" width="200" height="200">
+<p class="artist_name">LONDON GRAMMAR: </p><p class="release_title">IF YOU WAIT</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/0sIEXMGFepIcNdM41CS8rgz_SG8=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-306710-1453390988-2160.jpeg.jpg" width="200" height="200">
+<p class="artist_name">MARVIN GAYE: </p><p class="release_title">HERE, MY DEAR</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/yKVHDCLJ6BJOjgoALJ9cASipHYg=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-14162536-1569009043-1799.jpeg.jpg" width="200" height="200">
+<p class="artist_name">MEN I TRUST: </p><p class="release_title">ONCLE JAZZ</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/HHYEYoXSKrwMxOp_lSmq9oNmML8=/fit-in/600x608/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2825456-1430770143-1057.jpeg.jpg" width="200" height="200">
+<p class="artist_name">MILES DAVIS: </p><p class="release_title">KIND OF BLUE</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/dsWattmth6C1ksL81Mgd64eG29w=/fit-in/600x580/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2682089-1368959789-9399.jpeg.jpg" width="200" height="200">
+<p class="artist_name">MORTON GOULD AND HIS ORCHESTRA: </p><p class="release_title">1812 OVERTURE STEREO SPECTACULAR</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/0Gk95hii5X2nzvbl-PQYotdiaHM=/fit-in/500x500/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2462950-1305976893.jpeg.jpg" width="200" height="200">
+<p class="artist_name">NEIL DIAMOND: </p><p class="release_title">HOT AUGUST NIGHT</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/zCyv1Ko7An9z0xSaxv4DYY20OrE=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-379036-1275632309.jpeg.jpg" width="200" height="200">
+<p class="artist_name">PETER GABRIEL: </p><p class="release_title">SO</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/TlkQf8qfKVmCMYaBoWXKnkkAkY4=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1789461-1461369807-7246.jpeg.jpg" width="200" height="200">
+<p class="artist_name">PHOENIX: </p><p class="release_title">WOLFGANG AMADEUS PHOENIX</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/-RzTui6wx0Psuf_52JZEbIiRbe0=/fit-in/600x603/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-6858185-1492468301-1239.jpeg.jpg" width="200" height="200">
+<p class="artist_name">PINK FLOYD: </p><p class="release_title">ANIMALS</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/n6npBN1pU2z7xe6auTnlsU5e-KM=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-9296607-1479032194-2661.jpeg.jpg" width="200" height="200">
+<p class="artist_name">PINK FLOYD: </p><p class="release_title">THE DARK SIDE OF THE MOON</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/sXNVuR8cP8unRaPT5jjUexhRNIo=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-11603918-1521023467-4781.jpeg.jpg" width="200" height="200">
+<p class="artist_name">PORCUPINE TREE: </p><p class="release_title">FEAR OF A BLANK PLANET</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/9h4K7rZKp7k4unjSD7vDoGny8Kw=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-11606134-1519367287-2135.jpeg.jpg" width="200" height="200">
+<p class="artist_name">PORCUPINE TREE: </p><p class="release_title">DEADWING</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/OO21Yuz8q0uzaBk-xbVHfDtgmmQ=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-8690850-1500832291-7146.jpeg.jpg" width="200" height="200">
+<p class="artist_name">RADIOHEAD: </p><p class="release_title">OK COMPUTER</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/GuupDLjvEdjHX8jqeoEPr4HzinM=/fit-in/600x606/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1804319-1332554909.jpeg.jpg" width="200" height="200">
+<p class="artist_name">RAY CHARLES: </p><p class="release_title">CRYING TIME</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/lL_ABwUlawxeMXtUWLFiBAHpbNU=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7366723-1439926628-3810.jpeg.jpg" width="200" height="200">
+<p class="artist_name">RAY CHARLES: </p><p class="release_title">RAY CHARLES AT NEWPORT</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/5E1y1b8MBwPNyKvASmGYIcFRSLY=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3454564-1331009571.jpeg.jpg" width="200" height="200">
+<p class="artist_name">RAY CHARLES: </p><p class="release_title">THE GENIUS OF RAY CHARLES</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/mhvZs9tzM8Ov2HDT2o0JnMVex3Y=/fit-in/600x601/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-653078-1435461104-2918.jpeg.jpg" width="200" height="200">
+<p class="artist_name">RODGERS & HAMMERSTEIN: </p><p class="release_title">THE SOUND OF MUSIC (AN ORIGINAL SOUNDTRACK RECORDING)</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/92Daofbk38kUYslpbOM586WFr6Y=/fit-in/590x590/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-541912-1347224166-8878.jpeg.jpg" width="200" height="200">
+<p class="artist_name">SIMON & GARFUNKEL: </p><p class="release_title">THE GRADUATE (ORIGINAL SOUND TRACK RECORDING)</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/dDVf2mZ5_oxTNUgcu_fVTx3nuqg=/fit-in/600x599/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13923545-1564163231-4563.jpeg.jpg" width="200" height="200">
+<p class="artist_name">SPOON: </p><p class="release_title">EVERYTHING HITS AT ONCE (THE BEST OF SPOON)</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/ZjQXW_C_r8Ejs3--Y_ib5keT5Dw=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-433593-1308917981.jpeg.jpg" width="200" height="200">
+<p class="artist_name">STEELY DAN: </p><p class="release_title">AJA</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/evgkIWacJ-2iy2n_TSzQNh4dSTc=/fit-in/600x599/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-512366-1356970793-8400.jpeg.jpg" width="200" height="200">
+<p class="artist_name">STEELY DAN: </p><p class="release_title">PRETZEL LOGIC</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/aiMd7JwSsOR-evTJvReO_pfW2s0=/fit-in/585x599/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3087067-1368975387-2166.jpeg.jpg" width="200" height="200">
+<p class="artist_name">STEELY DAN: </p><p class="release_title">CAN'T BUY A THRILL</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/KL7rSY2q1OgpOZwn4DyM7Gp1GwA=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1788604-1308917731.jpeg.jpg" width="200" height="200">
+<p class="artist_name">STEELY DAN: </p><p class="release_title">THE ROYAL SCAM</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/UiVbQvcxZmidv-IatwSNDzT8QuI=/fit-in/600x599/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-844094-1527330294-8250.jpeg.jpg" width="200" height="200">
+<p class="artist_name">STEELY DAN: </p><p class="release_title">GAUCHO</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/XnjgRCvivjpq0xim1mCoLPIjt7g=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-8005929-1453336522-5571.jpeg.jpg" width="200" height="200">
+<p class="artist_name">STEVEN WILSON: </p><p class="release_title">4½</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/cYLV66xRrXkTFfxeQ64Pc87H0QE=/fit-in/600x808/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13398223-1553443866-4650.jpeg.jpg" width="200" height="200">
+<p class="artist_name">STEVIE WONDER: </p><p class="release_title">TALKING BOOK</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/jUPDcNrVm_3Sjez7khTzwEtzTYg=/fit-in/450x450/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2927062-1442459845-9750.jpeg.jpg" width="200" height="200">
+<p class="artist_name">STEVIE WONDER: </p><p class="release_title">SONGS IN THE KEY OF LIFE</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/fnIdn4eIQz6GAIox2btEQRn5O60=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-667892-1249548979.jpeg.jpg" width="200" height="200">
+<p class="artist_name">STROKES: </p><p class="release_title">IS THIS IT</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/w5Mb95LmX4P6cetsNPhUl0cR59g=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7050134-1432570924-3130.jpeg.jpg" width="200" height="200">
+<p class="artist_name">UNKNOWN MORTAL ORCHESTRA: </p><p class="release_title">MULTI-LOVE</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/pLvCWZc1z3CY2y_BjTZggr6CgCA=/fit-in/600x596/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2632748-1294186071.jpeg.jpg" width="200" height="200">
+<p class="artist_name">VARIOUS: </p><p class="release_title">SATURDAY NIGHT FEVER (THE ORIGINAL MOVIE SOUND TRACK)</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/2S8CdiEBEAaikyz9N7SMo0LCbPY=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-12890339-1544203504-8014.jpeg.jpg" width="200" height="200">
+<p class="artist_name">VULFPECK: </p><p class="release_title">HILL CLIMBER</p></div></div>
+<div class="zoom" style = "float:left;"><div class="img__wrap"><img src="https://img.discogs.com/4Fne92wZIrtrZKBYfvUixIQFjCo=/fit-in/475x475/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1637199-1233717323.jpeg.jpg" width="200" height="200">
+<p class="artist_name">YES: </p><p class="release_title">CLOSE TO THE EDGE</p></div></div>
+
+</body>
+</html>
