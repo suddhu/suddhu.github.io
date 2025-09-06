@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'motion/react'
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { XIcon, FileTextIcon, GraduationCapIcon, GithubIcon, LinkedinIcon, TwitterIcon, InfoIcon, ExternalLinkIcon, CodeIcon, DatabaseIcon, VideoIcon, PresentationIcon, ImageIcon, ChevronDownIcon, ChevronUpIcon, NewspaperIcon } from 'lucide-react'
 
 // Reusable Research Paper Component
@@ -21,12 +22,25 @@ function ResearchPaper({ paper }: { paper: any }) {
         container.className = 'max-h-[90vh] max-w-[90vw] rounded-xl overflow-y-auto';
         
         paper.images!.forEach((imageSrc: string, index: number) => {
-         const img = document.createElement('img');
-         img.src = imageSrc;
-         img.alt = `${paper.title} - Image ${index + 1}`;
-         img.className = 'w-full rounded-xl object-contain mb-2';
-         img.onclick = (e) => e.stopPropagation();
-         container.appendChild(img);
+         const isVideo = imageSrc.endsWith('.mp4') || imageSrc.endsWith('.m4v') || imageSrc.endsWith('.webm') || imageSrc.endsWith('.mov');
+         if (isVideo) {
+          const video = document.createElement('video');
+          video.src = imageSrc;
+          video.controls = true;
+          video.autoplay = true;
+          video.loop = true;
+          video.muted = true;
+          video.className = 'w-full rounded-xl object-contain mb-2';
+          video.onclick = (e) => e.stopPropagation();
+          container.appendChild(video);
+         } else {
+          const img = document.createElement('img');
+          img.src = imageSrc;
+          img.alt = `${paper.title} - Image ${index + 1}`;
+          img.className = 'w-full rounded-xl object-contain mb-2';
+          img.onclick = (e) => e.stopPropagation();
+          container.appendChild(img);
+         }
         });
         
         const closeBtn = document.createElement('button');
@@ -40,15 +54,31 @@ function ResearchPaper({ paper }: { paper: any }) {
        }}
       >
        <div className="space-y-1">
-        {paper.images.map((imageSrc: string, index: number) => (
-         <img
-          key={index}
-          src={imageSrc}
-          alt={`${paper.title} - Image ${index + 1}`}
-          className="w-full rounded-xl object-cover"
-          style={{ border: '0.25px solid #F0F0ED' }}
-         />
-        ))}
+        {paper.images.map((imageSrc: string, index: number) => {
+         const isVideo = imageSrc.endsWith('.mp4') || imageSrc.endsWith('.m4v') || imageSrc.endsWith('.webm') || imageSrc.endsWith('.mov');
+         return isVideo ? (
+          <video
+           key={index}
+           src={imageSrc}
+           autoPlay
+           loop
+           muted
+           className="w-full rounded-xl object-cover"
+           style={{ border: '0.25px solid #F0F0ED' }}
+          />
+         ) : (
+          <Image
+           key={index}
+           src={imageSrc}
+           alt={`${paper.title} - Image ${index + 1}`}
+           width={400}
+           height={300}
+           className="w-full rounded-xl object-cover"
+           style={{ border: '0.25px solid #F0F0ED' }}
+           priority={false}
+          />
+         );
+        })}
        </div>
       </div>
      ) : (
@@ -59,28 +89,58 @@ function ResearchPaper({ paper }: { paper: any }) {
         modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/50';
         modal.onclick = () => modal.remove();
         
-        const img = document.createElement('img');
-        img.src = paper.image;
-        img.alt = paper.title;
-        img.className = 'max-h-[90vh] max-w-[90vw] rounded-xl object-contain';
-        img.onclick = (e) => e.stopPropagation();
+        const isVideo = paper.image.endsWith('.mp4') || paper.image.endsWith('.m4v') || paper.image.endsWith('.webm') || paper.image.endsWith('.mov');
+        if (isVideo) {
+         const video = document.createElement('video');
+         video.src = paper.image;
+         video.controls = true;
+         video.autoplay = true;
+         video.loop = true;
+         video.muted = true;
+         video.className = 'max-h-[90vh] max-w-[90vw] rounded-xl object-contain';
+         video.onclick = (e) => e.stopPropagation();
+         modal.appendChild(video);
+        } else {
+         const img = document.createElement('img');
+         img.src = paper.image;
+         img.alt = paper.title;
+         img.className = 'max-h-[90vh] max-w-[90vw] rounded-xl object-contain';
+         img.onclick = (e) => e.stopPropagation();
+         modal.appendChild(img);
+        }
         
         const closeBtn = document.createElement('button');
         closeBtn.className = 'absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/70';
         closeBtn.innerHTML = '✕';
         closeBtn.onclick = () => modal.remove();
         
-        modal.appendChild(img);
         modal.appendChild(closeBtn);
         document.body.appendChild(modal);
        }}
       >
-       <img
-        src={paper.image}
-        alt={paper.title}
-        className="w-full rounded-xl object-cover"
-        style={{ border: '0.25px solid #F0F0ED' }}
-       />
+       {(() => {
+        const isVideo = paper.image.endsWith('.mp4') || paper.image.endsWith('.m4v') || paper.image.endsWith('.webm') || paper.image.endsWith('.mov');
+        return isVideo ? (
+         <video
+          src={paper.image}
+          autoPlay
+          loop
+          muted
+          className="w-full rounded-xl object-cover"
+          style={{ border: '0.25px solid #F0F0ED' }}
+         />
+        ) : (
+         <Image
+          src={paper.image}
+          alt={paper.title}
+          width={400}
+          height={300}
+          className="w-full rounded-xl object-cover"
+          style={{ border: '0.25px solid #F0F0ED' }}
+          priority={false}
+         />
+        );
+       })()}
       </div>
      )}
     </div>
@@ -548,7 +608,7 @@ export default function Personal() {
         rel="noopener noreferrer"
         className="underline decoration-zinc-400 underline-offset-2 text-[0.9em]"
        >
-        we're hiring, reach out!
+        we&apos;re hiring, reach out!
        </a>
       </p>
      </div>
@@ -594,7 +654,7 @@ export default function Personal() {
         2025/05
        </div>
        <div className="flex-1 text-zinc-600 ">
-        I'm a featured interview in our team's{' '}
+        I&apos;m a featured interview in our team&apos;s{' '}
         <a href="https://youtu.be/oe1dke3Cf7I?si=h1efM6LhXF8iPMxO" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
          video release
         </a>{' '}
@@ -733,7 +793,7 @@ export default function Personal() {
          2024/03
         </div>
         <div className="flex-1 text-zinc-600 ">
-         I've moved to Greater Boston, to work with the Atlas team at Boston Dynamics{' '}
+         I&apos;ve moved to Greater Boston, to work with the Atlas team at Boston Dynamics{' '}
          (<a href="https://www.youtube.com/watch?v=29ECwExc-_M" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           hello
          </a>).
@@ -745,7 +805,7 @@ export default function Personal() {
          2024/02
         </div>
         <div className="flex-1 text-zinc-600 ">
-         I've defended my Ph.D., here's my{' '}
+         I&apos;ve defended my Ph.D., here&apos;s my{' '}
          <a href="https://www.youtube.com/watch?v=9v-bmXGAxVc" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           talk
          </a>{' '}
@@ -869,7 +929,7 @@ export default function Personal() {
          2022/08
         </div>
         <div className="flex-1 text-zinc-600 ">
-         We've extended{' '}
+         We&apos;ve extended{' '}
          <a href="https://joeaortiz.github.io/iSDF/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           iSDF
          </a>{' '}
@@ -889,7 +949,7 @@ export default function Personal() {
          <a href="https://www.roboticsdebates.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           Debates on the Future of Robotics Research workshop
          </a>{' '}
-         at ICRA '22
+         at ICRA &apos;22
         </div>
        </div>
        
@@ -991,11 +1051,14 @@ export default function Personal() {
          <div key={paper.title} className="flex gap-6">
           <div className="flex-shrink-0 w-53">
            <div className="relative rounded-2xl bg-zinc-50/40 p-1">
-            <img
+            <Image
              src={paper.image}
              alt={paper.title}
+             width={400}
+             height={300}
              className="w-full rounded-xl object-cover"
              style={{ border: '0.25px solid #F0F0ED' }}
+             priority={false}
             />
            </div>
           </div>

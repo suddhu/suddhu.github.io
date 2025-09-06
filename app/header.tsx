@@ -1,6 +1,7 @@
  'use client'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { EMAIL } from './data'
 
 function ScramblingTitle({ children }: { children: string }) {
@@ -163,12 +164,13 @@ export function Header() {
   return (
     <>
       <div id="home" className="mb-6">
-        <img
+        <Image
           src="/profile.png"
           alt="Portrait of Sudharshan Suresh"
           className="hidden sm:block rounded-2xl ring-1 ring-zinc-200  float-left mr-6 mb-4"
           width={300}
           height={300}
+          priority
         />
         <div className="space-y-2">
           <div>
@@ -176,7 +178,7 @@ export function Header() {
           </div>
           <EmailScrambler />
           <p className="text-lg text-zinc-600  mt-4">
-            I'm a staff research scientist and tech lead at{' '}
+            I&apos;m a staff research scientist and tech lead at{' '}
             <a href="https://www.bostondynamics.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
               Boston Dynamics
             </a>{' '}

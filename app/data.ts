@@ -106,7 +106,7 @@ export const RESEARCH_PAPERS: ResearchPaper[] = [
     venue: 'Proc. Conf. on Robot Learning, CoRL',
     year: '2023',
     description: 'A visuotactile transformer gives us general dexterity for multi-axis object rotation in the wild.',
-    image: '/media/rotateit.gif',
+    image: '/media/rotateit.mp4',
     links: {
       paper: 'https://arxiv.org/abs/2309.09979',
       website: 'https://haozhi.io/rotateit',
@@ -129,7 +129,8 @@ export const RESEARCH_PAPERS: ResearchPaper[] = [
     venue: 'Proc. Conf. on Robot Learning, CoRL',
     year: '2022',
     description: "Where's Waldo? but for robot touch: tracking a robot finger on an object from geometry captured by touch.",
-    image: '/media/midastouch.gif',
+    image: '/media/midastouch.m4v',
+    images: ['/media/midastouch.m4v'],
     links: {
       paper: 'https://arxiv.org/abs/2210.14210',
       website: 'https://suddhu.github.io/midastouch-tactile/',
@@ -150,7 +151,7 @@ export const RESEARCH_PAPERS: ResearchPaper[] = [
     venue: 'IEEE Intl. Conf. on Robotics and Automation, ICRA',
     year: '2022',
     description: 'Online reconstruction of 3D objects from dense touch and vision via Gaussian processes.',
-    image: '/media/shape_map.gif',
+    image: '/media/shapemap.m4v',
     links: {
       paper: 'https://arxiv.org/abs/2109.09884',
       website: 'https://suddhu.github.io/shape-map/',

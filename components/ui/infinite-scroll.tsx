@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { useEffect, useState, useRef } from 'react';
+import Image from 'next/image';
 
 interface InfiniteScrollProps {
   gifs: {
@@ -146,14 +147,16 @@ export function InfiniteScroll({ gifs, speed = 20 }: InfiniteScrollProps) {
                 muted
                 playsInline
               />
-            ) : (
-              <img
-                src={gif.src}
-                alt={gif.alt}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            )}
+                          ) : (
+                <Image
+                  src={gif.src}
+                  alt={gif.alt}
+                  width={320}
+                  height={192}
+                  className="w-full h-full object-cover"
+                  priority={false}
+                />
+              )}
           </div>
         ))}
         </motion.div>
