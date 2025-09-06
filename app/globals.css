@@ -1,0 +1,95 @@
+@import 'tailwindcss';
+@custom-variant dark (&:is(.dark *));
+
+/* Garamond Premier Pro Medium Caption Font */
+@font-face {
+  font-family: 'Garamond Premier Pro';
+  src: url('/fonts/GaramondPremierPro-MediumCaption.woff2') format('woff2'),
+       url('/fonts/GaramondPremierPro-MediumCaption.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+:root {
+  --sh-class: #7aa2f7;
+  --sh-sign: #89ddff;
+  --sh-string: #9ece6a;
+  --sh-keyword: #bb9af7;
+  --sh-comment: #565f89;
+  --sh-jsxliterals: #7aa2f7;
+  --sh-property: #73daca;
+  --sh-entity: #e0af68;
+}
+
+/* Game Boy Font Styles */
+.gameboy-font {
+  font-family: 'Courier New', monospace;
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+
+.gameboy-classic {
+  color: #0f380f;
+  text-shadow: 2px 2px 0px #9bbc0f;
+}
+
+.gameboy-color {
+  color: #306230;
+  text-shadow: 2px 2px 0px #8bac0f;
+}
+
+.press-start-2p {
+  font-family: var(--font-press-start-2p), cursive;
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.press-start-2p-large {
+  font-family: var(--font-press-start-2p), cursive;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.garamond-body {
+  font-family: 'Garamond Premier Pro', serif;
+  font-weight: 500;
+}
+
+/* Smooth scrolling for navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom blink animation for cursor */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1.5s infinite;
+}
