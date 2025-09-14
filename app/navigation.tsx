@@ -6,7 +6,7 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'news', 'research', 'etc']
+      const sections = ['home', 'news', 'research']
       const scrollPosition = window.scrollY + 150 // Increased offset for fixed nav
 
       for (const section of sections) {
@@ -44,7 +44,7 @@ export function Navigation() {
     return `transition-colors duration-200 border px-2 py-1 ${
       isActive 
         ? 'text-zinc-900 border-zinc-300 bg-zinc-100' 
-        : 'text-zinc-600 border-transparent hover:text-zinc-900 hover:border-zinc-300'
+        : 'text-black border-transparent hover:text-zinc-900 hover:border-zinc-300'
     }`
   }
 
@@ -71,13 +71,6 @@ export function Navigation() {
             className={getLinkClass('research')}
           >
             Research
-          </button>
-          <span className="text-zinc-400">/</span>
-          <button 
-            onClick={() => scrollToSection('etc')}
-            className={getLinkClass('etc')}
-          >
-            etc
           </button>
         </div>
       </div>

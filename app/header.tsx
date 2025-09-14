@@ -135,7 +135,7 @@ function EmailScrambler() {
         className="cursor-pointer select-none press-start-2p"
         onClick={() => setIsScrambled(!isScrambled)}
       >
-        <span className="press-start-2p text-zinc-600">
+        <span className="press-start-2p text-black">
           {isClient ? displayUsername : '•'.repeat(emailUser.length)}
           <span style={{ color: '#0047FF' }}> [at] </span>
           {EMAIL.split('@')[1].split('.')[0]}
@@ -177,7 +177,7 @@ export function Header() {
             <ScramblingTitle>Sudharshan Suresh</ScramblingTitle>
           </div>
           <EmailScrambler />
-          <p className="text-lg text-zinc-600  mt-4">
+          <p className="text-lg text-black  mt-4">
             I&apos;m a staff research scientist and tech lead at{' '}
             <a href="https://www.bostondynamics.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
               Boston Dynamics
@@ -189,7 +189,7 @@ export function Header() {
             humanoid project.
             I specialize in learning from egocentric data, to enable quick re-tasking of robots with multimodal data.
           </p>
-          <p className="text-lg text-zinc-600  mt-4">
+          <p className="text-lg text-black  mt-4">
             I earned my Ph.D. in Robotics from{' '}
             <a
               href="https://www.cmu.edu/"

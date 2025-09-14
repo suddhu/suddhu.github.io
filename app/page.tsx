@@ -174,7 +174,7 @@ function ResearchPaper({ paper }: { paper: any }) {
           href={paper.authorLinks![authorName]}
           target="_blank"
           rel="noopener noreferrer"
-          className={`underline decoration-zinc-400 underline-offset-2 ${isSudharshan ? 'font-semibold text-zinc-900' : 'text-zinc-600'}`}
+          className={`underline decoration-zinc-400 underline-offset-2 ${isSudharshan ? 'font-semibold text-zinc-900' : 'text-black'}`}
          >
           {authorName}
          </a>
@@ -198,7 +198,7 @@ function ResearchPaper({ paper }: { paper: any }) {
     </div>
     {paper.press && paper.press.length > 0 && (
      <div className="mt-1">
-      <span className="text-sm text-zinc-600 inline-flex items-center gap-1">
+      <span className="text-sm text-black inline-flex items-center gap-1">
        {researchLinkIconFor('press')} {paper.press.map((pressItem: string, index: number) => {
         const match = pressItem.match(/^(.+?) \[(.+?)\]$/);
         if (match) {
@@ -637,7 +637,7 @@ export default function Personal() {
        <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
         2025/06
        </div>
-       <div className="flex-1 text-zinc-600 ">
+       <div className="flex-1 text-black ">
         I did a deep-dive into our whole-body manipulation and vision stack at the{' '}
         <a href="https://dex-manipulation.github.io/rss2025/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
          RSS Dexterous Manipulation Workshop
@@ -653,7 +653,7 @@ export default function Personal() {
        <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
         2025/05
        </div>
-       <div className="flex-1 text-zinc-600 ">
+       <div className="flex-1 text-black ">
         I&apos;m a featured interview in our team&apos;s{' '}
         <a href="https://youtu.be/oe1dke3Cf7I?si=h1efM6LhXF8iPMxO" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
          video release
@@ -669,7 +669,7 @@ export default function Personal() {
        <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
         2025/05
        </div>
-       <div className="flex-1 text-zinc-600 ">
+       <div className="flex-1 text-black ">
         Selected to be part of the{' '}
         <a href="https://sites.google.com/view/rsspioneers2025/participants?authuser=0" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
          RSS Pioneers Workshop
@@ -690,7 +690,7 @@ export default function Personal() {
        <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
         2024/11
        </div>
-       <div className="flex-1 text-zinc-600 ">
+       <div className="flex-1 text-black ">
         NeuralFeels is{' '}
         <a href="https://www.science.org/stoken/author-tokens/ST-2331/full" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
          published in Science Robotics
@@ -715,7 +715,7 @@ export default function Personal() {
          <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
           2024/10
          </div>
-         <div className="flex-1 text-zinc-600 ">
+         <div className="flex-1 text-black ">
           My work on Atlas was{' '}
           <a href="https://youtu.be/F_7IPm7f1vI?si=woSN8Jax0F6XK_P3" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
            featured in their autonomous demo
@@ -741,7 +741,7 @@ export default function Personal() {
        <div className="flex justify-center mt-4">
         <motion.button
          onClick={() => setShowAllUpdates(true)}
-         className="group relative inline-flex items-center gap-2 border border-zinc-300 bg-zinc-50 px-4 py-2 text-xs text-zinc-600 transition-colors duration-200 hover:bg-zinc-100 hover:text-zinc-700"
+         className="group relative inline-flex items-center gap-2 border border-zinc-300 bg-zinc-50 px-4 py-2 text-xs text-black transition-colors duration-200 hover:bg-zinc-100 hover:text-zinc-700"
          style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}
          whileHover={{ scale: 1.02 }}
          whileTap={{ scale: 0.98 }}
@@ -769,7 +769,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
          2024/10
         </div>
-        <div className="flex-1 text-zinc-600 ">
+        <div className="flex-1 text-black ">
          My work on Atlas was{' '}
          <a href="https://youtu.be/F_7IPm7f1vI?si=woSN8Jax0F6XK_P3" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           featured in their autonomous demo
@@ -792,7 +792,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
          2024/03
         </div>
-        <div className="flex-1 text-zinc-600 ">
+        <div className="flex-1 text-black ">
          I&apos;ve moved to Greater Boston, to work with the Atlas team at Boston Dynamics{' '}
          (<a href="https://www.youtube.com/watch?v=29ECwExc-_M" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           hello
@@ -804,7 +804,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
          2024/02
         </div>
-        <div className="flex-1 text-zinc-600 ">
+        <div className="flex-1 text-black ">
          I&apos;ve defended my Ph.D., here&apos;s my{' '}
          <a href="https://www.youtube.com/watch?v=9v-bmXGAxVc" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           talk
@@ -828,7 +828,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
          2023/12
         </div>
-        <div className="flex-1 text-zinc-600 ">
+        <div className="flex-1 text-black ">
          The pre-print for NeuralFeels is out, read it{' '}
          <a href="https://arxiv.org/abs/2312.13469" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           here
@@ -840,7 +840,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
          2023/08
         </div>
-        <div className="flex-1 text-zinc-600 ">
+        <div className="flex-1 text-black ">
          Our work{' '}
          <a href="https://haozhi.io/rotateit/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           RotateIt
@@ -860,7 +860,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
          2023/04
         </div>
-        <div className="flex-1 text-zinc-600 ">
+        <div className="flex-1 text-black ">
          Spending the summer as a research scientist intern at{' '}
          <a href="https://ai.facebook.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           FAIR
@@ -881,7 +881,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
          2022/12
         </div>
-        <div className="flex-1 text-zinc-600 ">
+        <div className="flex-1 text-black ">
          <a href="https://suddhu.github.io/midastouch-tactile/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           MidasTouch
          </a>{' '}
@@ -900,7 +900,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
          2022/10
         </div>
-        <div className="flex-1 text-zinc-600 ">
+        <div className="flex-1 text-black ">
          Successfully passed my{' '}
          <a href="https://www.ri.cmu.edu/event/tactile-slam-perception-for-dexterity-via-vision-based-touch/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           Ph.D. thesis proposal
@@ -912,7 +912,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
          2022/09
         </div>
-        <div className="flex-1 text-zinc-600 ">
+        <div className="flex-1 text-black ">
          <a href="https://suddhu.github.io/midastouch-tactile/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           MidasTouch
          </a>{' '}
@@ -928,7 +928,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
          2022/08
         </div>
-        <div className="flex-1 text-zinc-600 ">
+        <div className="flex-1 text-black ">
          We&apos;ve extended{' '}
          <a href="https://joeaortiz.github.io/iSDF/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           iSDF
@@ -944,7 +944,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
          2022/05
         </div>
-        <div className="flex-1 text-zinc-600 ">
+        <div className="flex-1 text-black ">
          Organized the{' '}
          <a href="https://www.roboticsdebates.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           Debates on the Future of Robotics Research workshop
@@ -957,7 +957,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
          2022/04
         </div>
-        <div className="flex-1 text-zinc-600 ">
+        <div className="flex-1 text-black ">
          Spending the summer at{' '}
          <a href="https://ai.facebook.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           FAIR
@@ -970,7 +970,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
          2022/01
         </div>
-        <div className="flex-1 text-zinc-600 ">
+        <div className="flex-1 text-black ">
          <a href="https://arxiv.org/abs/2109.09884" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           ShapeMap 3-D
          </a>{' '}
@@ -993,7 +993,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
          2021/08
         </div>
-        <div className="flex-1 text-zinc-600 ">
+        <div className="flex-1 text-black ">
          Presented at the Tartan SLAM series on our working on perception for planar pushing, video{' '}
          <a href="https://www.youtube.com/watch?v=IjuTxa8andk" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           here
@@ -1005,7 +1005,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
          2021/05
         </div>
-        <div className="flex-1 text-zinc-600 ">
+        <div className="flex-1 text-black ">
          <a href="https://suddhu.github.io/tactile-slam/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
           Tactile SLAM
          </a>{' '}
@@ -1019,7 +1019,7 @@ export default function Personal() {
      <div className="flex justify-center mt-6">
       <motion.button
        onClick={() => setShowAllUpdates(false)}
-       className="group relative inline-flex items-center gap-2 border border-zinc-300 bg-zinc-50 px-4 py-2 text-xs text-zinc-600 transition-colors duration-200 hover:bg-zinc-100 hover:text-zinc-700"
+       className="group relative inline-flex items-center gap-2 border border-zinc-300 bg-zinc-50 px-4 py-2 text-xs text-black transition-colors duration-200 hover:bg-zinc-100 hover:text-zinc-700"
        style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}
        whileHover={{ scale: 1.02 }}
        whileTap={{ scale: 0.98 }}
@@ -1083,7 +1083,7 @@ export default function Personal() {
        <div className="flex justify-center">
         <motion.button
          onClick={() => setShowAllResearch(true)}
-         className="group relative inline-flex items-center gap-2 border border-zinc-300 bg-zinc-50 px-4 py-2 text-xs text-zinc-600 transition-colors duration-200 hover:bg-zinc-100 hover:text-zinc-700"
+         className="group relative inline-flex items-center gap-2 border border-zinc-300 bg-zinc-50 px-4 py-2 text-xs text-black transition-colors duration-200 hover:bg-zinc-100 hover:text-zinc-700"
          style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}
          whileHover={{ scale: 1.02 }}
          whileTap={{ scale: 0.98 }}
@@ -1115,7 +1115,7 @@ export default function Personal() {
      <div className="flex justify-center mt-6">
       <motion.button
        onClick={() => setShowAllResearch(false)}
-       className="group relative inline-flex items-center gap-2 border border-zinc-300 bg-zinc-50 px-4 py-2 text-xs text-zinc-600 transition-colors duration-200 hover:bg-zinc-100 hover:text-zinc-700"
+       className="group relative inline-flex items-center gap-2 border border-zinc-300 bg-zinc-50 px-4 py-2 text-xs text-black transition-colors duration-200 hover:bg-zinc-100 hover:text-zinc-700"
        style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}
        whileHover={{ scale: 1.02 }}
        whileTap={{ scale: 0.98 }}
@@ -1127,53 +1127,6 @@ export default function Personal() {
     </motion.section>
    )}
 
-   {/* Etc Section */}
-   <motion.section
-    id="etc"
-    variants={VARIANTS_SECTION}
-    transition={TRANSITION_SECTION}
-   >
-    <h3 className="mb-5 text-2xl font-medium text-zinc-900" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>etc</h3>
-    <div className="space-y-4">
-     <div className="grid grid-cols-1 gap-4">
-      <div className="flex gap-4">
-       <div className="flex-shrink-0 w-20 text-sm text-zinc-500 font-medium">
-        running
-       </div>
-       <div className="flex-1 text-zinc-600 ">
-        I enjoy running and have completed several marathons and half-marathons. Currently training for my next race.n(str
-       </div>
-      </div>
-      
-      <div className="flex gap-4">
-       <div className="flex-shrink-0 w-20 text-sm text-zinc-500 font-medium">
-        visuals 
-       </div>
-       <div className="flex-1 text-zinc-600 ">
-        Road cycling and mountain biking are my go-to activities for exploring new places and staying active.
-       </div>
-      </div>
-
-      <div className="flex gap-4">
-       <div className="flex-shrink-0 w-20 text-sm text-zinc-500 font-medium">
-        biking 
-       </div>
-       <div className="flex-1 text-zinc-600 ">
-        Road cycling and mountain biking are my go-to activities for exploring new places and staying active.
-       </div>
-      </div>
-      
-      <div className="flex gap-4">
-       <div className="flex-shrink-0 w-20 text-sm text-zinc-500 font-medium">
-        records
-       </div>
-       <div className="flex-1 text-zinc-600 ">
-        I collect vinyl records, mostly jazz, classical, and electronic music. Always looking for new additions to the collection.
-       </div>
-      </div>
-     </div>
-    </div>
-   </motion.section>
 
    {/* Bio Section Anchor */}
    <div id="bio" className="sr-only"></div>
@@ -1213,7 +1166,7 @@ export default function Personal() {
         </motion.button>
        </div>
        <div 
-        className="text-zinc-600 leading-relaxed"
+        className="text-black leading-relaxed"
         dangerouslySetInnerHTML={{ __html: bioContent || '<p>Loading...</p>' }}
        />
       </div>
