@@ -26,10 +26,9 @@ jobs:
       env:
         NEXT_PUBLIC_BASE_PATH: '/test'
         
-    - name: Deploy Test Site to gh-pages
+    - name: Deploy Test Site to test-branch
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./out
-        destination_dir: test
-        keep_files: true
+        publish_branch: test-branch
