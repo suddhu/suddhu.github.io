@@ -80,7 +80,7 @@ export function InfiniteScroll({ gifs, speed = 30 }: InfiniteScrollProps) {
   const [duplicatedGifs, setDuplicatedGifs] = useState<typeof gifs>([]);
   const [isHovered, setIsHovered] = useState(false);
   const [currentX, setCurrentX] = useState(0);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
   const startTimeRef = useRef<number>(0);
   const totalPausedTimeRef = useRef<number>(0);
 
