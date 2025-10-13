@@ -10,8 +10,7 @@ const nextConfig = {
     unoptimized: true
   },
   
-  // Set base path for GitHub Pages
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  // No base path needed - deploying to root
   
   // Experimental features for faster builds
   experimental: {

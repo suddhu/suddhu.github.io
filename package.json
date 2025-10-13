@@ -8,7 +8,7 @@
     "dev:debug": "NODE_OPTIONS='--inspect --no-deprecation' next dev -p 3000",
     "dev:verbose": "NODE_OPTIONS='--no-deprecation' DEBUG=* next dev -p 3000",
     "build": "NODE_OPTIONS='--no-deprecation' next build",
-    "export": "NODE_OPTIONS='--no-deprecation' next build && next export",
+    "export": "NODE_OPTIONS='--no-deprecation' next build",
     "start": "NODE_OPTIONS='--no-deprecation' next start",
     "lint": "next lint"
   },
