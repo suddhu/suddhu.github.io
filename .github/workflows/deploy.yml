@@ -25,10 +25,20 @@ jobs:
       
     - name: Build
       run: npm run build
+      env:
+        NEXT_PUBLIC_BASE_PATH: ${{ github.ref == 'refs/heads/nextjs-version' && '/test' || '' }}
       
-    - name: Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages (Main Site)
       uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/nextjs-version'
+      if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./out
+        
+    - name: Deploy to GitHub Pages (Test Site)
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/nextjs-version'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./out
+        destination_dir: test

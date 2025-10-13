@@ -10,8 +10,8 @@ const nextConfig = {
     unoptimized: true
   },
   
-  // Set base path for GitHub Pages (uncomment and update if using project page)
-  // basePath: '/your-repo-name',
+  // Set base path for GitHub Pages
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
   
   // Experimental features for faster builds
   experimental: {
