@@ -146,19 +146,8 @@ function ResearchPaper({ paper }: { paper: any }) {
     </div>
    </div>
    <div className="flex-1 min-w-0">
-    <h4 className="group relative font-[450] text-lg text-zinc-900">
-     <div className="flex-1">
-      {paper.title}
-      <div className="group relative inline-block ml-2">
-       <button className="inline-flex items-center gap-2 border border-zinc-300 bg-zinc-50 px-2 py-1 text-[8px] transition-colors duration-200 hover:bg-zinc-100" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>
-        <span>TL;DR</span>
-       </button>
-       <div className="absolute bottom-full left-0 mb-2 w-80 rounded-lg bg-zinc-900 p-3 text-sm text-zinc-100 opacity-0 transition-opacity duration-200 group-hover:opacity-100 pointer-events-none z-10">
-        {paper.description}
-        <div className="absolute top-full left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-zinc-900"></div>
-       </div>
-      </div>
-     </div>
+    <h4 className="font-[450] text-lg text-zinc-900">
+     {paper.title}
     </h4>
     <p className="text-base text-zinc-500 mt-1 mb-2">
      {paper.authors.split(', ').map((author: string, index: number) => {
