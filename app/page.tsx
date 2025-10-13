@@ -354,22 +354,33 @@ import {
 } from './data'
 
 // Videos for infinite scroll
-const SCROLL_GIFS: { src: string; alt: string; type?: 'image' | 'video' }[] = [
+const SCROLL_VIDEOS: { src: string; alt: string; type?: 'image' | 'video' }[] = [
  {
   src: '/media/atlas_1.mp4',
   alt: 'Atlas robot lab demonstration',
   type: 'video'
  },
  {
-  src: 'https://suddhu.github.io/neural-feels/video/results/real/bell_pepper.mp4',
-  alt: 'Neural feels bell pepper video',
+  src: '/media/neuralfeels_website.m4v',
+  alt: 'Neural feels website video',
   type: 'video'
  },
  {
   src: '/media/atlas_2.mp4',
   alt: 'Atlas robot lab demonstration 2',
   type: 'video'
- }
+ },
+ {
+  src: '/media/rotateit.mp4',
+  alt: 'Rotate it video',
+  type: 'video'
+ },
+ {
+  src: '/media/midastouch.m4v',
+  alt: 'Midas touch video',
+  type: 'video'
+ },
+
 ]
 
 // These values are Tailwind CSS utility classes that set the height and width of the icon components responsively.
@@ -621,7 +632,7 @@ export default function Personal() {
     transition={TRANSITION_SECTION}
    >
     <div className="relative">
-             <InfiniteScroll gifs={SCROLL_GIFS} speed={60} />
+             <InfiniteScroll gifs={SCROLL_VIDEOS} speed={80} />
     </div>
    </motion.section>
 
@@ -1155,7 +1166,7 @@ export default function Personal() {
      >
       <div className="space-y-4">
        <div className="flex items-center justify-between">
-        <h3 className="text-xl font-semibold text-zinc-900 ">Bio</h3>
+        <h3 className="press-start-2p-large text-zinc-900">Bio</h3>
         <motion.button
          onClick={() => setShowShortBio(false)}
          className="h-fit w-fit rounded-full bg-white p-1 hover:bg-zinc-100 transition-colors"
