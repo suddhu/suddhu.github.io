@@ -1,13 +1,11 @@
-name: Deploy to GitHub Pages
+name: Deploy Test Site to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [ nextjs-version ]
 
 jobs:
-  build-and-deploy:
+  build-and-deploy-test:
     runs-on: ubuntu-latest
     
     steps:
@@ -25,9 +23,13 @@ jobs:
       
     - name: Build
       run: npm run build
-      
-    - name: Deploy to GitHub Pages
+      env:
+        NEXT_PUBLIC_BASE_PATH: '/test'
+        
+    - name: Deploy Test Site to gh-pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./out
+        destination_dir: test
+        keep_files: true
