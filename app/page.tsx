@@ -585,56 +585,6 @@ export default function Personal() {
     </div>
    </motion.section>
 
-   {/* Atlas Videos Section */}
-   <motion.section
-    variants={VARIANTS_SECTION}
-    transition={TRANSITION_SECTION}
-   >
-    <h3 className="mb-5 text-2xl font-medium text-zinc-900" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>Research at Boston Dynamics</h3>
-    <div className="flex gap-8 items-start">
-     {/* Videos on the left */}
-     <div className="flex-shrink-0 w-80">
-      <div className="space-y-4">
-       <div className="rounded-lg overflow-hidden bg-zinc-100 shadow-lg">
-        <video
-         src="/media/atlas_1.mp4"
-         className="w-full h-auto object-contain"
-         autoPlay
-         loop
-         muted
-         playsInline
-        />
-       </div>
-       <div className="rounded-lg overflow-hidden bg-zinc-100 shadow-lg">
-        <video
-         src="/media/atlas_2.mp4"
-         className="w-full h-auto object-contain"
-         autoPlay
-         loop
-         muted
-         playsInline
-        />
-       </div>
-      </div>
-     </div>
-     
-     {/* Research description on the right */}
-     <div className="flex-1 min-w-0">
-      <div className="space-y-4 text-black leading-relaxed">
-       <p>
-        I work as a staff research scientist and tech lead on the Atlas humanoid robot project at Boston Dynamics. My research focuses on developing machine learning systems for whole-body manipulation and perception that enable Atlas to perform complex tasks in real-world environments.
-       </p>
-       <p>
-        My work spans computer vision, tactile sensing, and manipulation planning to create robust robotic systems that can operate autonomously in unstructured environments. This includes developing neural networks for object recognition, pose estimation, and manipulation strategies that allow Atlas to interact with objects and navigate complex scenarios.
-       </p>
-       <p>
-        The videos showcase some of our recent advances in autonomous manipulation, where Atlas can now perform complex tasks like automotive parts picking with minimal human intervention. This represents significant progress in making humanoid robots practical for real-world applications.
-       </p>
-      </div>
-     </div>
-    </div>
-   </motion.section>
-
    <motion.section
     id="news"
     variants={VARIANTS_SECTION}
@@ -762,6 +712,57 @@ export default function Personal() {
        </div>
       </div>
      )}
+    </div>
+   </motion.section>
+
+   {/* Atlas Videos Section */}
+   <motion.section
+    id="recent-work"
+    variants={VARIANTS_SECTION}
+    transition={TRANSITION_SECTION}
+   >
+    <h3 className="mb-5 text-2xl font-medium text-zinc-900" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>Work</h3>
+    <div className="flex gap-8 items-start">
+     {/* Videos on the left */}
+     <div className="flex-shrink-0 w-56">
+      <div className="space-y-3">
+       <div className="rounded-lg overflow-hidden bg-zinc-100 shadow-lg">
+        <video
+         src="/media/atlas_1.mp4"
+         className="w-full h-auto object-contain"
+         autoPlay
+         loop
+         muted
+         playsInline
+        />
+       </div>
+       <div className="rounded-lg overflow-hidden bg-zinc-100 shadow-lg">
+        <video
+         src="/media/atlas_2.mp4"
+         className="w-full h-auto object-contain"
+         autoPlay
+         loop
+         muted
+         playsInline
+        />
+       </div>
+      </div>
+     </div>
+     
+     {/* Research description on the right */}
+     <div className="flex-1 min-w-0">
+      <div className="space-y-3 text-black leading-tight">
+       <p>
+        I work as a staff research scientist and tech lead on the Atlas humanoid robot project at Boston Dynamics. My research focuses on developing machine learning systems for whole-body manipulation and perception that enable Atlas to perform complex tasks in real-world environments.
+       </p>
+       <p>
+        My work spans computer vision, tactile sensing, and manipulation planning to create robust robotic systems that can operate autonomously in unstructured environments. This includes developing neural networks for object recognition, pose estimation, and manipulation strategies that allow Atlas to interact with objects and navigate complex scenarios.
+       </p>
+       <p>
+        The videos showcase some of our recent advances in autonomous manipulation, where Atlas can now perform complex tasks like automotive parts picking with minimal human intervention. This represents significant progress in making humanoid robots practical for real-world applications.
+       </p>
+      </div>
+     </div>
     </div>
    </motion.section>
 
@@ -1046,7 +1047,7 @@ export default function Personal() {
     variants={VARIANTS_SECTION}
     transition={TRANSITION_SECTION}
    >
-            <h3 className="mb-5 text-2xl font-medium text-zinc-900" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>Research</h3>
+            <h3 className="mb-5 text-2xl font-medium text-zinc-900" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>Publications</h3>
         <div className="flex flex-col space-y-8">
      {RESEARCH_PAPERS.slice(0, 5).map((paper) => (
       <ResearchPaper key={paper.title} paper={paper} />
