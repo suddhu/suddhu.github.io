@@ -336,41 +336,11 @@ import {
  MorphingDialogContainer,
 } from '@/components/ui/morphing-dialog'
 import { AnimatedBackground } from '@/components/ui/animated-background'
-import { InfiniteScroll } from '@/components/ui/infinite-scroll'
 import {
  NAV_LINKS,
  RESEARCH_PAPERS,
 } from './data'
 
-// Videos for infinite scroll
-const SCROLL_VIDEOS: { src: string; alt: string; type?: 'image' | 'video' }[] = [
- {
-  src: '/media/atlas_1.mp4',
-  alt: 'Atlas robot lab demonstration',
-  type: 'video'
- },
- {
-  src: '/media/neuralfeels_website.m4v',
-  alt: 'Neural feels website video',
-  type: 'video'
- },
- {
-  src: '/media/atlas_2.mp4',
-  alt: 'Atlas robot lab demonstration 2',
-  type: 'video'
- },
- {
-  src: '/media/rotateit.mp4',
-  alt: 'Rotate it video',
-  type: 'video'
- },
- {
-  src: '/media/midastouch.m4v',
-  alt: 'Midas touch video',
-  type: 'video'
- },
-
-]
 
 // These values are Tailwind CSS utility classes that set the height and width of the icon components responsively.
 // "h-3 w-3" sets the height and width to 0.75rem (12px) on all screens.
@@ -615,13 +585,53 @@ export default function Personal() {
     </div>
    </motion.section>
 
-   {/* Infinite Horizontal Scroll Section */}
+   {/* Atlas Videos Section */}
    <motion.section
     variants={VARIANTS_SECTION}
     transition={TRANSITION_SECTION}
    >
-    <div className="relative">
-             <InfiniteScroll gifs={SCROLL_VIDEOS} speed={80} />
+    <div className="flex gap-8 items-start">
+     {/* Videos on the left */}
+     <div className="flex-shrink-0 w-80">
+      <div className="space-y-4">
+       <div className="rounded-lg overflow-hidden bg-zinc-100 shadow-lg">
+        <video
+         src="/media/atlas_1.mp4"
+         className="w-full h-auto object-contain"
+         autoPlay
+         loop
+         muted
+         playsInline
+        />
+       </div>
+       <div className="rounded-lg overflow-hidden bg-zinc-100 shadow-lg">
+        <video
+         src="/media/atlas_2.mp4"
+         className="w-full h-auto object-contain"
+         autoPlay
+         loop
+         muted
+         playsInline
+        />
+       </div>
+      </div>
+     </div>
+     
+     {/* Research description on the right */}
+     <div className="flex-1 min-w-0">
+      <h3 className="mb-4 text-xl font-medium text-zinc-900" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>Research at Boston Dynamics</h3>
+      <div className="space-y-4 text-black leading-relaxed">
+       <p>
+        I work as a staff research scientist and tech lead on the Atlas humanoid robot project at Boston Dynamics. My research focuses on developing machine learning systems for whole-body manipulation and perception that enable Atlas to perform complex tasks in real-world environments.
+       </p>
+       <p>
+        My work spans computer vision, tactile sensing, and manipulation planning to create robust robotic systems that can operate autonomously in unstructured environments. This includes developing neural networks for object recognition, pose estimation, and manipulation strategies that allow Atlas to interact with objects and navigate complex scenarios.
+       </p>
+       <p>
+        The videos showcase some of our recent advances in autonomous manipulation, where Atlas can now perform complex tasks like automotive parts picking with minimal human intervention. This represents significant progress in making humanoid robots practical for real-world applications.
+       </p>
+      </div>
+     </div>
     </div>
    </motion.section>
 
