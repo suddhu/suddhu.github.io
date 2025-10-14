@@ -6,7 +6,7 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'news', 'research']
+      const sections = ['home', 'news', 'recent-work', 'research']
       const scrollPosition = window.scrollY + 150 // Increased offset for fixed nav
 
       for (const section of sections) {
@@ -67,10 +67,17 @@ export function Navigation() {
           </button>
           <span className="text-zinc-400">/</span>
           <button 
+            onClick={() => scrollToSection('recent-work')}
+            className={getLinkClass('recent-work')}
+          >
+            Work
+          </button>
+          <span className="text-zinc-400">/</span>
+          <button 
             onClick={() => scrollToSection('research')}
             className={getLinkClass('research')}
           >
-            Research
+            Publications
           </button>
         </div>
       </div>
