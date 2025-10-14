@@ -590,6 +590,7 @@ export default function Personal() {
     variants={VARIANTS_SECTION}
     transition={TRANSITION_SECTION}
    >
+    <h3 className="mb-5 text-2xl font-medium text-zinc-900" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>Research at Boston Dynamics</h3>
     <div className="flex gap-8 items-start">
      {/* Videos on the left */}
      <div className="flex-shrink-0 w-80">
@@ -619,7 +620,6 @@ export default function Personal() {
      
      {/* Research description on the right */}
      <div className="flex-1 min-w-0">
-      <h3 className="mb-4 text-xl font-medium text-zinc-900" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>Research at Boston Dynamics</h3>
       <div className="space-y-4 text-black leading-relaxed">
        <p>
         I work as a staff research scientist and tech lead on the Atlas humanoid robot project at Boston Dynamics. My research focuses on developing machine learning systems for whole-body manipulation and perception that enable Atlas to perform complex tasks in real-world environments.
