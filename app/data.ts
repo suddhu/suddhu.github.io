@@ -48,7 +48,7 @@ export const EMAIL = 'suddhus@gmail.com'
 // Top navigation links rendered as pill-style tabs under the header.
 // Replace '#' with your real URLs.
 export const NAV_LINKS: SocialLink[] = [
-  { label: 'CV', link: '/CV_Suddhu.pdf' },
+  { label: 'CV', link: '/cv/CV_Suddhu.pdf' },
   { label: 'Scholar', link: 'https://scholar.google.com/citations?user=dNX1oxoAAAAJ&hl=en' },
   { label: 'Github', link: 'https://github.com/suddhu/' },
   { label: 'LinkedIn', link: 'https://www.linkedin.com/in/sudharshansuresh/' },
