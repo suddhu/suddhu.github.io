@@ -178,7 +178,7 @@ export function Header() {
           </div>
           <EmailScrambler />
           <p className="text-lg text-black  mt-4">
-            I&apos;m a staff research scientist and tech lead at{' '}
+            I&apos;m a staff research scientist and technical lead at{' '}
             <a href="https://www.bostondynamics.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
               Boston Dynamics
             </a>{' '}
@@ -186,8 +186,7 @@ export function Header() {
             <a href="https://www.bostondynamics.com/robots/atlas/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
               Atlas
             </a>{' '}
-            humanoid project.
-            I specialize in learning from egocentric data, to enable quick re-tasking of robots with multimodal data.
+            humanoid project. I train humanoid policies with alternative data sources like egocentric human data. 
           </p>
           <p className="text-lg text-black  mt-4">
             I earned my Ph.D. in Robotics from{' '}
@@ -199,7 +198,7 @@ export function Header() {
             >
               CMU
             </a>
-            , while working as a part-time researcher at{' '}
+            , while working as a visiting researcher at{' '}
             <a
               href="https://ai.facebook.com/"
               target="_blank"
@@ -208,7 +207,7 @@ export function Header() {
             >
               FAIR
             </a>{' '}
-            (Meta) on the manipulation and tactile sensing team. My{' '}
+            (Meta) on the dexterous manipulation team. My{' '}
             <a
               href="https://kilthub.cmu.edu/articles/thesis/Perception_amidst_interaction_spatial_AI_with_vision_and_touch_for_robot_manipulation/25316152?file=44750527"
               target="_blank"
