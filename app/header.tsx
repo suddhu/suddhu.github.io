@@ -167,7 +167,7 @@ export function Header() {
         <Image
           src="/profile.png"
           alt="Portrait of Sudharshan Suresh"
-          className="hidden sm:block rounded-2xl ring-1 ring-zinc-200 dark:ring-zinc-700 float-left mr-6 mb-4"
+          className="mx-auto sm:float-left rounded-2xl ring-1 ring-zinc-200 dark:ring-zinc-700 sm:mr-6 mb-4"
           width={300}
           height={300}
           priority

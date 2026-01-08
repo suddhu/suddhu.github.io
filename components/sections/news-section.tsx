@@ -150,10 +150,10 @@ export function NewsSection() {
     <motion.div
      initial={{ opacity: 0, y: 20 }}
      animate={{ opacity: 1, y: 0 }}
-     className="space-y-2 mt-2"
+     className="space-y-1 mt-1"
     >
-     <div className="grid grid-cols-1 gap-2">
-      <div className="flex gap-4">
+     <div className="grid grid-cols-1 gap-1">
+      <div className="flex gap-4 py-0.5">
        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         Oct
        </div>
@@ -176,7 +176,7 @@ export function NewsSection() {
        </div>
       </div>
       
-      <div className="flex gap-4">
+      <div className="flex gap-4 py-0.5">
        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         Mar
        </div>
@@ -188,7 +188,7 @@ export function NewsSection() {
        </div>
       </div>
       
-      <div className="flex gap-4">
+      <div className="flex gap-4 py-0.5">
        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         Feb
        </div>
@@ -205,14 +205,14 @@ export function NewsSection() {
       </div>
       
       {/* Year divider */}
-      <div className="flex items-center gap-4 py-2">
+      <div className="flex items-center gap-4 py-1">
        <div className="flex-shrink-0 w-16 text-lg text-zinc-500 dark:text-zinc-400 font-medium">
         2023 ↓
        </div>
        <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
       </div>
       
-      <div className="flex gap-4">
+      <div className="flex gap-4 py-0.5">
        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         Dec
        </div>
@@ -224,7 +224,7 @@ export function NewsSection() {
        </div>
       </div>
       
-      <div className="flex gap-4">
+      <div className="flex gap-4 py-0.5">
        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         Aug
        </div>
@@ -244,7 +244,7 @@ export function NewsSection() {
        </div>
       </div>
       
-      <div className="flex gap-4">
+      <div className="flex gap-4 py-0.5">
        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         Apr
        </div>
@@ -258,14 +258,14 @@ export function NewsSection() {
       </div>
       
       {/* Year divider */}
-      <div className="flex items-center gap-4 py-2">
+      <div className="flex items-center gap-4 py-1">
        <div className="flex-shrink-0 w-16 text-lg text-zinc-500 dark:text-zinc-400 font-medium">
         2022 ↓
        </div>
        <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
       </div>
       
-      <div className="flex gap-4">
+      <div className="flex gap-4 py-0.5">
        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         Dec
        </div>
@@ -284,7 +284,7 @@ export function NewsSection() {
        </div>
       </div>
       
-      <div className="flex gap-4">
+      <div className="flex gap-4 py-0.5">
        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         Oct
        </div>
@@ -296,7 +296,7 @@ export function NewsSection() {
        </div>
       </div>
       
-      <div className="flex gap-4">
+      <div className="flex gap-4 py-0.5">
        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         Sep
        </div>
@@ -312,7 +312,7 @@ export function NewsSection() {
        </div>
       </div>
       
-      <div className="flex gap-4">
+      <div className="flex gap-4 py-0.5">
        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         Aug
        </div>
@@ -330,19 +330,6 @@ export function NewsSection() {
       
       <div className="flex gap-4 py-0.5">
        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
-        May
-       </div>
-       <div className="flex-1 text-lg text-black dark:text-zinc-300">
-        Organized the{' '}
-        <a href="https://www.roboticsdebates.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
-         Debates on the Future of Robotics Research workshop
-        </a>{' '}
-        at ICRA &apos;22
-       </div>
-      </div>
-      
-      <div className="flex gap-4">
-       <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         Apr
        </div>
        <div className="flex-1 text-lg text-black dark:text-zinc-300">
@@ -354,7 +341,7 @@ export function NewsSection() {
        </div>
       </div>
       
-      <div className="flex gap-4">
+      <div className="flex gap-4 py-0.5">
        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         Jan
        </div>
@@ -370,14 +357,14 @@ export function NewsSection() {
       </div>
       
       {/* Year divider */}
-      <div className="flex items-center gap-4 py-2">
+      <div className="flex items-center gap-4 py-1">
        <div className="flex-shrink-0 w-16 text-lg text-zinc-500 dark:text-zinc-400 font-medium">
         2021 ↓
        </div>
        <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
       </div>
       
-      <div className="flex gap-4">
+      <div className="flex gap-4 py-0.5">
        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         Aug
        </div>

@@ -15,8 +15,8 @@ export function WorkSection() {
   >
    <h3 className="mb-5 text-2xl font-medium text-zinc-900 dark:text-zinc-100" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>Work</h3>
    <div className="space-y-6">
-    {/* Media items horizontally */}
-    <div className="flex gap-4 items-stretch">
+    {/* Media items */}
+    <div className="flex flex-col sm:flex-row gap-4 items-stretch">
      {/* Video 1 */}
      <div className="flex-1 rounded-lg overflow-hidden bg-zinc-100 dark:bg-zinc-800 shadow-lg relative">
       {playingVideo1 ? (

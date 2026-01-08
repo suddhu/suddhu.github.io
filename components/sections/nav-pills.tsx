@@ -30,7 +30,7 @@ interface NavPillsProps {
 export function NavPills({ onShowBio }: NavPillsProps) {
  return (
   <div className="flex justify-center">
-   <div className="flex flex-nowrap items-center gap-1 p-0 whitespace-nowrap">
+   <div className="flex flex-wrap items-center justify-center gap-1 p-0">
     <AnimatedBackground
      enableHover
      className="h-full w-full rounded-lg bg-zinc-300 dark:bg-zinc-700"

@@ -31,8 +31,8 @@ const researchLinkIconFor = (linkType: string) => {
 
 export function ResearchPaper({ paper, priority = false }: { paper: any, priority?: boolean }) {
  return (
-  <div key={paper.title} className="flex gap-6 items-center">
-   <div className="flex-shrink-0 w-53">
+  <div key={paper.title} className="flex flex-col sm:flex-row gap-4 sm:gap-6 sm:items-center">
+   <div className="flex-shrink-0 w-full sm:w-53">
     <div>
      {paper.images && paper.images.length > 1 ? (
       <div 
