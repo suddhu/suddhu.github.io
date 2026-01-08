@@ -14,17 +14,17 @@ export function NewsSection() {
    transition={TRANSITION_SECTION}
   >
    <h3 className="mb-5 text-2xl font-medium text-zinc-900 dark:text-zinc-100" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>News</h3>
-   <div className="space-y-2">
-    <div className="grid grid-cols-1 gap-2">
+   <div className="space-y-1">
+    <div className="grid grid-cols-1 gap-1">
      {/* Year divider */}
-     <div className="flex items-center gap-4 py-2">
+     <div className="flex items-center gap-4 py-1">
       <div className="flex-shrink-0 w-16 text-lg text-zinc-500 dark:text-zinc-400 font-medium">
        2025 ↓
       </div>
       <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
      </div>
      
-     <div className="flex gap-4">
+     <div className="flex gap-4 py-0.5">
       <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
        Jun
       </div>
@@ -40,13 +40,13 @@ export function NewsSection() {
       </div>
      </div>
      
-     <div className="flex gap-4">
+     <div className="flex gap-4 py-0.5">
       <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
        May
       </div>
       <div className="flex-1 text-lg text-black dark:text-zinc-300">
        I&apos;m a featured interview in our team&apos;s{' '}
-       <a href="https://youtu.be/oe1dke3Cf7I?si=h1efM6LhXF8iPMxO" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
+       <a href="https://youtu.be/oe1dke3Cf7I?si=h1efM6LhF7iPMxO" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
         video release
        </a>{' '}
        and a contributing author to the accompanying{' '}
@@ -56,7 +56,7 @@ export function NewsSection() {
       </div>
      </div>
      
-     <div className="flex gap-4">
+     <div className="flex gap-4 py-0.5">
       <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
        May
       </div>
@@ -70,14 +70,14 @@ export function NewsSection() {
      </div>
      
      {/* Year divider */}
-     <div className="flex items-center gap-4 py-2">
+     <div className="flex items-center gap-4 py-1">
       <div className="flex-shrink-0 w-16 text-lg text-zinc-500 dark:text-zinc-400 font-medium">
        2024 ↓
       </div>
       <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
      </div>
      
-     <div className="flex gap-4">
+     <div className="flex gap-4 py-0.5">
       <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
        Nov
       </div>
@@ -102,7 +102,7 @@ export function NewsSection() {
      <div className="relative">
       {/* Preview of first hidden update */}
       <div className="pointer-events-none" style={{ opacity: 0.8 }}>
-       <div className="flex gap-4">
+       <div className="flex gap-4 py-0.5">
         <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Oct
         </div>
@@ -328,8 +328,8 @@ export function NewsSection() {
        </div>
       </div>
       
-      <div className="flex gap-4">
-       <div className="flex-shrink-0 w-24 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+      <div className="flex gap-4 py-0.5">
+       <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         May
        </div>
        <div className="flex-1 text-lg text-black dark:text-zinc-300">
@@ -389,8 +389,8 @@ export function NewsSection() {
        </div>
       </div>
       
-      <div className="flex gap-4">
-       <div className="flex-shrink-0 w-24 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+      <div className="flex gap-4 py-0.5">
+       <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         May
        </div>
        <div className="flex-1 text-lg text-black dark:text-zinc-300">
