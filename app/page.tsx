@@ -12,14 +12,14 @@ function ResearchPaper({ paper }: { paper: any }) {
     <div>
      {paper.images && paper.images.length > 1 ? (
       <div 
-       className="relative rounded-2xl bg-zinc-50/40 p-1 cursor-zoom-in"
+       className="relative rounded-2xl bg-zinc-50/40 dark:bg-zinc-800/40 p-1 cursor-zoom-in"
        onClick={() => {
         const modal = document.createElement('div');
-        modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/50';
+        modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm';
         modal.onclick = () => modal.remove();
         
         const container = document.createElement('div');
-        container.className = 'max-h-[90vh] max-w-[90vw] rounded-xl overflow-y-auto';
+        container.className = 'max-h-[90vh] max-w-[90vw] rounded-xl overflow-y-auto bg-transparent';
         
         paper.images!.forEach((imageSrc: string, index: number) => {
          const isVideo = imageSrc.endsWith('.mp4') || imageSrc.endsWith('.m4v') || imageSrc.endsWith('.webm') || imageSrc.endsWith('.mov');
@@ -63,8 +63,7 @@ function ResearchPaper({ paper }: { paper: any }) {
            autoPlay
            loop
            muted
-           className="w-full rounded-xl object-cover"
-           style={{ border: '0.25px solid #F0F0ED' }}
+           className="w-full rounded-xl object-cover border-[0.25px] border-[#F0F0ED] dark:border-zinc-800"
           />
          ) : (
           <Image
@@ -73,8 +72,7 @@ function ResearchPaper({ paper }: { paper: any }) {
            alt={`${paper.title} - Image ${index + 1}`}
            width={400}
            height={300}
-           className="w-full rounded-xl object-cover"
-           style={{ border: '0.25px solid #F0F0ED' }}
+           className="w-full rounded-xl object-cover border-[0.25px] border-[#F0F0ED] dark:border-zinc-800"
            priority={false}
           />
          );
@@ -83,10 +81,10 @@ function ResearchPaper({ paper }: { paper: any }) {
       </div>
      ) : (
       <div 
-       className="relative rounded-2xl bg-zinc-50/40 p-1 cursor-zoom-in"
+       className="relative rounded-2xl bg-zinc-50/40 dark:bg-zinc-800/40 p-1 cursor-zoom-in"
        onClick={() => {
         const modal = document.createElement('div');
-        modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/50';
+        modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm';
         modal.onclick = () => modal.remove();
         
         const isVideo = paper.image.endsWith('.mp4') || paper.image.endsWith('.m4v') || paper.image.endsWith('.webm') || paper.image.endsWith('.mov');
@@ -126,8 +124,7 @@ function ResearchPaper({ paper }: { paper: any }) {
           autoPlay
           loop
           muted
-          className="w-full rounded-xl object-cover"
-          style={{ border: '0.25px solid #F0F0ED' }}
+          className="w-full rounded-xl object-cover border-[0.25px] border-[#F0F0ED] dark:border-zinc-800"
          />
         ) : (
          <Image
@@ -135,8 +132,7 @@ function ResearchPaper({ paper }: { paper: any }) {
           alt={paper.title}
           width={400}
           height={300}
-          className="w-full rounded-xl object-cover"
-          style={{ border: '0.25px solid #F0F0ED' }}
+          className="w-full rounded-xl object-cover border-[0.25px] border-[#F0F0ED] dark:border-zinc-800"
           priority={false}
          />
         );
@@ -146,10 +142,10 @@ function ResearchPaper({ paper }: { paper: any }) {
     </div>
    </div>
    <div className="flex-1 min-w-0">
-    <h4 className="font-[450] text-lg text-zinc-900">
+    <h4 className="font-[450] text-lg text-zinc-900 dark:text-zinc-100">
      {paper.title}
     </h4>
-    <p className="text-base text-zinc-500 mt-1 mb-2">
+    <p className="text-base text-zinc-500 dark:text-zinc-400 mt-1 mb-2">
      {paper.authors.split(', ').map((author: string, index: number) => {
       const isLast = index === paper.authors.split(', ').length - 1;
       const authorName = author.replace(', and ', '').replace(' and ', '');
@@ -163,12 +159,12 @@ function ResearchPaper({ paper }: { paper: any }) {
           href={paper.authorLinks![authorName]}
           target="_blank"
           rel="noopener noreferrer"
-          className={`underline decoration-zinc-400 underline-offset-2 ${isSudharshan ? 'font-semibold text-zinc-900' : 'text-black'}`}
+          className={`underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ${isSudharshan ? 'font-semibold text-zinc-900 dark:text-zinc-100' : 'text-black dark:text-zinc-300'}`}
          >
           {authorName}
          </a>
         ) : (
-         <span className={isSudharshan ? 'font-semibold text-zinc-900' : ''}>
+         <span className={isSudharshan ? 'font-semibold text-zinc-900 dark:text-zinc-100' : 'text-black dark:text-zinc-300'}>
           {authorName}
          </span>
         )}
@@ -177,17 +173,17 @@ function ResearchPaper({ paper }: { paper: any }) {
       );
      })}
     </p>
-    <div className="text-lg text-zinc-500 flex flex-wrap items-baseline gap-2">
+    <div className="text-lg text-zinc-500 dark:text-zinc-400 flex flex-wrap items-baseline gap-2">
      <span>{paper.venue}, {paper.year}</span>
      {paper.highlights && paper.highlights.length > 0 && (
-      <span className="text-sm font-semibold" style={{ color: '#0047FF' }}>
+      <span className="text-sm font-semibold text-[#0047FF] dark:text-[#3B82F6]">
        [{paper.highlights.join(', ')}]
       </span>
      )}
     </div>
     {paper.press && paper.press.length > 0 && (
      <div className="mt-1">
-      <span className="text-sm text-black inline-flex items-center gap-1">
+      <span className="text-sm text-black dark:text-zinc-300 inline-flex items-center gap-1">
        {researchLinkIconFor('press')} {paper.press.map((pressItem: string, index: number) => {
         const match = pressItem.match(/^(.+?) \[(.+?)\]$/);
         if (match) {
@@ -198,7 +194,7 @@ function ResearchPaper({ paper }: { paper: any }) {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline decoration-zinc-400 underline-offset-2 "
+            className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 "
            >
             {title}
            </a>
@@ -220,106 +216,26 @@ function ResearchPaper({ paper }: { paper: any }) {
     <div className="mt-3">
      <AnimatedBackground
       enableHover
-      className="h-full w-full rounded-lg bg-zinc-100"
+      className="h-full w-full rounded-lg bg-zinc-100 dark:bg-zinc-800"
       transition={{ type: 'spring', bounce: 0, duration: 0.2 }}
      >
       <div className="flex flex-wrap gap-1 p-0">
-       {paper.links.paper && (
-        <a
-         href={paper.links.paper}
-         target="_blank"
-         rel="noopener noreferrer"
-         data-id="paper"
-         className="group relative inline-flex shrink-0 items-center gap-1 rounded-full bg-zinc-100 px-1.5 py-0.5 text-base text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50  "
-        >
-         {researchLinkIconFor('paper')}
-         <span>paper</span>
-        </a>
-       )}
-       {paper.links.website && (
-        <a
-         href={paper.links.website}
-         target="_blank"
-         rel="noopener noreferrer"
-         data-id="website"
-         className="group relative inline-flex shrink-0 items-center gap-1 rounded-full bg-zinc-100 px-1.5 py-0.5 text-base text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50  "
-        >
-         {researchLinkIconFor('website')}
-         <span>website</span>
-        </a>
-       )}
-       {paper.links.code && (
-        <a
-         href={paper.links.code}
-         target="_blank"
-         rel="noopener noreferrer"
-         data-id="code"
-         className="group relative inline-flex shrink-0 items-center gap-1 rounded-full bg-zinc-100 px-1.5 py-0.5 text-base text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50  "
-        >
-         {researchLinkIconFor('code')}
-         <span>code</span>
-        </a>
-       )}
-       {paper.links.data && (
-        <a
-         href={paper.links.data}
-         target="_blank"
-         rel="noopener noreferrer"
-         data-id="data"
-         className="group relative inline-flex shrink-0 items-center gap-1 rounded-full bg-zinc-100 px-1.5 py-0.5 text-base text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50  "
-        >
-         {researchLinkIconFor('data')}
-         <span>data</span>
-        </a>
-       )}
-       {paper.links.twitter && (
-        <a
-         href={paper.links.twitter}
-         target="_blank"
-         rel="noopener noreferrer"
-         data-id="twitter"
-         className="group relative inline-flex shrink-0 items-center gap-1 rounded-full bg-zinc-100 px-1.5 py-0.5 text-base text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50  "
-        >
-         {researchLinkIconFor('twitter')}
-         <span>twitter</span>
-        </a>
-       )}
-       {paper.links.presentation && (
-        <a
-         href={paper.links.presentation}
-         target="_blank"
-         rel="noopener noreferrer"
-         data-id="presentation"
-         className="group relative inline-flex shrink-0 items-center gap-1 rounded-full bg-zinc-100 px-1.5 py-0.5 text-base text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50  "
-        >
-         {researchLinkIconFor('presentation')}
-         <span>presentation</span>
-        </a>
-       )}
-       {paper.links.slides && (
-        <a
-         href={paper.links.slides}
-         target="_blank"
-         rel="noopener noreferrer"
-         data-id="slides"
-         className="group relative inline-flex shrink-0 items-center gap-1 rounded-full bg-zinc-100 px-1.5 py-0.5 text-base text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50  "
-        >
-         {researchLinkIconFor('slides')}
-         <span>slides</span>
-        </a>
-       )}
-       {paper.links.poster && (
-        <a
-         href={paper.links.poster}
-         target="_blank"
-         rel="noopener noreferrer"
-         data-id="poster"
-         className="group relative inline-flex shrink-0 items-center gap-1 rounded-full bg-zinc-100 px-1.5 py-0.5 text-base text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50  "
-        >
-         {researchLinkIconFor('poster')}
-         <span>poster</span>
-        </a>
-       )}
+       {Object.entries(paper.links).map(([key, value]) => {
+         if (!value) return null;
+         return (
+          <a
+           key={key}
+           href={value as string}
+           target="_blank"
+           rel="noopener noreferrer"
+           data-id={key}
+           className="group relative inline-flex shrink-0 items-center gap-1 rounded-full bg-zinc-100 dark:bg-zinc-800 px-1.5 py-0.5 text-base text-black dark:text-zinc-200 transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900"
+          >
+           {researchLinkIconFor(key)}
+           <span>{key}</span>
+          </a>
+         );
+       })}
       </div>
      </AnimatedBackground>
     </div>
@@ -434,7 +350,7 @@ function ProjectVideo({ src }: ProjectVideoProps) {
     />
    </MorphingDialogTrigger>
    <MorphingDialogContainer>
-    <MorphingDialogContent className="relative aspect-video rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset ">
+    <MorphingDialogContent className="relative aspect-video rounded-2xl bg-zinc-50 dark:bg-zinc-900 p-1 ring-1 ring-zinc-200/50 dark:ring-zinc-800/50 ring-inset ">
      <video
       src={src}
       autoPlay
@@ -444,7 +360,7 @@ function ProjectVideo({ src }: ProjectVideoProps) {
      />
     </MorphingDialogContent>
     <MorphingDialogClose
-     className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
+     className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white dark:bg-zinc-800 p-1"
      variants={{
       initial: { opacity: 0 },
       animate: {
@@ -454,7 +370,7 @@ function ProjectVideo({ src }: ProjectVideoProps) {
       exit: { opacity: 0, transition: { duration: 0 } },
      }}
     >
-     <XIcon className="h-5 w-5 text-zinc-500" />
+     <XIcon className="h-5 w-5 text-zinc-500 dark:text-zinc-400" />
     </MorphingDialogClose>
    </MorphingDialogContainer>
   </MorphingDialog>
@@ -472,7 +388,7 @@ function MagneticSocialLink({
   <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
    <a
     href={link}
-    className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50  "
+    className="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 dark:bg-zinc-800 px-2.5 py-1 text-sm text-black dark:text-zinc-200 transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900"
    >
     {children}
     <svg
@@ -544,7 +460,7 @@ export default function Personal() {
       <div className="flex flex-nowrap items-center gap-1 p-0 whitespace-nowrap">
        <AnimatedBackground
         enableHover
-        className="h-full w-full rounded-lg bg-zinc-300"
+        className="h-full w-full rounded-lg bg-zinc-300 dark:bg-zinc-700"
         transition={{ type: 'spring', bounce: 0, duration: 0.2 }}
        >
         {NAV_LINKS.map((item) => (
@@ -555,7 +471,7 @@ export default function Personal() {
           target={item.label === 'Short bio' ? undefined : '_blank'}
           rel={item.label === 'Short bio' ? undefined : 'noopener noreferrer'}
           data-id={item.label}
-          className="group relative inline-flex items-center gap-1 rounded-full bg-zinc-100 px-1.5 py-0.5 text-[12px] sm:px-2 sm:py-1 sm:text-[14px] text-black transition-colors duration-200  "
+          className="group relative inline-flex items-center gap-1 rounded-full bg-zinc-100 dark:bg-zinc-800 px-1.5 py-0.5 text-[12px] sm:px-2 sm:py-1 sm:text-[14px] text-black dark:text-zinc-200 transition-colors duration-200  "
          >
           <span className="inline-flex items-center gap-1">
            {linkIconFor(item.label)}
@@ -568,7 +484,7 @@ export default function Personal() {
      </div>
 
      <div className="text-center">
-      <p className="text-sm text-zinc-500 inline-flex items-center">
+      <p className="text-sm text-zinc-500 dark:text-zinc-400 inline-flex items-center">
        <img 
         src="https://bostondynamics.com/wp-content/uploads/2023/06/cropped-Boston-Dynamic_favicon-192x192.jpg" 
         alt="Boston Dynamics Icon" 
@@ -578,7 +494,7 @@ export default function Personal() {
         href="https://bostondynamics.wd1.myworkdayjobs.com/en-US/Boston_Dynamics?q=%27research+scientist+atlas%27&workerSubType=94b44667d8eb01113483ddaebc003906&timeType=2ea36fadc45601e65397a3a4024b5800&locations=94b44667d8eb01465fcf3edabd006468" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="underline decoration-zinc-400 underline-offset-2 text-[0.9em]"
+        className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 text-[0.9em]"
        >
         we&apos;re hiring, reach out!
        </a>
@@ -592,56 +508,56 @@ export default function Personal() {
     variants={VARIANTS_SECTION}
     transition={TRANSITION_SECTION}
    >
-            <h3 className="mb-5 text-2xl font-medium text-zinc-900" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>News</h3>
+            <h3 className="mb-5 text-2xl font-medium text-zinc-900 dark:text-zinc-100" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>News</h3>
     <div className="space-y-2">
      <div className="grid grid-cols-1 gap-2">
       {/* Year divider */}
       <div className="flex items-center gap-4 py-2">
-       <div className="flex-shrink-0 w-16 text-base text-zinc-500 font-medium">
+       <div className="flex-shrink-0 w-16 text-base text-zinc-500 dark:text-zinc-400 font-medium">
         2025 ↓
        </div>
-       <div className="flex-1 border-t border-zinc-300 "></div>
+       <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
       </div>
       
       <div className="flex gap-4">
-       <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+       <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
         Jun
        </div>
-       <div className="flex-1 text-black ">
+       <div className="flex-1 text-black dark:text-zinc-300">
         I did a deep-dive into our whole-body manipulation and vision stack at the{' '}
-        <a href="https://dex-manipulation.github.io/rss2025/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+        <a href="https://dex-manipulation.github.io/rss2025/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
          RSS Dexterous Manipulation Workshop
         </a>
         , link to the invited talk{' '}
-        <a href="https://youtu.be/7a5HYjQ4wJo?si=E3kdseb2sUG0MvXL&t=2442" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+        <a href="https://youtu.be/7a5HYjQ4wJo?si=E3kdseb2sUG0MvXL&t=2442" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
          here
         </a>.
        </div>
       </div>
       
       <div className="flex gap-4">
-       <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+       <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
         May
        </div>
-       <div className="flex-1 text-black ">
+       <div className="flex-1 text-black dark:text-zinc-300">
         I&apos;m a featured interview in our team&apos;s{' '}
-        <a href="https://youtu.be/oe1dke3Cf7I?si=h1efM6LhXF8iPMxO" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+        <a href="https://youtu.be/oe1dke3Cf7I?si=h1efM6LhXF8iPMxO" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
          video release
         </a>{' '}
         and a contributing author to the accompanying{' '}
-        <a href="https://bostondynamics.com/blog/making-atlas-see-the-world/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+        <a href="https://bostondynamics.com/blog/making-atlas-see-the-world/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
          blogpost
         </a>
        </div>
       </div>
       
       <div className="flex gap-4">
-       <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+       <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
         May
        </div>
-       <div className="flex-1 text-black ">
+       <div className="flex-1 text-black dark:text-zinc-300">
         Selected to be part of the{' '}
-        <a href="https://sites.google.com/view/rsspioneers2025/participants?authuser=0" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+        <a href="https://sites.google.com/view/rsspioneers2025/participants?authuser=0" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
          RSS Pioneers Workshop
         </a>
         , one of 33 PhD and early-career industry researchers.
@@ -650,26 +566,26 @@ export default function Personal() {
       
       {/* Year divider */}
       <div className="flex items-center gap-4 py-2">
-       <div className="flex-shrink-0 w-16 text-base text-zinc-500 font-medium">
+       <div className="flex-shrink-0 w-16 text-base text-zinc-500 dark:text-zinc-400 font-medium">
         2024 ↓
        </div>
-       <div className="flex-1 border-t border-zinc-300 "></div>
+       <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
       </div>
       
       <div className="flex gap-4">
-       <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+       <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
         Nov
        </div>
-       <div className="flex-1 text-black ">
+       <div className="flex-1 text-black dark:text-zinc-300">
         NeuralFeels is{' '}
-        <a href="https://www.science.org/stoken/author-tokens/ST-2331/full" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+        <a href="https://www.science.org/stoken/author-tokens/ST-2331/full" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
          published in Science Robotics
         </a>{' '}
         and featured as{' '}
-        <a href="https://www.science.org/toc/scirobotics/9/96" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+        <a href="https://www.science.org/toc/scirobotics/9/96" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
          cover of November issue
         </a>{' '}
-        (<a href="https://www.ri.cmu.edu/cmu-and-partners-redefine-robotic-perception-with-neuralfeels/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+        (<a href="https://www.ri.cmu.edu/cmu-and-partners-redefine-robotic-perception-with-neuralfeels/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
          spotlight article
         </a>).
        </div>
@@ -682,23 +598,23 @@ export default function Personal() {
        {/* Preview of first hidden update */}
        <div className="pointer-events-none" style={{ opacity: 0.8 }}>
         <div className="flex gap-4">
-         <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+         <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
           Oct
          </div>
-         <div className="flex-1 text-black ">
+         <div className="flex-1 text-black dark:text-zinc-300">
           My work on Atlas was{' '}
-          <a href="https://youtu.be/F_7IPm7f1vI?si=woSN8Jax0F6XK_P3" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+          <a href="https://youtu.be/F_7IPm7f1vI?si=woSN8Jax0F6XK_P3" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
            featured in their autonomous demo
           </a>{' '}
-          (<a href="https://spectrum.ieee.org/boston-dynamics-new-atlas" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+          (<a href="https://spectrum.ieee.org/boston-dynamics-new-atlas" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
            IEEE
           </a>
           ,{' '}
-          <a href="https://techcrunch.com/2024/10/30/boston-dynamics-electric-atlas-humanoid-executes-autonomous-automotive-parts-picking/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+          <a href="https://techcrunch.com/2024/10/30/boston-dynamics-electric-atlas-humanoid-executes-autonomous-automotive-parts-picking/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
            TechCrunch
           </a>
           ,{' '}
-          <a href="https://www.theverge.com/2024/10/30/24283592/boston-dynamics-atlas-robot-autonomous" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+          <a href="https://www.theverge.com/2024/10/30/24283592/boston-dynamics-atlas-robot-autonomous" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
            Verge
           </a>).
          </div>
@@ -706,12 +622,12 @@ export default function Personal() {
        </div>
        
        {/* Fade out gradient overlay */}
-                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#FBFBF8] via-[#FBFBF8] to-transparent pointer-events-none" style={{ height: '80px' }}></div>
+                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#FBFBF8] via-[#FBFBF8] dark:from-zinc-950 dark:via-zinc-950 to-transparent pointer-events-none" style={{ height: '80px' }}></div>
        
        <div className="flex justify-center mt-4">
         <motion.button
          onClick={() => setShowAllUpdates(true)}
-         className="group relative inline-flex items-center gap-2 border border-zinc-300 bg-zinc-50 px-4 py-2 text-xs text-black transition-colors duration-200 hover:bg-zinc-100 hover:text-zinc-700"
+         className="group relative inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 px-4 py-2 text-xs text-black dark:text-zinc-200 transition-colors duration-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-700 dark:hover:text-zinc-100"
          style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}
          whileHover={{ scale: 1.02 }}
          whileTap={{ scale: 0.98 }}
@@ -736,51 +652,51 @@ export default function Personal() {
      <div className="space-y-2">
       <div className="grid grid-cols-1 gap-2">
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Oct
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          My work on Atlas was{' '}
-         <a href="https://youtu.be/F_7IPm7f1vI?si=woSN8Jax0F6XK_P3" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://youtu.be/F_7IPm7f1vI?si=woSN8Jax0F6XK_P3" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           featured in their autonomous demo
          </a>{' '}
-         (<a href="https://spectrum.ieee.org/boston-dynamics-new-atlas" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         (<a href="https://spectrum.ieee.org/boston-dynamics-new-atlas" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           IEEE
          </a>
          ,{' '}
-         <a href="https://techcrunch.com/2024/10/30/boston-dynamics-electric-atlas-humanoid-executes-autonomous-automotive-parts-picking/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://techcrunch.com/2024/10/30/boston-dynamics-electric-atlas-humanoid-executes-autonomous-automotive-parts-picking/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           TechCrunch
          </a>
          ,{' '}
-         <a href="https://www.theverge.com/2024/10/30/24283592/boston-dynamics-atlas-robot-autonomous" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://www.theverge.com/2024/10/30/24283592/boston-dynamics-atlas-robot-autonomous" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           Verge
          </a>).
         </div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Mar
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          I&apos;ve moved to Greater Boston, to work with the Atlas team at Boston Dynamics{' '}
-         (<a href="https://www.youtube.com/watch?v=29ECwExc-_M" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         (<a href="https://www.youtube.com/watch?v=29ECwExc-_M" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           hello
          </a>).
         </div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Feb
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          I&apos;ve defended my Ph.D., here&apos;s my{' '}
-         <a href="https://www.youtube.com/watch?v=9v-bmXGAxVc" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://www.youtube.com/watch?v=9v-bmXGAxVc" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           talk
          </a>{' '}
          and{' '}
-         <a href="https://kilthub.cmu.edu/articles/thesis/Perception_amidst_interaction_spatial_AI_with_vision_and_touch_for_robot_manipulation/25316152?file=44750527" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://kilthub.cmu.edu/articles/thesis/Perception_amidst_interaction_spatial_AI_with_vision_and_touch_for_robot_manipulation/25316152?file=44750527" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           thesis
          </a>!
         </div>
@@ -788,51 +704,51 @@ export default function Personal() {
        
        {/* Year divider */}
        <div className="flex items-center gap-4 py-2">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-500 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-500 dark:text-zinc-400 font-medium">
          2023 ↓
         </div>
-        <div className="flex-1 border-t border-zinc-300 "></div>
+        <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Dec
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          The pre-print for NeuralFeels is out, read it{' '}
-         <a href="https://arxiv.org/abs/2312.13469" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://arxiv.org/abs/2312.13469" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           here
          </a>.
         </div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Aug
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          Our work{' '}
-         <a href="https://haozhi.io/rotateit/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://haozhi.io/rotateit/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           RotateIt
          </a>
          , led by{' '}
-         <a href="https://haozhi.io/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://haozhi.io/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           Haozhi
          </a>
          , was accepted to{' '}
-         <a href="https://www.corl2023.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://www.corl2023.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           CoRL 2023
          </a>.
         </div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Apr
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          Spending the summer as a research scientist intern at{' '}
-         <a href="https://ai.facebook.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://ai.facebook.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           FAIR
          </a>{' '}
          Menlo Park on visuo-tactile manipulation!
@@ -841,53 +757,53 @@ export default function Personal() {
        
        {/* Year divider */}
        <div className="flex items-center gap-4 py-2">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-500 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-500 dark:text-zinc-400 font-medium">
          2022 ↓
         </div>
-        <div className="flex-1 border-t border-zinc-300 "></div>
+        <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Dec
         </div>
-        <div className="flex-1 text-black ">
-         <a href="https://suddhu.github.io/midastouch-tactile/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+        <div className="flex-1 text-black dark:text-zinc-300">
+         <a href="https://suddhu.github.io/midastouch-tactile/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           MidasTouch
          </a>{' '}
          was showcased at{' '}
-         <a href="https://corl2022.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://corl2022.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           CoRL 2022
          </a>{' '}
          with a{' '}
-         <a href="data/media/midastouch/midastouch_demo.jpg" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="data/media/midastouch/midastouch_demo.jpg" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           live demo
          </a>.
         </div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Oct
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          Successfully passed my{' '}
-         <a href="https://www.ri.cmu.edu/event/tactile-slam-perception-for-dexterity-via-vision-based-touch/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://www.ri.cmu.edu/event/tactile-slam-perception-for-dexterity-via-vision-based-touch/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           Ph.D. thesis proposal
          </a>!
         </div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Sep
         </div>
-        <div className="flex-1 text-black ">
-         <a href="https://suddhu.github.io/midastouch-tactile/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+        <div className="flex-1 text-black dark:text-zinc-300">
+         <a href="https://suddhu.github.io/midastouch-tactile/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           MidasTouch
          </a>{' '}
          was accepted to{' '}
-         <a href="https://corl2022.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://corl2022.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           CoRL 2022
          </a>{' '}
          as an oral.
@@ -895,28 +811,28 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Aug
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          We&apos;ve extended{' '}
-         <a href="https://joeaortiz.github.io/iSDF/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://joeaortiz.github.io/iSDF/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           iSDF
          </a>{' '}
          for neural mapping with the Franka robot, code{' '}
-         <a href="https://github.com/facebookresearch/iSDF#3-running-isdf-with-a-franka-and-live-camera-in-ros" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://github.com/facebookresearch/iSDF#3-running-isdf-with-a-franka-and-live-camera-in-ros" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           here
          </a>.
         </div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-24 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          May
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          Organized the{' '}
-         <a href="https://www.roboticsdebates.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://www.roboticsdebates.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           Debates on the Future of Robotics Research workshop
          </a>{' '}
          at ICRA &apos;22
@@ -924,12 +840,12 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Apr
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          Spending the summer at{' '}
-         <a href="https://ai.facebook.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://ai.facebook.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           FAIR
          </a>{' '}
          Pittsburgh working on pose tracking from touch
@@ -937,15 +853,15 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Jan
         </div>
-        <div className="flex-1 text-black ">
-         <a href="https://arxiv.org/abs/2109.09884" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+        <div className="flex-1 text-black dark:text-zinc-300">
+         <a href="https://arxiv.org/abs/2109.09884" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           ShapeMap 3-D
          </a>{' '}
          was accepted to ICRA 2022, with an open-source{' '}
-         <a href="https://github.com/rpl-cmu/shape-map-3D" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://github.com/rpl-cmu/shape-map-3D" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           implementation
          </a>.
         </div>
@@ -953,30 +869,30 @@ export default function Personal() {
        
        {/* Year divider */}
        <div className="flex items-center gap-4 py-2">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-500 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-500 dark:text-zinc-400 font-medium">
          2021 ↓
         </div>
-        <div className="flex-1 border-t border-zinc-300 "></div>
+        <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Aug
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          Presented at the Tartan SLAM series on our working on perception for planar pushing, video{' '}
-         <a href="https://www.youtube.com/watch?v=IjuTxa8andk" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://www.youtube.com/watch?v=IjuTxa8andk" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           here
          </a>.
         </div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-24 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          May
         </div>
-        <div className="flex-1 text-black ">
-         <a href="https://suddhu.github.io/tactile-slam/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+        <div className="flex-1 text-black dark:text-zinc-300">
+         <a href="https://suddhu.github.io/tactile-slam/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           Tactile SLAM
          </a>{' '}
          was the ICRA 2021 best paper in service robotics finalist!
@@ -989,7 +905,7 @@ export default function Personal() {
      <div className="flex justify-center mt-6">
       <motion.button
        onClick={() => setShowAllUpdates(false)}
-       className="group relative inline-flex items-center gap-2 border border-zinc-300 bg-zinc-50 px-4 py-2 text-xs text-black transition-colors duration-200 hover:bg-zinc-100 hover:text-zinc-700"
+       className="group relative inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 px-4 py-2 text-xs text-black dark:text-zinc-200 transition-colors duration-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-700 dark:hover:text-zinc-100"
        style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}
        whileHover={{ scale: 1.02 }}
        whileTap={{ scale: 0.98 }}
@@ -1007,12 +923,12 @@ export default function Personal() {
     variants={VARIANTS_SECTION}
     transition={TRANSITION_SECTION}
    >
-    <h3 className="mb-5 text-2xl font-medium text-zinc-900" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>Work</h3>
+    <h3 className="mb-5 text-2xl font-medium text-zinc-900 dark:text-zinc-100" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>Work</h3>
     <div className="space-y-6">
      {/* Media items horizontally */}
      <div className="flex gap-4 items-stretch">
       {/* Video 1 */}
-      <div className="flex-1 rounded-lg overflow-hidden bg-zinc-100 shadow-lg relative">
+      <div className="flex-1 rounded-lg overflow-hidden bg-zinc-100 dark:bg-zinc-800 shadow-lg relative">
        {playingVideo1 ? (
         <iframe
          src="https://www.youtube.com/embed/oe1dke3Cf7I?autoplay=1&modestbranding=1&rel=0"
@@ -1044,7 +960,7 @@ export default function Personal() {
       </div>
 
       {/* Video 2 */}
-      <div className="flex-1 rounded-lg overflow-hidden bg-zinc-100 shadow-lg relative">
+      <div className="flex-1 rounded-lg overflow-hidden bg-zinc-100 dark:bg-zinc-800 shadow-lg relative">
        {playingVideo2 ? (
         <iframe
          src="https://www.youtube.com/embed/7a5HYjQ4wJo?start=2442&autoplay=1&modestbranding=1&rel=0"
@@ -1086,9 +1002,9 @@ export default function Personal() {
      </div>
      
      {/* Research description below */}
-     <div className="text-black leading-tight text-justify">
+     <div className="text-black dark:text-zinc-300 leading-tight text-justify">
       <p>
-       <span className="font-bold">I'm a research scientist</span> and <span className="font-bold">technical lead</span> on the Atlas VLA team. I train humanoid policies with alternative data sources like egocentric human data (more details soon). My work is often split between ML training, robot deployment, and coordinating data collection efforts. Previously, I was responsible for vision and wholebody manipulation that powered the Atlas sequencing demos.
+       <span className="font-bold">I&apos;m a research scientist</span> and <span className="font-bold">technical lead</span> on the Atlas VLA team. I train humanoid policies with alternative data sources like egocentric human data (more details soon). My work is often split between ML training, robot deployment, and coordinating data collection efforts. Previously, I was responsible for vision and wholebody manipulation that powered the Atlas sequencing demos.
       </p>
      </div>
     </div>
@@ -1105,51 +1021,51 @@ export default function Personal() {
      <div className="space-y-2">
       <div className="grid grid-cols-1 gap-2">
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Oct
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          My work on Atlas was{' '}
-         <a href="https://youtu.be/F_7IPm7f1vI?si=woSN8Jax0F6XK_P3" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://youtu.be/F_7IPm7f1vI?si=woSN8Jax0F6XK_P3" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           featured in their autonomous demo
          </a>{' '}
-         (<a href="https://spectrum.ieee.org/boston-dynamics-new-atlas" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         (<a href="https://spectrum.ieee.org/boston-dynamics-new-atlas" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           IEEE
          </a>
          ,{' '}
-         <a href="https://techcrunch.com/2024/10/30/boston-dynamics-electric-atlas-humanoid-executes-autonomous-automotive-parts-picking/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://techcrunch.com/2024/10/30/boston-dynamics-electric-atlas-humanoid-executes-autonomous-automotive-parts-picking/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           TechCrunch
          </a>
          ,{' '}
-         <a href="https://www.theverge.com/2024/10/30/24283592/boston-dynamics-atlas-robot-autonomous" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://www.theverge.com/2024/10/30/24283592/boston-dynamics-atlas-robot-autonomous" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           Verge
          </a>).
         </div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Mar
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          I&apos;ve moved to Greater Boston, to work with the Atlas team at Boston Dynamics{' '}
-         (<a href="https://www.youtube.com/watch?v=29ECwExc-_M" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         (<a href="https://www.youtube.com/watch?v=29ECwExc-_M" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           hello
          </a>).
         </div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Feb
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          I&apos;ve defended my Ph.D., here&apos;s my{' '}
-         <a href="https://www.youtube.com/watch?v=9v-bmXGAxVc" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://www.youtube.com/watch?v=9v-bmXGAxVc" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           talk
          </a>{' '}
          and{' '}
-         <a href="https://kilthub.cmu.edu/articles/thesis/Perception_amidst_interaction_spatial_AI_with_vision_and_touch_for_robot_manipulation/25316152?file=44750527" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://kilthub.cmu.edu/articles/thesis/Perception_amidst_interaction_spatial_AI_with_vision_and_touch_for_robot_manipulation/25316152?file=44750527" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           thesis
          </a>!
         </div>
@@ -1157,51 +1073,51 @@ export default function Personal() {
        
        {/* Year divider */}
        <div className="flex items-center gap-4 py-2">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-500 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-500 dark:text-zinc-400 font-medium">
          2023 ↓
         </div>
-        <div className="flex-1 border-t border-zinc-300 "></div>
+        <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Dec
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          The pre-print for NeuralFeels is out, read it{' '}
-         <a href="https://arxiv.org/abs/2312.13469" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://arxiv.org/abs/2312.13469" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           here
          </a>.
         </div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Aug
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          Our work{' '}
-         <a href="https://haozhi.io/rotateit/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://haozhi.io/rotateit/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           RotateIt
          </a>
          , led by{' '}
-         <a href="https://haozhi.io/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://haozhi.io/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           Haozhi
          </a>
          , was accepted to{' '}
-         <a href="https://www.corl2023.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://www.corl2023.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           CoRL 2023
          </a>.
         </div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Apr
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          Spending the summer as a research scientist intern at{' '}
-         <a href="https://ai.facebook.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://ai.facebook.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           FAIR
          </a>{' '}
          Menlo Park on visuo-tactile manipulation!
@@ -1210,53 +1126,53 @@ export default function Personal() {
        
        {/* Year divider */}
        <div className="flex items-center gap-4 py-2">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-500 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-500 dark:text-zinc-400 font-medium">
          2022 ↓
         </div>
-        <div className="flex-1 border-t border-zinc-300 "></div>
+        <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Dec
         </div>
-        <div className="flex-1 text-black ">
-         <a href="https://suddhu.github.io/midastouch-tactile/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+        <div className="flex-1 text-black dark:text-zinc-300">
+         <a href="https://suddhu.github.io/midastouch-tactile/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           MidasTouch
          </a>{' '}
          was showcased at{' '}
-         <a href="https://corl2022.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://corl2022.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           CoRL 2022
          </a>{' '}
          with a{' '}
-         <a href="data/media/midastouch/midastouch_demo.jpg" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="data/media/midastouch/midastouch_demo.jpg" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           live demo
          </a>.
         </div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Oct
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          Successfully passed my{' '}
-         <a href="https://www.ri.cmu.edu/event/tactile-slam-perception-for-dexterity-via-vision-based-touch/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://www.ri.cmu.edu/event/tactile-slam-perception-for-dexterity-via-vision-based-touch/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           Ph.D. thesis proposal
          </a>!
         </div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Sep
         </div>
-        <div className="flex-1 text-black ">
-         <a href="https://suddhu.github.io/midastouch-tactile/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+        <div className="flex-1 text-black dark:text-zinc-300">
+         <a href="https://suddhu.github.io/midastouch-tactile/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           MidasTouch
          </a>{' '}
          was accepted to{' '}
-         <a href="https://corl2022.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://corl2022.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           CoRL 2022
          </a>{' '}
          as an oral.
@@ -1264,28 +1180,28 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Aug
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          We&apos;ve extended{' '}
-         <a href="https://joeaortiz.github.io/iSDF/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://joeaortiz.github.io/iSDF/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           iSDF
          </a>{' '}
          for neural mapping with the Franka robot, code{' '}
-         <a href="https://github.com/facebookresearch/iSDF#3-running-isdf-with-a-franka-and-live-camera-in-ros" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://github.com/facebookresearch/iSDF#3-running-isdf-with-a-franka-and-live-camera-in-ros" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           here
          </a>.
         </div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-24 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          May
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          Organized the{' '}
-         <a href="https://www.roboticsdebates.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://www.roboticsdebates.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           Debates on the Future of Robotics Research workshop
          </a>{' '}
          at ICRA &apos;22
@@ -1293,12 +1209,12 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Apr
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          Spending the summer at{' '}
-         <a href="https://ai.facebook.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://ai.facebook.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           FAIR
          </a>{' '}
          Pittsburgh working on pose tracking from touch
@@ -1306,15 +1222,15 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Jan
         </div>
-        <div className="flex-1 text-black ">
-         <a href="https://arxiv.org/abs/2109.09884" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+        <div className="flex-1 text-black dark:text-zinc-300">
+         <a href="https://arxiv.org/abs/2109.09884" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           ShapeMap 3-D
          </a>{' '}
          was accepted to ICRA 2022, with an open-source{' '}
-         <a href="https://github.com/rpl-cmu/shape-map-3D" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://github.com/rpl-cmu/shape-map-3D" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           implementation
          </a>.
         </div>
@@ -1322,30 +1238,30 @@ export default function Personal() {
        
        {/* Year divider */}
        <div className="flex items-center gap-4 py-2">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-500 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-500 dark:text-zinc-400 font-medium">
          2021 ↓
         </div>
-        <div className="flex-1 border-t border-zinc-300 "></div>
+        <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          Aug
         </div>
-        <div className="flex-1 text-black ">
+        <div className="flex-1 text-black dark:text-zinc-300">
          Presented at the Tartan SLAM series on our working on perception for planar pushing, video{' '}
-         <a href="https://www.youtube.com/watch?v=IjuTxa8andk" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+         <a href="https://www.youtube.com/watch?v=IjuTxa8andk" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           here
          </a>.
         </div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-24 text-base text-zinc-900 font-medium">
+        <div className="flex-shrink-0 w-24 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          May
         </div>
-        <div className="flex-1 text-black ">
-         <a href="https://suddhu.github.io/tactile-slam/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+        <div className="flex-1 text-black dark:text-zinc-300">
+         <a href="https://suddhu.github.io/tactile-slam/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           Tactile SLAM
          </a>{' '}
          was the ICRA 2021 best paper in service robotics finalist!
@@ -1358,7 +1274,7 @@ export default function Personal() {
      <div className="flex justify-center mt-6">
       <motion.button
        onClick={() => setShowAllUpdates(false)}
-       className="group relative inline-flex items-center gap-2 border border-zinc-300 bg-zinc-50 px-4 py-2 text-xs text-black transition-colors duration-200 hover:bg-zinc-100 hover:text-zinc-700"
+       className="group relative inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 px-4 py-2 text-xs text-black dark:text-zinc-200 transition-colors duration-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-700 dark:hover:text-zinc-100"
        style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}
        whileHover={{ scale: 1.02 }}
        whileTap={{ scale: 0.98 }}
@@ -1375,7 +1291,7 @@ export default function Personal() {
     variants={VARIANTS_SECTION}
     transition={TRANSITION_SECTION}
    >
-            <h3 className="mb-5 text-2xl font-medium text-zinc-900" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>Publications</h3>
+            <h3 className="mb-5 text-2xl font-medium text-zinc-900 dark:text-zinc-100" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>Publications</h3>
         <div className="flex flex-col space-y-8">
      {RESEARCH_PAPERS.slice(0, 5).map((paper) => (
       <ResearchPaper key={paper.title} paper={paper} />
@@ -1389,26 +1305,25 @@ export default function Personal() {
         {RESEARCH_PAPERS.slice(5, 6).map((paper) => (
          <div key={paper.title} className="flex gap-6">
           <div className="flex-shrink-0 w-53">
-           <div className="relative rounded-2xl bg-zinc-50/40 p-1">
+           <div className="relative rounded-2xl bg-zinc-50/40 dark:bg-zinc-800/40 p-1">
             <Image
              src={paper.image}
              alt={paper.title}
              width={400}
              height={300}
-             className="w-full rounded-xl object-cover"
-             style={{ border: '0.25px solid #F0F0ED' }}
+             className="w-full rounded-xl object-cover border-[0.25px] border-[#F0F0ED] dark:border-zinc-800"
              priority={false}
             />
            </div>
           </div>
           <div className="flex-1 min-w-0">
-           <h4 className="font-base font-[450] text-zinc-900 ">
+           <h4 className="font-base font-[450] text-zinc-900 dark:text-zinc-100">
             {paper.title}
            </h4>
-           <p className="text-base text-zinc-500 mt-1">
+           <p className="text-base text-zinc-500 dark:text-zinc-400 mt-1">
             {paper.authors.split(', ').slice(0, 3).join(', ')}...
            </p>
-           <p className="text-base text-zinc-500 ">
+           <p className="text-base text-zinc-500 dark:text-zinc-400">
             {paper.venue}, {paper.year}
            </p>
           </div>
@@ -1417,12 +1332,12 @@ export default function Personal() {
        </div>
        
               {/* Fade out gradient overlay */}
-       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#FBFBF8] to-[#FBFBF8] pointer-events-none"></div>
+       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#FBFBF8] via-[#FBFBF8] dark:via-zinc-950 dark:to-zinc-950 to-[#FBFBF8] pointer-events-none"></div>
        
        <div className="flex justify-center">
         <motion.button
          onClick={() => setShowAllResearch(true)}
-         className="group relative inline-flex items-center gap-2 border border-zinc-300 bg-zinc-50 px-4 py-2 text-xs text-black transition-colors duration-200 hover:bg-zinc-100 hover:text-zinc-700"
+         className="group relative inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 px-4 py-2 text-xs text-black dark:text-zinc-200 transition-colors duration-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-700 dark:hover:text-zinc-100"
          style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}
          whileHover={{ scale: 1.02 }}
          whileTap={{ scale: 0.98 }}
@@ -1454,7 +1369,7 @@ export default function Personal() {
      <div className="flex justify-center mt-6">
       <motion.button
        onClick={() => setShowAllResearch(false)}
-       className="group relative inline-flex items-center gap-2 border border-zinc-300 bg-zinc-50 px-4 py-2 text-xs text-black transition-colors duration-200 hover:bg-zinc-100 hover:text-zinc-700"
+       className="group relative inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 px-4 py-2 text-xs text-black dark:text-zinc-200 transition-colors duration-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-700 dark:hover:text-zinc-100"
        style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}
        whileHover={{ scale: 1.02 }}
        whileTap={{ scale: 0.98 }}
@@ -1476,7 +1391,7 @@ export default function Personal() {
      initial={{ opacity: 0 }}
      animate={{ opacity: 1 }}
      exit={{ opacity: 0 }}
-     className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+     className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
      onClick={() => setShowShortBio(false)}
     >
      <motion.div
@@ -1488,24 +1403,23 @@ export default function Personal() {
        bounce: 0,
        duration: 0.3,
       }}
-                  className="relative max-w-2xl rounded-2xl p-6 ring-1 ring-zinc-200/50 ring-inset m-4"
-            style={{ backgroundColor: '#FBFBF8' }}
+                  className="relative max-w-2xl rounded-2xl p-6 ring-1 ring-zinc-200/50 dark:ring-zinc-800/50 ring-inset m-4 bg-[#FBFBF8] dark:bg-zinc-950"
       onClick={(e) => e.stopPropagation()}
      >
       <div className="space-y-4">
        <div className="flex items-center justify-between">
-        <h3 className="press-start-2p-large text-zinc-900">Bio</h3>
+        <h3 className="press-start-2p-large text-zinc-900 dark:text-zinc-100">Bio</h3>
         <motion.button
          onClick={() => setShowShortBio(false)}
-         className="h-fit w-fit rounded-full bg-white p-1 hover:bg-zinc-100 transition-colors"
+         className="h-fit w-fit rounded-full bg-white dark:bg-zinc-800 p-1 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors"
          whileHover={{ scale: 1.1 }}
          whileTap={{ scale: 0.9 }}
         >
-         <XIcon className="h-5 w-5 text-zinc-500" />
+         <XIcon className="h-5 w-5 text-zinc-500 dark:text-zinc-400" />
         </motion.button>
        </div>
        <div 
-        className="text-black leading-relaxed"
+        className="text-black dark:text-zinc-300 leading-relaxed"
         dangerouslySetInnerHTML={{ __html: bioContent || '<p>Loading...</p>' }}
        />
       </div>

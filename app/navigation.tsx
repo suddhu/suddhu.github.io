@@ -1,6 +1,8 @@
 'use client'
 import { useState, useEffect } from 'react'
 
+import { ThemeToggle } from '@/components/theme-toggle'
+
 export function Navigation() {
   const [activeSection, setActiveSection] = useState('home')
 
@@ -43,15 +45,15 @@ export function Navigation() {
     const isActive = activeSection === section
     return `transition-colors duration-200 border px-2 py-1 ${
       isActive 
-        ? 'text-zinc-900 border-zinc-300 bg-zinc-100' 
-        : 'text-black border-transparent hover:text-zinc-900 hover:border-zinc-300'
+        ? 'text-zinc-900 border-zinc-300 bg-zinc-100 dark:bg-zinc-800 dark:text-zinc-100 dark:border-zinc-700' 
+        : 'text-black dark:text-zinc-400 border-transparent hover:text-zinc-900 hover:border-zinc-300 dark:hover:text-zinc-200 dark:hover:border-zinc-600'
     }`
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm py-4" style={{ backgroundColor: 'rgba(251, 251, 248, 0.9)' }}>
-      <div className="mx-auto w-full max-w-screen-md px-4">
-                <div className="flex items-center gap-1 text-xs tracking-tight" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm py-4 bg-white/90 dark:bg-zinc-950/90 transition-colors duration-300">
+      <div className="mx-auto w-full max-w-screen-md px-4 flex items-center justify-between">
+        <div className="flex items-center gap-1 text-xs tracking-tight" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>
           <button 
             onClick={() => scrollToSection('home')}
             className={getLinkClass('home')}
@@ -80,6 +82,7 @@ export function Navigation() {
             Publications
           </button>
         </div>
+        <ThemeToggle />
       </div>
     </nav>
   )

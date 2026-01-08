@@ -81,10 +81,10 @@ function ScramblingTitle({ children }: { children: string }) {
     <span
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
-      className="press-start-2p-large text-black  cursor-pointer"
+      className="press-start-2p-large text-black dark:text-zinc-100 cursor-pointer"
     >
       {displayText}
-      <span className="inline-block w-3 h-0.5 bg-black  animate-blink"></span>
+      <span className="inline-block w-3 h-0.5 bg-black dark:bg-zinc-100 animate-blink"></span>
     </span>
   );
 }
@@ -135,18 +135,18 @@ function EmailScrambler() {
         className="cursor-pointer select-none press-start-2p"
         onClick={() => setIsScrambled(!isScrambled)}
       >
-        <span className="press-start-2p text-black">
+        <span className="press-start-2p text-black dark:text-zinc-200">
           {isClient ? displayUsername : '•'.repeat(emailUser.length)}
-          <span style={{ color: '#0047FF' }}> [at] </span>
+          <span className="text-[#0047FF] dark:text-[#3B82F6]"> [at] </span>
           {EMAIL.split('@')[1].split('.')[0]}
-          <span style={{ color: '#0047FF' }}> [dot] </span>
+          <span className="text-[#0047FF] dark:text-[#3B82F6]"> [dot] </span>
           {EMAIL.split('.')[EMAIL.split('.').length - 1]}
         </span>
       </div>
       <div style={{ height: '5px' }}></div>
       {isScrambled && (
         <div 
-          className="text-[8px] text-zinc-500 cursor-pointer hover:text-zinc-700" 
+          className="text-[8px] text-zinc-500 dark:text-zinc-400 cursor-pointer hover:text-zinc-700 dark:hover:text-zinc-300" 
           style={{ fontFamily: 'var(--font-press-start-2p), cursive', fontSize: '8px' }}
           onClick={() => setIsScrambled(!isScrambled)}
         >
@@ -167,7 +167,7 @@ export function Header() {
         <Image
           src="/profile.png"
           alt="Portrait of Sudharshan Suresh"
-          className="hidden sm:block rounded-2xl ring-1 ring-zinc-200  float-left mr-6 mb-4"
+          className="hidden sm:block rounded-2xl ring-1 ring-zinc-200 dark:ring-zinc-700 float-left mr-6 mb-4"
           width={300}
           height={300}
           priority
@@ -177,24 +177,24 @@ export function Header() {
             <ScramblingTitle>Sudharshan Suresh</ScramblingTitle>
           </div>
           <EmailScrambler />
-          <p className="text-lg text-black  mt-4">
+          <p className="text-lg text-black dark:text-zinc-200 mt-4">
             I&apos;m a staff research scientist and technical lead at{' '}
-            <a href="https://www.bostondynamics.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+            <a href="https://www.bostondynamics.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
               Boston Dynamics
             </a>{' '}
             on the{' '}
-            <a href="https://www.bostondynamics.com/robots/atlas/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 underline-offset-2 ">
+            <a href="https://www.bostondynamics.com/robots/atlas/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
               Atlas
             </a>{' '}
             humanoid project. I train humanoid policies with alternative data sources like egocentric human data. 
           </p>
-          <p className="text-lg text-black  mt-4">
+          <p className="text-lg text-black dark:text-zinc-200 mt-4">
             I earned my Ph.D. in Robotics from{' '}
             <a
               href="https://www.cmu.edu/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-zinc-400 underline-offset-2 "
+              className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 "
             >
               CMU
             </a>
@@ -203,7 +203,7 @@ export function Header() {
               href="https://ai.facebook.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-zinc-400 underline-offset-2 "
+              className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 "
             >
               FAIR
             </a>{' '}
@@ -212,7 +212,7 @@ export function Header() {
               href="https://kilthub.cmu.edu/articles/thesis/Perception_amidst_interaction_spatial_AI_with_vision_and_touch_for_robot_manipulation/25316152?file=44750527"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-zinc-400 underline-offset-2 "
+              className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 "
             >
               thesis
             </a>{' '}
@@ -221,7 +221,7 @@ export function Header() {
               href="https://suddhu.github.io/neural-feels/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-zinc-400 underline-offset-2 "
+              className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 "
             >
               NeuralFeels
             </a>{' '}
@@ -230,7 +230,7 @@ export function Header() {
               href="https://suddhu.github.io/midastouch-tactile/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-zinc-400 underline-offset-2 "
+              className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 "
             >
               MidasTouch
             </a>. 
