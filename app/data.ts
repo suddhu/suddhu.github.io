@@ -85,7 +85,7 @@ export const RESEARCH_PAPERS: ResearchPaper[] = [
       twitter: 'https://x.com/Suddhus/status/1856781256941510752',
       presentation: 'https://youtu.be/KOHh0awhSEg?si=sjSEdC54lKEY3hFy'
     },
-    highlights: ['Cover of November edition'],
+    highlights: ['Featured as journal cover'],
     press: [
       'CMU Robotics [https://www.ri.cmu.edu/cmu-and-partners-redefine-robotic-perception-with-neuralfeels/]',
       'AI at Meta [https://x.com/AIatMeta/status/1856798670592905398]'
@@ -178,7 +178,7 @@ export const RESEARCH_PAPERS: ResearchPaper[] = [
       website: 'https://suddhu.github.io/tactile-slam/',
       presentation: 'https://youtu.be/77VnwArHOhk'
     },
-    highlights: ['ICRA best paper award in service robotics finalist']
+    highlights: ['Best paper award in service robotics finalist']
   },
   {
     title: 'Active SLAM using 3D submap saliency for underwater volumetric exploration',

@@ -1,0 +1,10 @@
+
+> nim@0.1.0 dev
+> NODE_OPTIONS='--no-deprecation' next dev -p 3000
+
+   ▲ Next.js 15.1.1
+   - Local:        http://localhost:3000
+   - Network:      http://10.0.0.107:3000
+
+ ✓ Starting...
+ ✓ Ready in 1088ms

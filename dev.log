@@ -1,0 +1,19 @@
+
+> nim@0.1.0 dev
+> NODE_OPTIONS='--no-deprecation' next dev -p 3000
+
+   ▲ Next.js 15.1.1
+   - Local:        http://localhost:3000
+   - Network:      http://10.0.0.107:3000
+
+ ✓ Starting...
+ ✓ Ready in 1187ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1018ms (1376 modules)
+ GET / 200 in 1277ms
+ ✓ Compiled /_not-found in 250ms (1380 modules)
+ GET /fonts/GaramondPremierPro-MediumCaption.woff2 404 in 312ms
+ GET /fonts/GaramondPremierPro-MediumCaption.woff 404 in 23ms
+ GET / 200 in 67ms
+ GET /fonts/GaramondPremierPro-MediumCaption.woff2 404 in 20ms
+ GET /fonts/GaramondPremierPro-MediumCaption.woff 404 in 12ms

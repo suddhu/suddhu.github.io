@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono, Press_Start_2P } from 'next/font/google'
+import { Geist, Geist_Mono, Press_Start_2P, EB_Garamond } from 'next/font/google'
 import './globals.css'
 import { Header } from './header'
 import { Footer } from './footer'
@@ -40,6 +40,11 @@ const pressStart2P = Press_Start_2P({
   weight: '400',
 })
 
+const ebGaramond = EB_Garamond({
+  variable: '--font-eb-garamond',
+  subsets: ['latin'],
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -48,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geist.variable} ${geistMono.variable} ${pressStart2P.variable} tracking-tight antialiased bg-[#FBFBF8] dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 transition-colors duration-300`}
+        className={`${geist.variable} ${geistMono.variable} ${pressStart2P.variable} ${ebGaramond.variable} tracking-tight antialiased bg-[#FBFBF8] dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 transition-colors duration-300`}
       >
         <ThemeProvider
           enableSystem={false}

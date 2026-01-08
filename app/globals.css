@@ -71,7 +71,7 @@
 }
 
 .garamond-body {
-  font-family: 'Garamond Premier Pro', serif;
+  font-family: var(--font-eb-garamond), serif;
   font-weight: 500;
 }
 

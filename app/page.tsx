@@ -142,10 +142,10 @@ function ResearchPaper({ paper }: { paper: any }) {
     </div>
    </div>
    <div className="flex-1 min-w-0">
-    <h4 className="font-[450] text-lg text-zinc-900 dark:text-zinc-100">
+    <h4 className="font-semibold text-lg leading-tight text-zinc-900 dark:text-zinc-100">
      {paper.title}
     </h4>
-    <p className="text-base text-zinc-500 dark:text-zinc-400 mt-1 mb-2">
+    <p className="text-lg text-zinc-500 dark:text-zinc-400 mt-1 mb-2">
      {paper.authors.split(', ').map((author: string, index: number) => {
       const isLast = index === paper.authors.split(', ').length - 1;
       const authorName = author.replace(', and ', '').replace(' and ', '');
@@ -173,17 +173,17 @@ function ResearchPaper({ paper }: { paper: any }) {
       );
      })}
     </p>
-    <div className="text-lg text-zinc-500 dark:text-zinc-400 flex flex-wrap items-baseline gap-2">
+    <div className="text-lg font-[450] text-zinc-900 dark:text-zinc-100 flex flex-wrap items-baseline gap-2">
      <span>{paper.venue}, {paper.year}</span>
      {paper.highlights && paper.highlights.length > 0 && (
-      <span className="text-sm font-semibold text-[#0047FF] dark:text-[#3B82F6]">
+      <span className="text-lg font-semibold text-[#800000] dark:text-[#ff9999]">
        [{paper.highlights.join(', ')}]
       </span>
      )}
     </div>
     {paper.press && paper.press.length > 0 && (
      <div className="mt-1">
-      <span className="text-sm text-black dark:text-zinc-300 inline-flex items-center gap-1">
+      <span className="text-base text-black dark:text-zinc-300 inline-flex items-center gap-1">
        {researchLinkIconFor('press')} {paper.press.map((pressItem: string, index: number) => {
         const match = pressItem.match(/^(.+?) \[(.+?)\]$/);
         if (match) {
@@ -213,30 +213,30 @@ function ResearchPaper({ paper }: { paper: any }) {
      </div>
     )}
 
-    <div className="mt-3">
+    <div className="mt-4 flex flex-wrap gap-1">
      <AnimatedBackground
       enableHover
-      className="h-full w-full rounded-lg bg-zinc-100 dark:bg-zinc-800"
+      className="h-full w-full rounded-full bg-zinc-100 dark:bg-zinc-800"
       transition={{ type: 'spring', bounce: 0, duration: 0.2 }}
      >
-      <div className="flex flex-wrap gap-1 p-0">
-       {Object.entries(paper.links).map(([key, value]) => {
-         if (!value) return null;
-         return (
-          <a
-           key={key}
-           href={value as string}
-           target="_blank"
-           rel="noopener noreferrer"
-           data-id={key}
-           className="group relative inline-flex shrink-0 items-center gap-1 rounded-full bg-zinc-100 dark:bg-zinc-800 px-1.5 py-0.5 text-base text-black dark:text-zinc-200 transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900"
-          >
+      {Object.entries(paper.links).map(([key, value]) => {
+        if (!value) return null;
+        return (
+         <a
+          key={key}
+          href={value as string}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-id={key}
+          className="group relative inline-flex shrink-0 items-center gap-1 rounded-full bg-transparent px-2 py-0.5 text-base text-black dark:text-zinc-200 transition-colors duration-200 hover:text-zinc-950 dark:hover:text-zinc-50"
+         >
+          <div className="flex items-center gap-1 whitespace-nowrap">
            {researchLinkIconFor(key)}
            <span>{key}</span>
-          </a>
-         );
-       })}
-      </div>
+          </div>
+         </a>
+        );
+      })}
      </AnimatedBackground>
     </div>
    </div>
@@ -265,17 +265,17 @@ import {
 const linkIconFor = (label: string) => {
  switch (label) {
   case 'CV':
-   return <FileTextIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+   return <FileTextIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
   case 'Scholar':
-   return <GraduationCapIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+   return <GraduationCapIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
   case 'Github':
-   return <GithubIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+   return <GithubIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
   case 'LinkedIn':
-   return <LinkedinIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+   return <LinkedinIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
   case 'Twitter':
-   return <TwitterIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+   return <TwitterIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
   case 'Short bio':
-   return <InfoIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+   return <InfoIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
   default:
    return null
  }
@@ -471,7 +471,7 @@ export default function Personal() {
           target={item.label === 'Short bio' ? undefined : '_blank'}
           rel={item.label === 'Short bio' ? undefined : 'noopener noreferrer'}
           data-id={item.label}
-          className="group relative inline-flex items-center gap-1 rounded-full bg-zinc-100 dark:bg-zinc-800 px-1.5 py-0.5 text-[12px] sm:px-2 sm:py-1 sm:text-[14px] text-black dark:text-zinc-200 transition-colors duration-200  "
+          className="group relative inline-flex items-center gap-1 rounded-full bg-zinc-100 dark:bg-zinc-800 px-1.5 py-0.5 text-[13px] sm:px-2 sm:py-1 sm:text-[16px] text-black dark:text-zinc-200 transition-colors duration-200  "
          >
           <span className="inline-flex items-center gap-1">
            {linkIconFor(item.label)}
@@ -479,26 +479,24 @@ export default function Personal() {
           </span>
          </a>
         ))}
+        <a 
+         href="https://bostondynamics.wd1.myworkdayjobs.com/en-US/Boston_Dynamics?q=%27research+scientist+atlas%27&workerSubType=94b44667d8eb01113483ddaebc003906&timeType=2ea36fadc45601e65397a3a4024b5800&locations=94b44667d8eb01465fcf3edabd006468" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         data-id="hiring"
+         className="group relative inline-flex items-center gap-1 rounded-full bg-zinc-100 dark:bg-zinc-800 px-1.5 py-0.5 text-[13px] sm:px-2 sm:py-1 sm:text-[16px] text-black dark:text-zinc-200 transition-colors duration-200"
+        >
+         <span className="inline-flex items-center gap-1">
+          <img 
+           src="https://bostondynamics.com/wp-content/uploads/2023/06/cropped-Boston-Dynamic_favicon-192x192.jpg" 
+           alt="Boston Dynamics Icon" 
+           className="h-3.5 w-3.5 sm:h-4 sm:w-4"
+          />
+          we&apos;re hiring!
+         </span>
+        </a>
        </AnimatedBackground>
       </div>
-     </div>
-
-     <div className="text-center">
-      <p className="text-sm text-zinc-500 dark:text-zinc-400 inline-flex items-center">
-       <img 
-        src="https://bostondynamics.com/wp-content/uploads/2023/06/cropped-Boston-Dynamic_favicon-192x192.jpg" 
-        alt="Boston Dynamics Icon" 
-        className="h-4 w-4 mr-2"
-       />
-       <a 
-        href="https://bostondynamics.wd1.myworkdayjobs.com/en-US/Boston_Dynamics?q=%27research+scientist+atlas%27&workerSubType=94b44667d8eb01113483ddaebc003906&timeType=2ea36fadc45601e65397a3a4024b5800&locations=94b44667d8eb01465fcf3edabd006468" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 text-[0.9em]"
-       >
-        we&apos;re hiring, reach out!
-       </a>
-      </p>
      </div>
     </div>
    </motion.section>
@@ -513,17 +511,17 @@ export default function Personal() {
      <div className="grid grid-cols-1 gap-2">
       {/* Year divider */}
       <div className="flex items-center gap-4 py-2">
-       <div className="flex-shrink-0 w-16 text-base text-zinc-500 dark:text-zinc-400 font-medium">
+       <div className="flex-shrink-0 w-16 text-lg text-zinc-500 dark:text-zinc-400 font-medium">
         2025 ↓
        </div>
        <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
       </div>
       
       <div className="flex gap-4">
-       <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+       <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         Jun
        </div>
-       <div className="flex-1 text-black dark:text-zinc-300">
+       <div className="flex-1 text-lg text-black dark:text-zinc-300">
         I did a deep-dive into our whole-body manipulation and vision stack at the{' '}
         <a href="https://dex-manipulation.github.io/rss2025/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
          RSS Dexterous Manipulation Workshop
@@ -536,10 +534,10 @@ export default function Personal() {
       </div>
       
       <div className="flex gap-4">
-       <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+       <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         May
        </div>
-       <div className="flex-1 text-black dark:text-zinc-300">
+       <div className="flex-1 text-lg text-black dark:text-zinc-300">
         I&apos;m a featured interview in our team&apos;s{' '}
         <a href="https://youtu.be/oe1dke3Cf7I?si=h1efM6LhXF8iPMxO" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
          video release
@@ -552,10 +550,10 @@ export default function Personal() {
       </div>
       
       <div className="flex gap-4">
-       <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+       <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         May
        </div>
-       <div className="flex-1 text-black dark:text-zinc-300">
+       <div className="flex-1 text-lg text-black dark:text-zinc-300">
         Selected to be part of the{' '}
         <a href="https://sites.google.com/view/rsspioneers2025/participants?authuser=0" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
          RSS Pioneers Workshop
@@ -566,17 +564,17 @@ export default function Personal() {
       
       {/* Year divider */}
       <div className="flex items-center gap-4 py-2">
-       <div className="flex-shrink-0 w-16 text-base text-zinc-500 dark:text-zinc-400 font-medium">
+       <div className="flex-shrink-0 w-16 text-lg text-zinc-500 dark:text-zinc-400 font-medium">
         2024 ↓
        </div>
        <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
       </div>
       
       <div className="flex gap-4">
-       <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+       <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
         Nov
        </div>
-       <div className="flex-1 text-black dark:text-zinc-300">
+       <div className="flex-1 text-lg text-black dark:text-zinc-300">
         NeuralFeels is{' '}
         <a href="https://www.science.org/stoken/author-tokens/ST-2331/full" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
          published in Science Robotics
@@ -598,10 +596,10 @@ export default function Personal() {
        {/* Preview of first hidden update */}
        <div className="pointer-events-none" style={{ opacity: 0.8 }}>
         <div className="flex gap-4">
-         <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+         <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
           Oct
          </div>
-         <div className="flex-1 text-black dark:text-zinc-300">
+         <div className="flex-1 text-lg text-black dark:text-zinc-300">
           My work on Atlas was{' '}
           <a href="https://youtu.be/F_7IPm7f1vI?si=woSN8Jax0F6XK_P3" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
            featured in their autonomous demo
@@ -652,10 +650,10 @@ export default function Personal() {
      <div className="space-y-2">
       <div className="grid grid-cols-1 gap-2">
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Oct
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          My work on Atlas was{' '}
          <a href="https://youtu.be/F_7IPm7f1vI?si=woSN8Jax0F6XK_P3" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           featured in their autonomous demo
@@ -675,10 +673,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Mar
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          I&apos;ve moved to Greater Boston, to work with the Atlas team at Boston Dynamics{' '}
          (<a href="https://www.youtube.com/watch?v=29ECwExc-_M" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           hello
@@ -687,10 +685,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Feb
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          I&apos;ve defended my Ph.D., here&apos;s my{' '}
          <a href="https://www.youtube.com/watch?v=9v-bmXGAxVc" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           talk
@@ -704,17 +702,17 @@ export default function Personal() {
        
        {/* Year divider */}
        <div className="flex items-center gap-4 py-2">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-500 dark:text-zinc-400 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-500 dark:text-zinc-400 font-medium">
          2023 ↓
         </div>
         <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Dec
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          The pre-print for NeuralFeels is out, read it{' '}
          <a href="https://arxiv.org/abs/2312.13469" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           here
@@ -723,10 +721,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Aug
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          Our work{' '}
          <a href="https://haozhi.io/rotateit/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           RotateIt
@@ -743,10 +741,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Apr
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          Spending the summer as a research scientist intern at{' '}
          <a href="https://ai.facebook.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           FAIR
@@ -757,17 +755,17 @@ export default function Personal() {
        
        {/* Year divider */}
        <div className="flex items-center gap-4 py-2">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-500 dark:text-zinc-400 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-500 dark:text-zinc-400 font-medium">
          2022 ↓
         </div>
         <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Dec
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          <a href="https://suddhu.github.io/midastouch-tactile/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           MidasTouch
          </a>{' '}
@@ -783,10 +781,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Oct
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          Successfully passed my{' '}
          <a href="https://www.ri.cmu.edu/event/tactile-slam-perception-for-dexterity-via-vision-based-touch/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           Ph.D. thesis proposal
@@ -795,10 +793,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Sep
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          <a href="https://suddhu.github.io/midastouch-tactile/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           MidasTouch
          </a>{' '}
@@ -811,10 +809,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Aug
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          We&apos;ve extended{' '}
          <a href="https://joeaortiz.github.io/iSDF/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           iSDF
@@ -830,7 +828,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          May
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          Organized the{' '}
          <a href="https://www.roboticsdebates.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           Debates on the Future of Robotics Research workshop
@@ -840,10 +838,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Apr
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          Spending the summer at{' '}
          <a href="https://ai.facebook.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           FAIR
@@ -853,10 +851,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Jan
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          <a href="https://arxiv.org/abs/2109.09884" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           ShapeMap 3-D
          </a>{' '}
@@ -869,17 +867,17 @@ export default function Personal() {
        
        {/* Year divider */}
        <div className="flex items-center gap-4 py-2">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-500 dark:text-zinc-400 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-500 dark:text-zinc-400 font-medium">
          2021 ↓
         </div>
         <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Aug
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          Presented at the Tartan SLAM series on our working on perception for planar pushing, video{' '}
          <a href="https://www.youtube.com/watch?v=IjuTxa8andk" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           here
@@ -891,7 +889,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          May
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          <a href="https://suddhu.github.io/tactile-slam/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           Tactile SLAM
          </a>{' '}
@@ -1002,9 +1000,9 @@ export default function Personal() {
      </div>
      
      {/* Research description below */}
-     <div className="text-black dark:text-zinc-300 leading-tight text-justify">
+     <div className="text-lg text-black dark:text-zinc-300 leading-tight text-justify">
       <p>
-       <span className="font-bold">I&apos;m a research scientist</span> and <span className="font-bold">technical lead</span> on the Atlas VLA team. I train humanoid policies with alternative data sources like egocentric human data (more details soon). My work is often split between ML training, robot deployment, and coordinating data collection efforts. Previously, I was responsible for vision and wholebody manipulation that powered the Atlas sequencing demos.
+       <span className="font-bold">I&apos;m a research scientist</span> and <span className="font-bold">technical lead</span> on the Atlas VLA team. I currently focus on scaling humanoid policies through alternative data sources like egocentric human data (more details soon). My work is often split between ML training, robot deployment, and coordinating data collection efforts. Previously, I was responsible for vision and wholebody manipulation that powered the Atlas sequencing demos.
       </p>
      </div>
     </div>
@@ -1021,10 +1019,10 @@ export default function Personal() {
      <div className="space-y-2">
       <div className="grid grid-cols-1 gap-2">
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Oct
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          My work on Atlas was{' '}
          <a href="https://youtu.be/F_7IPm7f1vI?si=woSN8Jax0F6XK_P3" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           featured in their autonomous demo
@@ -1044,10 +1042,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Mar
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          I&apos;ve moved to Greater Boston, to work with the Atlas team at Boston Dynamics{' '}
          (<a href="https://www.youtube.com/watch?v=29ECwExc-_M" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           hello
@@ -1056,10 +1054,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Feb
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          I&apos;ve defended my Ph.D., here&apos;s my{' '}
          <a href="https://www.youtube.com/watch?v=9v-bmXGAxVc" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           talk
@@ -1073,17 +1071,17 @@ export default function Personal() {
        
        {/* Year divider */}
        <div className="flex items-center gap-4 py-2">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-500 dark:text-zinc-400 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-500 dark:text-zinc-400 font-medium">
          2023 ↓
         </div>
         <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Dec
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          The pre-print for NeuralFeels is out, read it{' '}
          <a href="https://arxiv.org/abs/2312.13469" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           here
@@ -1092,10 +1090,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Aug
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          Our work{' '}
          <a href="https://haozhi.io/rotateit/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           RotateIt
@@ -1112,10 +1110,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Apr
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          Spending the summer as a research scientist intern at{' '}
          <a href="https://ai.facebook.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           FAIR
@@ -1126,17 +1124,17 @@ export default function Personal() {
        
        {/* Year divider */}
        <div className="flex items-center gap-4 py-2">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-500 dark:text-zinc-400 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-500 dark:text-zinc-400 font-medium">
          2022 ↓
         </div>
         <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Dec
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          <a href="https://suddhu.github.io/midastouch-tactile/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           MidasTouch
          </a>{' '}
@@ -1152,10 +1150,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Oct
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          Successfully passed my{' '}
          <a href="https://www.ri.cmu.edu/event/tactile-slam-perception-for-dexterity-via-vision-based-touch/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           Ph.D. thesis proposal
@@ -1164,10 +1162,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Sep
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          <a href="https://suddhu.github.io/midastouch-tactile/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           MidasTouch
          </a>{' '}
@@ -1180,10 +1178,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Aug
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          We&apos;ve extended{' '}
          <a href="https://joeaortiz.github.io/iSDF/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           iSDF
@@ -1199,7 +1197,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          May
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          Organized the{' '}
          <a href="https://www.roboticsdebates.org/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           Debates on the Future of Robotics Research workshop
@@ -1209,10 +1207,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Apr
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          Spending the summer at{' '}
          <a href="https://ai.facebook.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           FAIR
@@ -1222,10 +1220,10 @@ export default function Personal() {
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Jan
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          <a href="https://arxiv.org/abs/2109.09884" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           ShapeMap 3-D
          </a>{' '}
@@ -1238,17 +1236,17 @@ export default function Personal() {
        
        {/* Year divider */}
        <div className="flex items-center gap-4 py-2">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-500 dark:text-zinc-400 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-500 dark:text-zinc-400 font-medium">
          2021 ↓
         </div>
         <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
        </div>
        
        <div className="flex gap-4">
-        <div className="flex-shrink-0 w-16 text-base text-zinc-900 dark:text-zinc-100 font-medium">
+        <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
          Aug
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          Presented at the Tartan SLAM series on our working on perception for planar pushing, video{' '}
          <a href="https://www.youtube.com/watch?v=IjuTxa8andk" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           here
@@ -1260,7 +1258,7 @@ export default function Personal() {
         <div className="flex-shrink-0 w-24 text-base text-zinc-900 dark:text-zinc-100 font-medium">
          May
         </div>
-        <div className="flex-1 text-black dark:text-zinc-300">
+        <div className="flex-1 text-lg text-black dark:text-zinc-300">
          <a href="https://suddhu.github.io/tactile-slam/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
           Tactile SLAM
          </a>{' '}
@@ -1317,13 +1315,13 @@ export default function Personal() {
            </div>
           </div>
           <div className="flex-1 min-w-0">
-           <h4 className="font-base font-[450] text-zinc-900 dark:text-zinc-100">
+           <h4 className="text-lg font-semibold leading-tight text-zinc-900 dark:text-zinc-100">
             {paper.title}
            </h4>
-           <p className="text-base text-zinc-500 dark:text-zinc-400 mt-1">
+           <p className="text-lg text-zinc-500 dark:text-zinc-400 mt-1">
             {paper.authors.split(', ').slice(0, 3).join(', ')}...
            </p>
-           <p className="text-base text-zinc-500 dark:text-zinc-400">
+           <p className="text-lg font-[450] text-zinc-900 dark:text-zinc-100">
             {paper.venue}, {paper.year}
            </p>
           </div>
