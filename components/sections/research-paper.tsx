@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import { FileTextIcon, ExternalLinkIcon, CodeIcon, DatabaseIcon, VideoIcon, PresentationIcon, ImageIcon, NewspaperIcon } from 'lucide-react'
+import { FileTextIcon, ExternalLinkIcon, CodeIcon, DatabaseIcon, VideoIcon, PresentationIcon, ImageIcon, NewspaperIcon, TwitterIcon } from 'lucide-react'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 
 const researchLinkIconFor = (linkType: string) => {
