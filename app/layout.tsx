@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     template: '%s | Sudharshan Suresh'
   },
   description: 'Sudharshan Suresh is a research scientist at Boston Dynamics, working on machine learning for the Atlas humanoid robot.',
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 const geist = Geist({
