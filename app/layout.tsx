@@ -13,15 +13,15 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nim-fawn.vercel.app/'),
+  metadataBase: new URL('https://suddhu.github.io/'),
   alternates: {
     canonical: '/'
   },
   title: {
-    default: 'Nim - Personal website template',
-    template: '%s | Nim'
+    default: 'Sudharshan Suresh',
+    template: '%s | Sudharshan Suresh'
   },
-  description:  'Nim is a free and open-source personal website template built with Next.js 15, React 19 and Motion-Primitives.',
+  description: 'Sudharshan Suresh is a research scientist at Boston Dynamics, working on machine learning for the Atlas humanoid robot.',
 };
 
 const geist = Geist({
