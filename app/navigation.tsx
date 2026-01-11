@@ -51,7 +51,7 @@ export function Navigation() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm py-4 bg-white/90 dark:bg-zinc-950/90 transition-colors duration-300">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm py-4 bg-[#FBFBF8]/90 dark:bg-zinc-950/90 transition-colors duration-300">
       <div className="mx-auto w-full max-w-screen-md px-4 flex items-center justify-between gap-2">
         <div className="flex flex-wrap items-center gap-0.5 sm:gap-1 text-[10px] sm:text-xs tracking-tight" style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}>
           <button 
