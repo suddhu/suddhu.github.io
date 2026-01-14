@@ -1,0 +1,534 @@
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>NeuralFeels</title>
+    <style>
+        /* Add your CSS here */
+        @media only screen and (max-width: 600px) {
+            body {
+                background-color: lightblue;
+            }
+        }
+        .video-mask{
+            border-radius: 30px; 
+            overflow: hidden;
+            -webkit-transform: translateZ(0);
+        }
+    </style>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+    <!--FACEBOOK-->
+    <meta property="og:image" content="https://suddhu.github.io/neural-feels/img/pipeline.jpg>
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="682">
+    <meta property="og:image:height" content="682">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://suddhu.github.io/neural-feels/"/>
+    <meta property="og:title" content="neuralfeels" />
+    <meta property="og:description" content="Project page for Neural feels with neural fields: Visuo-tactile perception for in-hand manipulation." />
+
+    <!--TWITTER-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="neuralfeels" />
+    <meta name="twitter:description" content="Project page for Neural feels with neural fields: Visuo-tactile perception for in-hand manipulation" />
+    <meta name="twitter:image" content="https://suddhu.github.io/neural-feels/img/pipeline.jpg" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="style_tweaks.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+
+    <script src="js/app.js"></script>
+    <script>
+        function changevid1(buttonlink) {
+            document.getElementById('change1').src = buttonlink;
+        }
+        function changevid2(buttonlink) {
+            document.getElementById('change2').src = buttonlink;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <a href="/"><img src="img/neuralfeels_logo.png" width="120px" alt="logo" style="padding-left: 35px; padding-top: 10px;"/></a><span class="pre"><b>NeuralFeels with neural fields</b>  <br> &nbsp;&nbsp;&nbsp; Visuo-tactile perception for in-hand manipulation</span>
+                <br/>
+                <small style="color: #c11117; font-weight: lighter;"> &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; Science Robotics 2024</small>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <ul class="list-inline">
+                    <li>
+                        <a href="http://www.cs.cmu.edu/~sudhars1/" target="_blank">
+                            Sudharshan Suresh
+                        </a>
+                        <sup>1, 2</sup>
+                    </li>
+                    <li>
+                        <a href="https://haozhi.io/" target="_blank">
+                            Haozhi Qi
+                        </a>
+                        <sup>2, 3</sup>
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=9bt2Z5QAAAAJ&hl=en" target="_blank">
+                            Tingfan Wu
+                        </a>
+                        <sup>2</sup>
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=3PJeg1wAAAAJ&hl=en" target="_blank">
+                            Taosha Fan
+                        </a>
+                        <sup>2</sup>
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=rebEn8oAAAAJ&hl=en" target="_blank">
+                            Luis Pineda
+                        </a>
+                        <sup>2</sup>
+                    </li>
+                    <br>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=p6DCMrQAAAAJ&hl=en" target="_blank">
+                            Mike Lambeta
+                        </a>
+                        <sup>2</sup>
+                    </li>
+                    <li>
+                        <a href="https://people.eecs.berkeley.edu/~malik/" target="_blank">
+                            Jitendra Malik
+                        </a>
+                        <sup>2, 3</sup>
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=DMTuJzAAAAAJ&hl=en" target="_blank">
+                            Mrinal Kalakrishnan
+                        </a>
+                        <sup>2</sup>
+                    </li>
+                    <br>
+                    <li>
+                        <a href="https://scholar.google.ch/citations?user=fA0rYxMAAAAJ&hl=en" target="_blank">
+                            Roberto Calandra
+                        </a>
+                        <sup>4, 5</sup>
+                    </li>
+                    <li>
+                        <a href="https://www.cs.cmu.edu/~kaess/" target="_blank">
+                            Michael Kaess
+                        </a>
+                        <sup>1</sup>
+                    </li>
+                    <li>
+                        <a href="https://joeaortiz.github.io/" target="_blank">
+                            Joseph Ortiz
+                        </a>
+                        <sup>2</sup>
+                    </li>
+                    <li>
+                        <a href="https://www.mustafamukadam.com/" target="_blank">
+                            Mustafa Mukadam
+                        </a>
+                        <sup>2</sup>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- add affiliation logos -->
+            <div class="row">
+                <div class="col-md-10 text-center col-md-offset-1">
+                    <ul class="list-inline">
+                        <li style="margin-right: 60px;">
+                            <img src="img/RI_small.jpg" height="35px">
+                        </li>
+                        <li style="margin-right: 60px;">
+                            <img src="img/fair.jpeg" height="35px">
+                        </li>
+                        <li style="margin-right: 60px;">
+                            <img src="img/berkeley.png" height="35px">
+                        </li>
+                        <li style="margin-right: 60px;">
+                            <img src="img/tu_dresden.svg" height="35px">
+                        </li>
+                        <li>
+                            <img src="img/ceti.png" height="35px">
+                        </li>
+                    </ul>
+            </div>
+            <!-- add affiliations with superscripts -->
+            <div class="col-md-10 text-center col-md-offset-1">
+                <ul class="list-inline">
+                    <li>
+                        <sup>1</sup>
+                        <a href="https://www.ri.cmu.edu/" target="_blank">
+                        CMU
+                        </a>
+                    </li>
+                    <li>
+                        <sup>2</sup>
+                        <a href="https://ai.meta.com/research/" target="_blank">
+                        FAIR
+                        </a>
+                    </li>
+                    <li>
+                        <sup>3</sup>
+                        <a href="https://eecs.berkeley.edu/" target="_blank">
+                        UC Berkeley
+                        </a>
+                    </li>
+                    <li>
+                        <sup>4</sup>
+                        <a href="https://tu-dresden.de/?set_language=en" target="_blank">
+                        TU Dresden
+                        </a>
+                    </li>
+                    <li>
+                        <sup>5</sup>
+                        <a href="https://ceti.one/" target="_blank">
+                        CeTI
+                        </a>
+                    </li>
+                </ul>
+        </div>
+
+        <div class="row">
+                <div class="col-md-8 text-center col-md-offset-2">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://www.science.org/stoken/author-tokens/ST-2331/full" target="_blank">
+                            <image src="https://pbs.twimg.com/profile_images/887031261910491136/nf0GEeGB_400x400.jpg" height="60px">
+                                <h4><strong>Journal paper</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://youtu.be/KOHh0awhSEg?si=sjSEdC54lKEY3hFy">
+                            <image src="img/youtube_icon.png" height="60px">
+                                <h4><strong>Presentation</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/facebookresearch/neuralfeels" target="_blank">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://huggingface.co/collections/suddhu/neuralfeels-673184a97ddcac2df69ff489" target="_blank">
+                            <image src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" height="60px"></image>
+                                <h4><strong>Dataset</strong></h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+            <div class="col-md-10 text-center col-md-offset-1">
+                <video width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay muted loop class="center" style="margin: 0px 0px 5px 0px">
+                    <source src="video/results/real/bell_pepper.mp4" type='video/mp4'>
+                </video> 
+                <p class="text-center">
+                    <font size="4"><b>TL;DR</b>: Neural perception with vision and touch yields robust tracking <br> and reconstruction of novel objects for in-hand manipulation.</font>
+                </p>
+                <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+                <h3>
+                    <b>Overview</b>
+                </h3>
+                <div class="row align-items-center">
+                    <img src="img/cover.jpg" alt="Tactile depth netowork" width="80%" align="center" style="margin: 0px 0px 20px 0px"/>
+                </div>
+                <p class="text-justify">
+                    To achieve human-level dexterity, robots must infer spatial awareness from multimodal sensing to reason over contact interactions. During in-hand manipulation of novel objects, such spatial awareness involves estimating the object's pose and shape. The status quo for in-hand perception primarily employs vision, and restricts to tracking a priori known objects. Moreover, visual occlusion of objects in-hand is imminent during manipulation, preventing current systems to push beyond tasks without occlusion. We combine vision and touch sensing on a multi-fingered hand to estimate an object's pose and shape during in-hand manipulation. Our method, <em><b>NeuralFeels</b></em>, encodes object geometry by learning a neural field online and jointly tracks it by optimizing a pose graph problem. We study multimodal in-hand perception in simulation and the real-world, interacting with different object via a proprioception-driven policy. Our experiments show final reconstruction F-scores of \(81\)% and average pose drifts of \(4.7\,\text{mm}\), further reduced to \(2.3\,\text{mm}\) with known CAD models. Additionally, we observe that under heavy visual occlusion we can achieve up to \(94\)% improvements in tracking compared to vision-only methods. Our results demonstrate that touch, at the very least, refines and, at the very best, disambiguates visual estimates during in-hand manipulation. We release our evaluation dataset of 70 experiments, FeelSight, as a step towards benchmarking in this domain. Our neural representation driven by multimodal sensing can serve as a perception backbone towards advancing robot dexterity.
+                </p>
+            </div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <h3>
+                    <b>Video presentation</b>
+                </h3>
+                <div class="text-center">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/MkudcePyBJI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <a id="pipeline"></a><h3><b>Our pipeline</b>: visuo-tactile neural optimization</h3>
+                    <div class="row align-items-center">
+                        <video width="100%" controls onmouseover="this.pause()" onmouseout="this.play()" autoplay muted class="center">
+                            <source src="video/pipeline.m4v" type='video/mp4'>
+                        </video>
+                    </div>
+                    <p class="text-justify">
+                        <em>The <b>frontend</b> achieves robust segmentation and depth prediction for vision and touch, while the <b>backend</b> combines this information into a neural field, while simultaneously optimizing for pose via volumetric sampling.
+                        </em>
+                    </p>
+            </div>
+        </div>
+
+        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+            <h3><b>Neural SLAM</b>: object pose and shape estimation</h3>
+            <video id="change1" width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay muted loop class="hover-video center">
+                <source src="video/results/sim/contactdb_rubber_duck.mp4" type="video/mp4"></source>
+            </video>
+            <div class="flexbox">
+                <div>
+                    <button onClick="changevid1('video/results/sim/contactdb_rubber_duck.mp4')"><figure><img src="img/feelsight/contactdb_rubber_duck.png" height="50px"></figure></button><br>sim
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/real/rubiks_cube_small.mp4')"><figure><img src="img/feelsight/rubiks_cube_small.png" height="50px"></figure></button><br>real
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/sim/015_peach.mp4')"><figure></figure><img src="img/feelsight/peach.png" height="50px"></figure></button><br>sim
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/sim/016_pear.mp4')"><figure><img src="img/feelsight/pear.png" height="50px"></figure></button><br>sim
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/real/bell_pepper.mp4')"><figure><img src="img/feelsight/bell_pepper.png" height="50px"></figure></button><br>real
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/sim/077_rubiks_cube.mp4')"><figure></figure><img src="img/feelsight/077_rubiks_cube.png" height="50px"></figure></button><br>sim
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/real/large_dice.mp4')"><figure><img src="img/feelsight/large_dice.png" height="50px"></figure></button><br>real
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/real/peach.mp4')"><figure><img src="img/feelsight/peach.png" height="50px"></figure></button><br>real
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/sim/010_potted_meat_can.mp4')"><figure></figure><img src="img/feelsight/010_potted_meat_can.png" height="50px"></figure></button><br>sim
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/real/pear.mp4')"><figure><img src="img/feelsight/pear.png" height="50px"></figure></button><br>real
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/real/pepper_grinder.mp4')"><figure><img src="img/feelsight/pepper_grinder.png" height="50px"></figure></button><br>real
+                </div>
+                <div>
+                    <button onClick="changevid1('video/results/sim/contactdb_elephant.mp4')"><figure></figure><img src="img/feelsight/contactdb_elephant.png" height="50px"></figure></button><br>sim
+                </div>
+            </div>
+            <span class="blink_me">
+                <p class="text-center">
+                    Click on each object to view results, hover to pause
+                </p>
+            </span>
+
+            <p class="text-justify">
+                In both real-world and simulation, we build an evolving neural SDF that integrates vision and touch while simultaneously tracking the object. We illustrate the input stream of RGB-D and tactile images, paired with the posed reconstruction at that timestep.
+            </p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <h3><b>Neural tracking</b>: object pose estimation given shape</h3>
+                <div class="row align-items-center">
+                    <video width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay loop muted class="center">
+                        <source src="video/sim_pose_collage.mp4" type='video/mp4'>
+                    </video>
+                </div>
+                <p class="text-justify">
+                    As a special case, we demonstrate superior multimodal pose tracking when provided the CAD models of the objects at runtime. The object's SDF model is pre-computed and we freeze the weights of the neural field, to only perform visuo-tactile tracking with the frontend estimates.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <h3><b>Percieving under duress</b>: the effects of occlusion</h3>
+                <div class="row align-items-center">
+                    <video width="100%" controls onmouseover="this.pause()" onmouseout="this.play()" autoplay loop muted class="center">
+                        <source src="video/occlusion.mp4" type='video/mp4'>
+                    </video>
+                </div>
+                <p class="text-justify">
+                    With occluded viewpoints, visuo-tactile fusion helps improve tracking performance with an unobstructed local perspective. We quantify these gains across a sphere of camera viewpoint to show improvements, particularly in occlusion-heavy points-of-view. We observe that touch plays a larger role when vision is heavily occluded, and a refinement role when we there is negligible occlusion. 
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <a id="frontend_sam"></a><h3><b>Frontend</b>: Segment-anything with kinematics</h3>
+                    <video width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay loop muted class="center">
+                        <source src="video/animated_sam.mp4" type='video/mp4'>
+                    </video>
+            </div>
+
+            <div class="col-md-10 text-center col-md-offset-1">
+                <p class="text-justify">
+                    Our neural optimization relies on segmented object depth as input: the frontend is engineered to robustly singulate object depth from vision. Depth is available as-is in an RGB-D camera, but the challenge is to robustly segment out pixels of interest in heavily-occluded interactions. Towards this, we introduce a kinematics-aware segmentation strategy based on <a href="https://github.com/facebookresearch/segment-anything">powerful vision foundation models</a>. 
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <a id="frontend_dpt"></a><h3><b>Frontend</b>: Tactile transformer</h3>
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <img src="img/tactile_transformer.jpg" alt="Tactile transformer" width="105%" align="center" style="margin: 0px 0px 0px 0px"/>
+                    </div>
+                    <div class="col-md-8">
+                        <video width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay loop muted class="center">
+                            <source src="video/dpt_test.mp4" type='video/mp4'>
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-10 text-center col-md-offset-1">
+                <p class="text-justify">
+                    While vision-based touch sensors interpret contact geometry as images, they remain out-of-distribution from natural images. The embedded camera directly perceives the illuminated gelpad, and contact depth is either obtained via photometric stereo, or supervised learning. Existing touch-to-depth relies on convolution, however recent work has shown the benefit of a ViT for <a href="https://github.com/isl-org/DPT">dense depth prediction in natural images</a>. We present a tactile transformer for predicting contact depth from vision-based touch, trained entirely in simulation to generalize across multiple real-world DIGIT sensors.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <a id="backend"></a><h3><b>Backend</b>: shape and pose optimizer</h3>
+                    <div class="row align-items-center">
+                            <img src="img/pgo.jpg" alt="Tactile depth netowork" width="100%" align="center" style="margin: 0px 0px 20px 0px"/>
+                    </div>
+            </div>
+
+            <div class="col-md-10 text-center col-md-offset-1">
+                <p class="text-justify">
+                    The backend module ingests the intermediate output from the frontend, and builds our persistent object model online. This alternates between map and pose optimizer steps using samples from the visuo-tactile depth stream. In our map optimizer, the weights of an instant-NGP model fully-describe the 3D geometry of the object. We formulate pose optimization as a nonlinear least squares problem with custom measurement factors in <a href="https://sites.google.com/view/theseus-ai"><img src="img/theseus.png" height="25px" style="margin-bottom: 5px; margin-left:2px;"> Theseus</a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <a id="dataset"></a><h3>The <b>FeelSight</b> dataset</h3>
+                    <div class="video-mask">
+                        <video width="100%" onmouseover="this.pause()" onmouseout="this.play()" autoplay loop muted class="center">
+                            <source src="video/dataset_zoom.mp4" type='video/mp4'>
+                        </video>
+                        </div>
+
+                <p class="text-justify">
+                    Our FeelSight dataset will empower practitioners in the domain of visuo-tactile manipulation, where there is both a lack of experimental standardization and scarcity of benchmarks. It comprises of a total of 70 rotation sequences in both the real-world and simulation, with ground-truth object meshes and tracking.
+                </p>
+            </div> 
+        </div>
+        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <h3>
+                    <b>Video presentation</b>
+                </h3>
+                <div class="text-center">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/KOHh0awhSEg?si=Vb6JDSQ4vq2JYOYD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <h3>
+                    <b>Bibtex</b>
+                </h3>
+                <div class="form-group text-left col-md-12">
+                    <textarea id="bibtex" class="form-control" readonly>
+@article{suresh2024neuralfeels,
+title={{N}eural feels with neural fields: {V}isuo-tactile perception for in-hand manipulation},
+author={Suresh, Sudharshan and Qi, Haozhi and Wu, Tingfan and Fan, Taosha and Pineda, Luis and Lambeta, Mike and Malik, Jitendra and Kalakrishnan, Mrinal and Calandra, Roberto and Kaess, Michael and Ortiz, Joseph and Mukadam, Mustafa},
+journal={Science Robotics},
+pages={adl0628},
+year={2024},
+publisher={American Association for the Advancement of Science}}</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <h3>
+                    <b>Acknowledgements</b>
+                </h3>
+                <p class="text-justify">
+                    Our neural rendering and Open3D visualizer are based on <a href="https://github.com/facebookresearch/iSDF">iSDF</a> by <a href="https://joeaortiz.github.io/">Joe Ortiz</a> and others. For in-hand rotation, we train a <a href="https://github.com/HaozhiQi/hora">HORA</a> policy by <a href="https://haozhi.io/">Haozhi Qi</a> and others. We thank the <a href="https://digit.ml/">DIGIT</a> team for the vision-based touch sensors, <a href="https://github.com/facebookresearch/tacto">TACTO</a> for tactile sensor simulation, <a href="https://github.com/facebookresearch/theseus">Theseus</a> for the PyTorch-friendly optimizer, <a href="https://github.com/isl-org/DPT">DPT</a> and <a href="https://github.com/antocad/FocusOnDepth">FocusOnDepth</a> for the transformer architecture, <a href="https://segment-anything.com/">Segment-anything</a> for prompt-based segmentation, <a href="https://github.com/Jianghanxiao/Helper3D">Helper3D</a> for URDF-visualization in Open3D. Some of our mesh models are sourced from <a href="https://www.ycbbenchmarks.com/">YCB</a> and <a href="https://contactdb.cc.gatech.edu/">ContactDB</a>.
+                </p>
+
+                <p class="text-justify">
+                
+                    The authors thank Dhruv Batra, Theophile Gervet, Akshara Rai for feedback on writing, and Wei Dong, Tess Hellebrekers, Carolina Higuera, Patrick Lancaster, Franziska Meier, Alberto Rodriguez, Akash Sharma, Jessica Yin for helpful discussions on the research. 
+                </p>
+                
+                <!-- horizontal line -->
+                <div class="col-md-12 text-center"><hr></div>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-md-10 text-center col-md-offset-1">
+                <p class="text-justify">
+                The website uses the <a href="https://suddhu.github.io/midastouch-tactile/">MidasTouch template</a>,  in turn based on <a href="https://jonbarron.info/mipnerf/">John Barron</a>/<a href="http://mgharbi.com/">Michaël Gharbi's websites</a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-10 text-center col-md-offset-1"><hr></div>
+            <div class="col-md-10 text-left col-md-offset-1">
+                <p>
+                    Copyright © 2024 Meta Platforms, Inc
+                  </p>
+                  <p>
+                    <b>Legal</b>:
+                    <a
+                      href="https://opensource.facebook.com/legal/privacy/"
+                      target="_blank"
+                      rel="noreferrer noopener">
+                      Privacy
+                    </a> and
+                    <a
+                      href="https://opensource.facebook.com/legal/terms/"
+                      target="_blank"
+                      rel="noreferrer noopener">
+                      Terms
+                    </a>
+                  </p>
+            </div>
+        </div>
+</body>
+</html>

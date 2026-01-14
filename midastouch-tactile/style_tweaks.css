@@ -1,0 +1,86 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+
+ .blink_me {
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+figcaption {
+  align-self: flex-end;
+  font-size: 8px;
+  line-height: 1px;
+  color: #000000;
+  padding-bottom:5px;
+  /*adjust this to control how far it should be from egde*/
+}
+
+
+.caption {
+  padding:5px;
+  width:90%;
+  font-size:12px;
+  line-height: 1.2em;
+}
+
+  /* without hover */
+ .hover-video {
+  transition: opacity .5s ease-out;
+  -moz-transition: opacity .5s ease-out;
+  -webkit-transition: opacity .5s ease-out;
+  -o-transition: opacity .5s ease-out;
+ }
+
+ .flexbox {
+  display: flex;
+  justify-content: space-between;
+}
+
+  /* on hover behavior */
+ .hover-video:hover {
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity .5s ease-out;
+  -moz-transition: opacity .5s ease-out;
+  -webkit-transition: opacity .5s ease-out;
+  -o-transition: opacity .5s ease-out;
+}
+
+/* border on element hover */
+.hover-box:hover {
+    outline:0.1px solid #000000;
+    border-radius: 5px;
+}
+
+ .canvas-row canvas {
+   max-width:100%;
+ }
+
+ .padding-0{
+     padding-right:0;
+     padding-left:0;
+ }
+
+ .padding-10{
+  padding-top:10;
+  padding-bottom:10;
+  padding-right:10;
+  padding-left:10;
+}
+
+ .vspace-top {
+     margin-top: 30px;
+ }
