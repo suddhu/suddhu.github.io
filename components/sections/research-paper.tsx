@@ -183,12 +183,12 @@ export function ResearchPaper({ paper, priority = false }: { paper: any, priorit
           href={paper.authorLinks![authorName]}
           target="_blank"
           rel="noopener noreferrer"
-          className={`underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ${isSudharshan ? 'font-semibold text-zinc-900 dark:text-zinc-100' : 'text-black dark:text-zinc-300'}`}
+          className={`underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ${isSudharshan ? 'text-zinc-900 dark:text-zinc-100' : 'text-black dark:text-zinc-300'}`}
          >
           {authorName}
          </a>
         ) : (
-         <span className={isSudharshan ? 'font-semibold text-zinc-900 dark:text-zinc-100' : 'text-black dark:text-zinc-300'}>
+         <span className={isSudharshan ? 'text-zinc-900 dark:text-zinc-100' : 'text-black dark:text-zinc-300'}>
           {authorName}
          </span>
         )}
