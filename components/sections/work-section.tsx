@@ -94,7 +94,7 @@ export function WorkSection() {
     {/* Research description below */}
     <div className="text-lg text-black dark:text-zinc-300 leading-tight text-justify">
      <p>
-      <span className="font-bold">I&apos;m a research scientist</span> and <span className="font-bold">technical lead</span> on the Atlas VLA team. I currently focus on scaling humanoid policies through alternative data sources like egocentric human data (more details soon). My work is often split between ML training, robot deployment, and coordinating data collection efforts. Previously, I was responsible for vision and wholebody manipulation that powered the Atlas sequencing demos.
+      I currently focus on scaling humanoid policies through alternative data sources like egocentric human data (more details soon). My work is often split between ML training, robot deployment, and coordinating data collection efforts. Previously, I was responsible for vision and wholebody manipulation that powered the Atlas sequencing demos.
      </p>
     </div>
    </div>
