@@ -19,6 +19,27 @@ export function NewsSection() {
      {/* Year divider */}
      <div className="flex items-center gap-4 py-1">
       <div className="flex-shrink-0 w-16 text-lg text-zinc-500 dark:text-zinc-400 font-medium">
+       2026 ↓
+      </div>
+      <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
+     </div>
+
+     <div className="flex gap-4 py-0.5">
+      <div className="flex-shrink-0 w-16 text-lg text-zinc-900 dark:text-zinc-100 font-medium">
+       Jan
+      </div>
+      <div className="flex-1 text-lg text-black dark:text-zinc-300">
+       I wrote a{' '}
+       <a href="https://www.science.org/eprint/BZ4KZXTIXXSEW43ZAAF5/full?activationRedirect=/doi/full/10.1126/scirobotics.aee5782" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
+        focus article
+       </a>{' '}
+       for Science Robotics about Robot Dexterity, have a read!
+      </div>
+     </div>
+
+     {/* Year divider */}
+     <div className="flex items-center gap-4 py-1">
+      <div className="flex-shrink-0 w-16 text-lg text-zinc-500 dark:text-zinc-400 font-medium">
        2025 ↓
       </div>
       <div className="flex-1 border-t border-zinc-300 dark:border-zinc-700"></div>
