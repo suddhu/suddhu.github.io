@@ -94,7 +94,7 @@ export function WorkSection() {
     {/* Research description below */}
     <div className="text-lg text-black dark:text-zinc-300">
      <p>
-      I currently focus on scaling humanoid policies through alternative data sources like egocentric human data (more details soon). My work is often split between ML training, robot deployment, and coordinating data collection efforts. Previously, I was responsible for vision and wholebody manipulation that powered the Atlas sequencing demos.
+      I currently focus on training humanoid policies at scale through alternative data sources, like egocentric human data (more details soon). My work is often split between ML training, robot deployment, and coordinating data collection efforts. Previously, I was responsible for whole-body manipulation and vision foundation models for Atlas.
      </p>
     </div>
    </div>

@@ -178,7 +178,7 @@ export function Header() {
           </div>
           <EmailScrambler />
           <p className="text-lg text-black dark:text-zinc-200 mt-4">
-            I&apos;m a staff research scientist and technical lead at{' '}
+            I&apos;m a senior staff research scientist and technical lead at{' '}
             <a href="https://www.bostondynamics.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
               Boston Dynamics
             </a>{' '}
@@ -186,7 +186,7 @@ export function Header() {
             <a href="https://www.bostondynamics.com/robots/atlas/" target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-400 dark:decoration-zinc-600 underline-offset-2 ">
               Atlas
             </a>{' '}
-            humanoid project. I currently focus on scaling humanoid policies through alternative data sources like egocentric human data. 
+            humanoid project. I currently focus on training humanoid policies at scale through alternative data sources, like egocentric human data. 
           </p>
           <p className="text-lg text-black dark:text-zinc-200 mt-4">
             I earned my Ph.D. in Robotics from{' '}
