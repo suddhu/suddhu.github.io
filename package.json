@@ -10,7 +10,9 @@
     "build": "NODE_OPTIONS='--no-deprecation' next build",
     "export": "NODE_OPTIONS='--no-deprecation' next build",
     "start": "NODE_OPTIONS='--no-deprecation' next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cv:pull": "git submodule update --remote --merge",
+    "cv:sync": "cp cv_suddhu/main_v2.pdf public/cv/CV_Suddhu.pdf"
   },
   "dependencies": {
     "clsx": "^2.1.1",
