@@ -25,6 +25,29 @@ export const metadata: Metadata = {
   icons: {
     icon: '/icon.png',
   },
+  openGraph: {
+    title: 'Sudharshan Suresh',
+    description: 'Research scientist at Boston Dynamics, working on machine learning for the Atlas humanoid robot.',
+    url: 'https://suddhu.github.io/',
+    siteName: 'Sudharshan Suresh',
+    images: [
+      {
+        url: '/profile.png',
+        width: 800,
+        height: 800,
+        alt: 'Sudharshan Suresh',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sudharshan Suresh',
+    description: 'Research scientist at Boston Dynamics, working on machine learning for the Atlas humanoid robot.',
+    creator: '@suddhus',
+    images: ['/profile.png'],
+  },
 };
 
 const geist = Geist({

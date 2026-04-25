@@ -1,6 +1,13 @@
+import React from 'react'
+
 type SocialLink = {
   label: string
   link: string
+}
+
+export type NewsItem = {
+  date: string
+  content: React.ReactNode
 }
 
 type ResearchPaper = {
@@ -27,6 +34,12 @@ type ResearchPaper = {
 }
 
 export const EMAIL = 'suddhus@gmail.com'
+
+export const BIO = (
+  <p className="text-justify m-0 pt-2.5">
+    Sudharshan Suresh (he/him) is a senior staff research scientist at Boston Dynamics, working on machine learning for the Atlas humanoid robot. He earned a Ph.D. from the Robotics Institute at Carnegie Mellon University, advised by Michael Kaess. He was also a part-time researcher at FAIR, working with the Embodied AI team. His thesis research was on spatial AI from vision and touch for robot manipulation. Prior to this, he completed his Masters in Robotics at CMU, working on underwater SLAM and active exploration. His work in manipulation, perception, and SLAM has been presented at Science Robotics, CoRL, ICRA, IROS, and RA-L. Sudharshan is the recipient of the Hima and Jive Fellowship in Computer Science and the best paper finalist in service robotics at ICRA 2021.
+  </p>
+)
 
 // Top navigation links rendered as pill-style tabs under the header.
 // Replace '#' with your real URLs.

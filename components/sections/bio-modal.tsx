@@ -6,7 +6,7 @@ import { XIcon } from 'lucide-react'
 interface BioModalProps {
  isOpen: boolean
  onClose: () => void
- bioContent: string
+ bioContent: React.ReactNode
 }
 
 export function BioModal({ isOpen, onClose, bioContent }: BioModalProps) {
@@ -44,10 +44,9 @@ export function BioModal({ isOpen, onClose, bioContent }: BioModalProps) {
        <XIcon className="h-5 w-5 text-zinc-500 dark:text-zinc-400" />
       </motion.button>
      </div>
-     <div 
-      className="text-black dark:text-zinc-300 leading-relaxed"
-      dangerouslySetInnerHTML={{ __html: bioContent || '<p>Loading...</p>' }}
-     />
+     <div className="text-black dark:text-zinc-300 leading-relaxed">
+      {bioContent || <p>Loading...</p>}
+     </div>
     </div>
    </motion.div>
   </motion.div>

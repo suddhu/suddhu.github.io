@@ -251,6 +251,7 @@ export function ResearchPaper({ paper, priority = false }: { paper: any, priorit
           href={value as string}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={key}
           data-id={key}
           className="group relative inline-flex shrink-0 items-center gap-1 rounded-full bg-transparent px-2 py-0.5 text-base text-black dark:text-zinc-200 transition-colors duration-200 hover:text-zinc-950 dark:hover:text-zinc-50"
          >

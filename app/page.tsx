@@ -7,29 +7,10 @@ import { WorkSection } from '@/components/sections/work-section'
 import { ResearchSection } from '@/components/sections/research-section'
 import { BioModal } from '@/components/sections/bio-modal'
 import { NavPills } from '@/components/sections/nav-pills'
+import { BIO } from '@/app/data'
 
 export default function Personal() {
  const [showShortBio, setShowShortBio] = useState(false);
- const [bioContent, setBioContent] = useState('');
-
- useEffect(() => {
-  if (showShortBio && !bioContent) {
-   fetch('/short_bio.html')
-    .then(response => response.text())
-    .then(html => {
-     const parser = new DOMParser();
-     const doc = parser.parseFromString(html, 'text/html');
-     const pElement = doc.querySelector('p');
-     if (pElement) {
-      setBioContent(pElement.innerHTML);
-     }
-    })
-    .catch(error => {
-     console.error('Error loading bio content:', error);
-     setBioContent('Sudharshan Suresh (he/him) is a research scientist at Boston Dynamics, working on machine learning for the Atlas humanoid robot...');
-    });
-  }
- }, [showShortBio, bioContent]);
 
  return (
   <motion.main
@@ -48,15 +29,15 @@ export default function Personal() {
    </motion.section>
 
    <NewsSection />
+
    <WorkSection />
+
    <ResearchSection />
 
-   <div id="bio" className="sr-only"></div>
-   
-   <BioModal 
-    isOpen={showShortBio} 
-    onClose={() => setShowShortBio(false)} 
-    bioContent={bioContent} 
+   <BioModal
+    isOpen={showShortBio}
+    onClose={() => setShowShortBio(false)}
+    bioContent={BIO}
    />
   </motion.main>
  )
