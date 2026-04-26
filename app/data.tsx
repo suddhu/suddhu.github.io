@@ -37,7 +37,7 @@ export const EMAIL = 'suddhus@gmail.com'
 
 export const BIO = (
   <p className="text-justify m-0 pt-2.5">
-    Sudharshan Suresh (he/him) is a senior staff research scientist at Boston Dynamics, working on machine learning and dexterity for Atlas. He earned a Ph.D. from the Robotics Institute at Carnegie Mellon University, working on the intersection of touch and robot learning. He was also a visiting researcher at FAIR (Meta), working with the dexterous manipulation team. His thesis enabled robots to learn from vision and touch, see popular work like NeuralFeels and MidasTouch. Prior to this, he completed his Masters in Robotics at CMU, working on field robotics and underwater exploration. His work has been presented at Science Robotics, CoRL, RSS, ICRA, IROS, and RA-L. Sudharshan is a 2025 RSS Pioneer, a recipient of the Hima and Jive Fellowship at CMU, and the best paper finalist in service robotics at ICRA.
+    Sudharshan Suresh (he/him) is a senior staff research scientist and technical lead at Boston Dynamics, working on machine learning and dexterity for Atlas. He earned a Ph.D. from the Robotics Institute at Carnegie Mellon University, working on the intersection of touch and robot learning. He was also a visiting researcher at FAIR (Meta), working with the dexterous manipulation team. His thesis enabled robots to learn from vision and touch, see popular work like NeuralFeels and MidasTouch. Prior to this, he completed his Masters in Robotics at CMU, working on field robotics and underwater exploration. His work has been presented at Science Robotics, CoRL, RSS, ICRA, IROS, and RA-L. Sudharshan is a 2025 RSS Pioneer, a recipient of the Hima and Jive Fellowship at CMU, and the best paper finalist in service robotics at ICRA.
   </p>
 )
 
