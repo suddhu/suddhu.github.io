@@ -7,8 +7,6 @@ export function Footer() {
         <a href="https://github.com/ibelick/nim" target="_blank" rel="noopener noreferrer">
           <span className="text-base text-zinc-500 dark:text-zinc-400">© 2025 Sudharshan Suresh.</span>
         </a>
-        <span className="hidden sm:inline text-zinc-300 dark:text-zinc-700">|</span>
-        <span className="text-sm italic text-zinc-400 dark:text-zinc-500">An exercise in vibe-coding</span>
       </div>
     </footer>
   )
