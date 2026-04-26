@@ -110,8 +110,9 @@ export function WorkSection() {
             I currently focus on training humanoid policies at scale through
             alternative data sources, like egocentric human data. My work is
             often split between ML training, robot deployment, and coordinating
-            data collection efforts. Previously, I was responsible for
-            whole-body manipulation and vision foundation models for Atlas.
+            data collection efforts. Previously, as a staff RS, I was
+            responsible for whole-body manipulation and vision foundation models
+            for Atlas.
           </p>{' '}
         </div>
       </div>
