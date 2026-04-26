@@ -15,21 +15,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: 'recursive'
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Configure Git for Submodule
-        if: env.OVERLEAF_TOKEN != ''
         env:
           OVERLEAF_TOKEN: ${{ secrets.OVERLEAF_TOKEN }}
         run: |
-          git config --global url."https://suddhus:$OVERLEAF_TOKEN@git.overleaf.com/".insteadOf "https://git@git.overleaf.com/"
+          if [ -n "$OVERLEAF_TOKEN" ]; then
+            git config --global url."https://suddhus:$OVERLEAF_TOKEN@git.overleaf.com/".insteadOf "https://git@git.overleaf.com/"
+          fi
+
+      - name: Initialize Submodule
+        run: git submodule update --init --recursive
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-index: '20'
+          node-version: '20'
 
       - name: Pull latest CV source
         run: npm run cv:pull
