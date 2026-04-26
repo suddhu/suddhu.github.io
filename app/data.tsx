@@ -35,11 +35,6 @@ type ResearchPaper = {
 
 export const EMAIL = 'suddhus@gmail.com'
 
-  press?: string[]
-}
-
-export const EMAIL = 'suddhus@gmail.com'
-
 export const BIO = (
   <p className="text-justify m-0 pt-2.5">
     Sudharshan Suresh (he/him) is a senior staff research scientist and technical lead at 
