@@ -18,12 +18,16 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Configure Git for Submodule
+      - name: Configure Submodule URL with Token
         env:
           OVERLEAF_TOKEN: ${{ secrets.OVERLEAF_TOKEN }}
         run: |
           if [ -n "$OVERLEAF_TOKEN" ]; then
-            git config --global url."https://suddhus:$OVERLEAF_TOKEN@git.overleaf.com/".insteadOf "https://git@git.overleaf.com/"
+            # Manually sync the submodule URL with the authentication token
+            git submodule set-url cv_suddhu https://git:${OVERLEAF_TOKEN}@git.overleaf.com/5bf0bf3b5be7df7b92dba6ae
+          else
+            echo "Error: OVERLEAF_TOKEN is not set in GitHub Secrets."
+            exit 1
           fi
 
       - name: Initialize Submodule
