@@ -10,7 +10,10 @@
     "build": "NODE_OPTIONS='--no-deprecation' next build",
     "export": "NODE_OPTIONS='--no-deprecation' next build",
     "start": "NODE_OPTIONS='--no-deprecation' next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cv:pull": "git submodule update --remote --merge",
+    "cv:sync": "cp cv_suddhu/main_v2.pdf public/cv/CV_Suddhu.pdf",
+    "prepare": "husky"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -35,6 +38,13 @@
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.10",
     "tailwindcss": "^4.0.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,md}": [
+      "prettier --write"
+    ]
   }
 }

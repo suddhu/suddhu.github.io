@@ -4,9 +4,9 @@
 This project is a **personal portfolio website** for Sudharshan Suresh, a robotics researcher. It is based on the [Nim](https://github.com/ibelick/nim) template and utilizes a modern React stack to showcase publications, research work, and professional updates. The site is designed as a minimal, single-page application with rich animations.
 
 ## Tech Stack
-*   **Framework:** Next.js 15 (App Router, React Server Components)
+*   **Framework:** Next.js 16 (App Router, React Server Components)
 *   **Core:** React 19
-*   **Styling:** Tailwind CSS v4 (PostCSS-based, zero-config)
+*   **Styling:** Tailwind CSS v4 (PostCSS-based)
 *   **Icons:** Lucide React
 *   **Animation:** Motion (motion/react), Motion-Primitives
 *   **Typography:** Google Fonts (Geist, Geist Mono, Press Start 2P), custom 'Garamond Premier Pro'
@@ -14,15 +14,18 @@ This project is a **personal portfolio website** for Sudharshan Suresh, a roboti
 *   **Deployment:** Static export (`output: 'export'`) optimized for GitHub Pages or Vercel.
 
 ## Architecture & Key Patterns
-*   **Data-Driven:** All content (bio, research papers, social links) is centralized in `app/data.ts`. This is the primary file for content updates.
+*   **Data-Driven:** All content (bio, research papers, social links, news) is centralized in `app/data.ts`. This is the primary file for content updates.
 *   **App Router:** Uses the Next.js App Router structure:
-    *   `app/page.tsx`: Main landing page combining News, Work, and Publications. Contains inline components like `ResearchPaper` and `ProjectVideo`.
-    *   `app/layout.tsx`: Root layout, fonts, and theme.
-    *   `app/header.tsx` & `app/footer.tsx`: Global navigation and footer.
-*   **Components:** Reusable UI components are located in `components/ui/`, heavily leveraging `motion/react` for interactivity.
-*   **Media:** Supports diverse media types (images, MP4, WEBM, GIFs) with specific handling for research paper visualizations.
-*   **Styling:** Tailwind CSS v4 (PostCSS-based, zero-config). Customizations are handled in `app/globals.css` (custom fonts, variables).
-*   **Dark Mode:** Implemented using `next-themes`. A toggle button is available in the top navigation bar.
+    *   `app/page.tsx`: Main landing page combining News, Research, and Work sections.
+    *   `app/layout.tsx`: Root layout, font configurations, and theme provider setup.
+    *   `app/header.tsx` & `app/footer.tsx`: Global navigation and site footer.
+*   **Component Organization:**
+    *   `components/sections/`: Modular page sections like `news-section.tsx`, `research-section.tsx`, and `work-section.tsx`.
+    *   `components/ui/`: Reusable, low-level UI components (e.g., `animated-background.tsx`, `morphing-dialog.tsx`).
+*   **Media Management:** 
+    *   Static assets are located in `public/media/`.
+    *   Project-specific sub-pages (e.g., `midastouch-tactile`, `neural-feels`) are hosted as static HTML in `public/`.
+*   **Dark Mode:** Implemented using `next-themes` with a custom `ThemeToggle` component in the header.
 
 ## Building and Running
 
@@ -40,8 +43,7 @@ This project is a **personal portfolio website** for Sudharshan Suresh, a roboti
 *   **Format:** `npx prettier --write .`
 
 ## Development Conventions
-*   **Content Updates:** Prefer updating `app/data.ts` for text/data changes rather than hardcoding into components.
-*   **Formatting:** The project uses Prettier with the `prettier-plugin-tailwindcss` for class sorting.
-*   **Animations:** Animations use spring physics. Use the `Motion` library components and variants for consistent behavior.
-*   **Type Safety:** Strict TypeScript usage is enforced. Ensure types in `app/data.ts` (e.g., `ResearchPaper`, `Project`) are respected.
-*   **External Content:** The bio is fetched from `/public/short_bio.html`.
+*   **Content Updates:** Always prefer updating `app/data.ts` for text/data changes.
+*   **Animations:** Use the `motion/react` library for consistent spring-based animations.
+*   **Type Safety:** Adhere to types defined in `app/data.ts` (e.g., `ResearchPaper`, `Project`, `NewsItem`).
+*   **External Bio:** The main bio content is fetched from `public/short_bio.html`.
