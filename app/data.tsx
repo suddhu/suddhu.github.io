@@ -35,6 +35,11 @@ type ResearchPaper = {
 
 export const EMAIL = 'suddhus@gmail.com'
 
+  press?: string[]
+}
+
+export const EMAIL = 'suddhus@gmail.com'
+
 export const BIO = (
   <p className="text-justify m-0 pt-2.5">
     Sudharshan Suresh (he/him) is a senior staff research scientist and technical lead at 
@@ -43,11 +48,13 @@ export const BIO = (
     intersection of touch and robot learning, see popular work like NeuralFeels and MidasTouch. 
     He was also a visiting researcher at FAIR (Meta), working with the dexterous manipulation 
     team. Prior to this, he completed his Masters in Robotics at CMU, working on field 
-    robotics and underwater exploration. His academic work was featured in the cover of Science Robotics and presentations at CoRL, ICRA, IROS, and RA-L, while his industry research has been 
+    robotics and underwater exploration. His academic work includes a Science Robotics cover 
+    and presentations at CoRL, ICRA, IROS, and RA-L, while his industry research has been 
     highlighted at RSS, in interviews, and on technical blogs. Sudharshan is a 2025 RSS Pioneer, 
     a Hima and Jive Fellow at CMU, and a best paper finalist in service robotics at ICRA.
   </p>
 )
+
 
 
 // Top navigation links rendered as pill-style tabs under the header.
