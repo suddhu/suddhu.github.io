@@ -35,7 +35,7 @@ export function NewsSection() {
             </div>
             <div className="flex-1 text-lg text-black dark:text-zinc-300">
               I was promoted to senior staff RS! I lead a team that trains robot
-              policies at scale from human demonstrations.
+              policies from human data.
             </div>
           </div>
 
