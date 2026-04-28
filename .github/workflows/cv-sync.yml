@@ -23,7 +23,6 @@ jobs:
           OVERLEAF_TOKEN: ${{ secrets.OVERLEAF_TOKEN }}
         run: |
           if [ -n "$OVERLEAF_TOKEN" ]; then
-            # Manually sync the submodule URL with the authentication token
             git submodule set-url cv_suddhu https://git:${OVERLEAF_TOKEN}@git.overleaf.com/5bf0bf3b5be7df7b92dba6ae
           else
             echo "Error: OVERLEAF_TOKEN is not set in GitHub Secrets."
@@ -33,21 +32,20 @@ jobs:
       - name: Initialize Submodule
         run: git submodule update --init --recursive
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
         with:
-          node-version: '20'
-
-      - name: Pull latest CV source
-        run: npm run cv:pull
-        continue-on-error: true
+          root_file: main_v2.tex
+          working_directory: cv_suddhu
 
       - name: Sync CV PDF
         run: |
           if [ -f "cv_suddhu/main_v2.pdf" ]; then
-            npm run cv:sync
+            mkdir -p public/cv
+            cp cv_suddhu/main_v2.pdf public/cv/CV_Suddhu.pdf
           else
-            echo "main_v2.pdf not found in cv_suddhu directory. Skipping sync."
+            echo "main_v2.pdf was not generated. Check LaTeX compilation logs."
+            exit 1
           fi
 
       - name: Commit and Push changes
@@ -58,6 +56,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore: auto-sync CV from Overleaf"
+            git commit -m "chore: auto-compile and sync CV from Overleaf"
             git push
           fi
