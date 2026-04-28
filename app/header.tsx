@@ -212,8 +212,8 @@ export function Header() {
             >
               Atlas
             </a>
-            . I currently focus on training humanoid policies at scale through
-            alternative data sources, like egocentric human data.
+            . I currently focus on training humanoid policies at scale with
+            egocentric human data.
           </p>
           <p className="mt-4 text-lg text-black dark:text-zinc-200">
             I earned my Ph.D. in Robotics from{' '}
