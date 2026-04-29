@@ -31,16 +31,6 @@ export function NewsSection() {
 
           <div className="flex gap-4 py-0.5">
             <div className="w-16 flex-shrink-0 text-lg font-medium text-zinc-900 dark:text-zinc-100">
-              Mar
-            </div>
-            <div className="flex-1 text-lg text-black dark:text-zinc-300">
-              I was promoted to senior staff RS! I lead a team that trains robot
-              policies from human data.
-            </div>
-          </div>
-
-          <div className="flex gap-4 py-0.5">
-            <div className="w-16 flex-shrink-0 text-lg font-medium text-zinc-900 dark:text-zinc-100">
               Jan
             </div>
             <div className="flex-1 text-lg text-black dark:text-zinc-300">
