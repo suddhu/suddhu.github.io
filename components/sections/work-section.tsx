@@ -2,10 +2,10 @@
 import React, { useState } from 'react'
 import { motion } from 'motion/react'
 import { VARIANTS_SECTION, TRANSITION_SECTION } from '@/lib/constants'
+import { VideoModal, type VideoModalVideo } from './video-modal'
 
 export function WorkSection() {
-  const [playingVideo1, setPlayingVideo1] = useState(false)
-  const [playingVideo2, setPlayingVideo2] = useState(false)
+  const [activeVideo, setActiveVideo] = useState<VideoModalVideo | null>(null)
 
   return (
     <motion.section
@@ -24,74 +24,60 @@ export function WorkSection() {
         <div className="flex flex-col items-stretch gap-4 sm:flex-row">
           {/* Video 1 */}
           <div className="relative flex-1 overflow-hidden rounded-lg bg-zinc-100 shadow-lg dark:bg-zinc-800">
-            {playingVideo1 ? (
-              <iframe
-                src="https://www.youtube.com/embed/oe1dke3Cf7I?autoplay=1&modestbranding=1&rel=0"
-                className="aspect-video w-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="Boston Dynamics Atlas Video Release"
-              />
-            ) : (
-              <>
-                <img
-                  src="https://img.youtube.com/vi/oe1dke3Cf7I/maxresdefault.jpg"
-                  alt="Boston Dynamics Atlas Video Release"
-                  className="aspect-video w-full object-cover"
-                />
-                <button
-                  onClick={() => setPlayingVideo1(true)}
-                  className="group absolute inset-0 flex items-center justify-center bg-black/0 transition-colors hover:bg-black/10"
-                  aria-label="Play Boston Dynamics Atlas Video Release"
+            <img
+              src="https://img.youtube.com/vi/oe1dke3Cf7I/maxresdefault.jpg"
+              alt="Boston Dynamics Atlas Video Release"
+              className="aspect-video w-full object-cover"
+            />
+            <button
+              onClick={() =>
+                setActiveVideo({
+                  src: 'https://www.youtube.com/embed/oe1dke3Cf7I?autoplay=1&modestbranding=1&rel=0',
+                  title: 'Boston Dynamics Atlas Video Release',
+                })
+              }
+              className="group absolute inset-0 flex items-center justify-center bg-black/0 transition-colors hover:bg-black/10"
+              aria-label="Play Boston Dynamics Atlas Video Release"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600/90 transition-colors group-hover:bg-red-600">
+                <svg
+                  className="ml-0.5 h-6 w-6 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600/90 transition-colors group-hover:bg-red-600">
-                    <svg
-                      className="ml-0.5 h-6 w-6 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                </button>
-              </>
-            )}
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </button>
           </div>
 
           {/* Video 2 */}
           <div className="relative flex-1 overflow-hidden rounded-lg bg-zinc-100 shadow-lg dark:bg-zinc-800">
-            {playingVideo2 ? (
-              <iframe
-                src="https://www.youtube.com/embed/7a5HYjQ4wJo?start=2442&autoplay=1&modestbranding=1&rel=0"
-                className="aspect-video w-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="RSS Dexterous Manipulation Workshop Talk"
-              />
-            ) : (
-              <>
-                <img
-                  src="/media/rss_talk.png"
-                  alt="RSS Dexterous Manipulation Workshop Talk - Making Atlas See the World"
-                  className="aspect-video w-full object-cover"
-                />
-                <button
-                  onClick={() => setPlayingVideo2(true)}
-                  className="group absolute inset-0 flex items-center justify-center bg-black/0 transition-colors hover:bg-black/10"
-                  aria-label="Play RSS Dexterous Manipulation Workshop Talk"
+            <img
+              src="/media/rss_talk.png"
+              alt="RSS Dexterous Manipulation Workshop Talk - Making Atlas See the World"
+              className="aspect-video w-full object-cover"
+            />
+            <button
+              onClick={() =>
+                setActiveVideo({
+                  src: 'https://www.youtube.com/embed/7a5HYjQ4wJo?start=2442&autoplay=1&modestbranding=1&rel=0',
+                  title: 'RSS Dexterous Manipulation Workshop Talk',
+                })
+              }
+              className="group absolute inset-0 flex items-center justify-center bg-black/0 transition-colors hover:bg-black/10"
+              aria-label="Play RSS Dexterous Manipulation Workshop Talk"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600/90 transition-colors group-hover:bg-red-600">
+                <svg
+                  className="ml-0.5 h-6 w-6 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600/90 transition-colors group-hover:bg-red-600">
-                    <svg
-                      className="ml-0.5 h-6 w-6 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                </button>
-              </>
-            )}
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </button>
           </div>
 
           {/* Image */}
@@ -114,6 +100,7 @@ export function WorkSection() {
           </p>{' '}
         </div>
       </div>
+      <VideoModal video={activeVideo} onClose={() => setActiveVideo(null)} />
     </motion.section>
   )
 }
