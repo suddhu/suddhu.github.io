@@ -4,8 +4,9 @@
 /* Garamond Premier Pro Medium Caption Font */
 @font-face {
   font-family: 'Garamond Premier Pro';
-  src: url('/fonts/GaramondPremierPro-MediumCaption.woff2') format('woff2'),
-       url('/fonts/GaramondPremierPro-MediumCaption.woff') format('woff');
+  src:
+    url('/fonts/GaramondPremierPro-MediumCaption.woff2') format('woff2'),
+    url('/fonts/GaramondPremierPro-MediumCaption.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -70,6 +71,276 @@
   line-height: 1.4;
 }
 
+/* Nav mark: pixel robot arm shuttling a block between two pads (32x32 grid) */
+.arm-mark {
+  display: block;
+}
+.arm-mark .sh,
+.arm-mark .el,
+.arm-mark .wr {
+  transform-box: view-box;
+}
+.arm-mark .sh {
+  transform-origin: 4px 24px;
+  animation: arm-sh 6s infinite;
+}
+.arm-mark .el {
+  transform-origin: 4px 12px;
+  animation: arm-el 6s infinite;
+}
+.arm-mark .wr {
+  transform-origin: 14px 12px;
+  animation: arm-wr 6s infinite;
+}
+.arm-mark .fl {
+  animation: arm-fl 6s infinite step-end;
+}
+.arm-mark .fr {
+  animation: arm-fr 6s infinite step-end;
+}
+.arm-mark .blk {
+  animation: arm-blk 6s infinite step-end;
+}
+.arm-mark .pad-near {
+  animation: arm-pad-near 6s infinite step-end;
+}
+.arm-mark .pad-far {
+  animation: arm-pad-far 6s infinite step-end;
+}
+@keyframes arm-sh {
+  0% {
+    transform: rotate(18deg);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.9, 0.6);
+  }
+  6%,
+  10% {
+    transform: rotate(43deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  20% {
+    transform: rotate(18deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  30% {
+    transform: rotate(57deg);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.9, 0.6);
+  }
+  36%,
+  40% {
+    transform: rotate(74deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  48%,
+  52% {
+    transform: rotate(57deg);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.9, 0.6);
+  }
+  58%,
+  62% {
+    transform: rotate(74deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  72% {
+    transform: rotate(18deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  82% {
+    transform: rotate(18deg);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.9, 0.6);
+  }
+  88%,
+  92% {
+    transform: rotate(43deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  100% {
+    transform: rotate(18deg);
+  }
+}
+@keyframes arm-el {
+  0% {
+    transform: rotate(3deg);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.9, 0.6);
+  }
+  6%,
+  10% {
+    transform: rotate(18deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  20% {
+    transform: rotate(-39deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  30% {
+    transform: rotate(-59deg);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.9, 0.6);
+  }
+  36%,
+  40% {
+    transform: rotate(-55deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  48%,
+  52% {
+    transform: rotate(-59deg);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.9, 0.6);
+  }
+  58%,
+  62% {
+    transform: rotate(-55deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  72% {
+    transform: rotate(-39deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  82% {
+    transform: rotate(3deg);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.9, 0.6);
+  }
+  88%,
+  92% {
+    transform: rotate(18deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  100% {
+    transform: rotate(3deg);
+  }
+}
+@keyframes arm-wr {
+  0% {
+    transform: rotate(-21deg);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.9, 0.6);
+  }
+  6%,
+  10% {
+    transform: rotate(-61deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  20% {
+    transform: rotate(21deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  30% {
+    transform: rotate(2deg);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.9, 0.6);
+  }
+  36%,
+  40% {
+    transform: rotate(-19deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  48%,
+  52% {
+    transform: rotate(2deg);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.9, 0.6);
+  }
+  58%,
+  62% {
+    transform: rotate(-19deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  72% {
+    transform: rotate(21deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  82% {
+    transform: rotate(-21deg);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.9, 0.6);
+  }
+  88%,
+  92% {
+    transform: rotate(-61deg);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+  }
+  100% {
+    transform: rotate(-21deg);
+  }
+}
+@keyframes arm-fl {
+  0% {
+    transform: translateX(0);
+  }
+  9% {
+    transform: translateX(1px);
+  }
+  39% {
+    transform: translateX(0);
+  }
+  61% {
+    transform: translateX(1px);
+  }
+  91%,
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes arm-fr {
+  0% {
+    transform: translateX(0);
+  }
+  9% {
+    transform: translateX(-1px);
+  }
+  39% {
+    transform: translateX(0);
+  }
+  61% {
+    transform: translateX(-1px);
+  }
+  91%,
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes arm-blk {
+  0% {
+    opacity: 0;
+  }
+  9% {
+    opacity: 1;
+  }
+  39% {
+    opacity: 0;
+  }
+  61% {
+    opacity: 1;
+  }
+  91%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes arm-pad-near {
+  0% {
+    opacity: 1;
+  }
+  9% {
+    opacity: 0;
+  }
+  91%,
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes arm-pad-far {
+  0% {
+    opacity: 0;
+  }
+  39% {
+    opacity: 1;
+  }
+  61%,
+  100% {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .arm-mark * {
+    animation-play-state: paused;
+  }
+}
+
 .garamond-body {
   font-family: var(--font-eb-garamond), serif;
   font-weight: 500;
@@ -82,10 +353,12 @@ html {
 
 /* Custom blink animation for cursor */
 @keyframes blink {
-  0%, 50% {
+  0%,
+  50% {
     opacity: 1;
   }
-  51%, 100% {
+  51%,
+  100% {
     opacity: 0;
   }
 }

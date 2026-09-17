@@ -107,10 +107,10 @@ export function WorkSection() {
         {/* Research description below */}
         <div className="text-lg text-black dark:text-zinc-300">
           <p>
-            I focus on training humanoid policies at scale with egocentric human
-            data. My work is split between ML training, data collection efforts,
-            and robot deployment. Previously, as a staff RS, I was responsible
-            for whole-body manipulation and vision foundation models for Atlas.
+            I focus on training humanoid policies at scale with human data. My
+            work is split between ML training, data collection efforts, and
+            robot deployment. Previously, I was responsible for whole-body
+            manipulation on the e-Atlas research platform.
           </p>{' '}
         </div>
       </div>
