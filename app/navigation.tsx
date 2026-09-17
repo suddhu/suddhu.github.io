@@ -47,7 +47,7 @@ export function Navigation() {
 
   const getLinkClass = (section: string) => {
     const isActive = activeSection === section
-    return `transition-colors duration-200 border px-1.5 py-1 sm:px-2 ${
+    return `transition-colors duration-200 border px-1 py-1 sm:px-2 ${
       isActive
         ? 'text-zinc-900 border-zinc-300 bg-zinc-100 dark:bg-zinc-800 dark:text-zinc-100 dark:border-zinc-700'
         : 'text-black dark:text-zinc-400 border-transparent hover:text-zinc-900 hover:border-zinc-300 dark:hover:text-zinc-200 dark:hover:border-zinc-600'
@@ -55,13 +55,16 @@ export function Navigation() {
   }
 
   return (
-    <nav className="fixed top-0 right-0 left-0 z-50 bg-[#FBFBF8]/90 py-4 backdrop-blur-sm transition-colors duration-300 dark:bg-zinc-950/90">
+    <nav className="sticky top-0 z-50 bg-[#FBFBF8]/90 py-4 backdrop-blur-sm transition-colors duration-300 dark:bg-zinc-950/90">
       <div className="mx-auto flex w-full max-w-screen-md items-center justify-between gap-2 px-4">
         <div
           className="flex flex-wrap items-center gap-0.5 text-[10px] tracking-tight sm:gap-1 sm:text-xs"
           style={{ fontFamily: 'var(--font-press-start-2p), cursive' }}
         >
-          <span className="mr-1.5 inline-flex items-center" aria-hidden="true">
+          <span
+            className="mr-1 inline-flex items-center sm:mr-1.5"
+            aria-hidden="true"
+          >
             <ArmMark />
           </span>
           <button
@@ -89,7 +92,8 @@ export function Navigation() {
             onClick={() => scrollToSection('research')}
             className={getLinkClass('research')}
           >
-            Publications
+            <span className="sm:hidden">Papers</span>
+            <span className="hidden sm:inline">Publications</span>
           </button>
         </div>
         <div className="flex-shrink-0">

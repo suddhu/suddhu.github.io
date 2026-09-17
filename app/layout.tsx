@@ -1,5 +1,10 @@
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono, Press_Start_2P, EB_Garamond } from 'next/font/google'
+import {
+  Geist,
+  Geist_Mono,
+  Press_Start_2P,
+  EB_Garamond,
+} from 'next/font/google'
 import './globals.css'
 import { Header } from './header'
 import { Footer } from './footer'
@@ -15,19 +20,21 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://suddhu.github.io/'),
   alternates: {
-    canonical: '/'
+    canonical: '/',
   },
   title: {
     default: 'Sudharshan Suresh',
-    template: '%s | Sudharshan Suresh'
+    template: '%s | Sudharshan Suresh',
   },
-  description: 'Sudharshan Suresh is a research scientist at Boston Dynamics, working on machine learning for the Atlas humanoid robot.',
+  description:
+    'Sudharshan Suresh is a research scientist at Boston Dynamics, working on machine learning for the Atlas humanoid robot.',
   icons: {
     icon: '/icon.png',
   },
   openGraph: {
     title: 'Sudharshan Suresh',
-    description: 'Research scientist at Boston Dynamics, working on machine learning for the Atlas humanoid robot.',
+    description:
+      'Research scientist at Boston Dynamics, working on machine learning for the Atlas humanoid robot.',
     url: 'https://suddhu.github.io/',
     siteName: 'Sudharshan Suresh',
     images: [
@@ -44,11 +51,12 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Sudharshan Suresh',
-    description: 'Research scientist at Boston Dynamics, working on machine learning for the Atlas humanoid robot.',
+    description:
+      'Research scientist at Boston Dynamics, working on machine learning for the Atlas humanoid robot.',
     creator: '@suddhus',
     images: ['/profile.png'],
   },
-};
+}
 
 const geist = Geist({
   variable: '--font-geist',
@@ -79,7 +87,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geist.variable} ${geistMono.variable} ${pressStart2P.variable} ${ebGaramond.variable} tracking-tight antialiased bg-[#FBFBF8] dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 transition-colors duration-300`}
+        className={`${geist.variable} ${geistMono.variable} ${pressStart2P.variable} ${ebGaramond.variable} bg-[#FBFBF8] tracking-tight text-zinc-900 antialiased transition-colors duration-300 dark:bg-zinc-950 dark:text-zinc-50`}
       >
         <ThemeProvider
           enableSystem={false}
@@ -87,9 +95,9 @@ export default function RootLayout({
           storageKey="theme"
           defaultTheme="light"
         >
-          <div className="flex min-h-screen w-full flex-col garamond-body">
+          <div className="garamond-body flex min-h-screen w-full flex-col">
             <Navigation />
-            <div className="relative mx-auto w-full max-w-screen-md flex-1 px-4 pt-16">
+            <div className="relative mx-auto w-full max-w-screen-md flex-1 px-4 pt-1">
               <Header />
               {children}
               <Footer />
