@@ -1,10 +1,8 @@
-export function ArmMark({ size = 28 }: { size?: number }) {
+export function ArmMark() {
   return (
     <svg
-      className="arm-mark text-black dark:text-zinc-100"
+      className="arm-mark h-6 w-6 text-black sm:h-7 sm:w-7 dark:text-zinc-100"
       viewBox="0 0 32 32"
-      width={size}
-      height={size}
       shapeRendering="crispEdges"
       aria-hidden="true"
       focusable="false"
